@@ -1,0 +1,21 @@
+# Arquivos que não precisam ser versionados
+
+# Arquivos do sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos de backup
+*.bak
+*~
+
+# Arquivos temporários
+*.tmp
+*.log
+
+# Arquivos de IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+
