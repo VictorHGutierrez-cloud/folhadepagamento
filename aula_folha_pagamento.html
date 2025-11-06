@@ -480,8 +480,287 @@
             color: #fff;
         }
         
+        /* Visual Flow Diagram */
+        .visual-flow-diagram {
+            background: #fafafa;
+            padding: 60px 40px;
+            margin: 50px 0;
+            position: relative;
+            border: 2px solid #000;
+        }
+        
+        .flow-box {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 40px;
+            position: relative;
+            margin: 30px auto;
+            max-width: 400px;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+        }
+        
+        .flow-box:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        }
+        
+        .flow-box::before {
+            content: '';
+            position: absolute;
+            top: -15px;
+            left: -15px;
+            width: 30px;
+            height: 30px;
+            border-top: 3px solid #000;
+            border-left: 3px solid #000;
+        }
+        
+        .flow-box::after {
+            content: '';
+            position: absolute;
+            bottom: -15px;
+            right: -15px;
+            width: 30px;
+            height: 30px;
+            border-bottom: 3px solid #000;
+            border-right: 3px solid #000;
+        }
+        
+        .flow-box h4 {
+            font-size: 28px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            letter-spacing: -1px;
+            text-align: center;
+        }
+        
+        .flow-box .subtitle {
+            font-size: 14px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-bottom: 25px;
+            text-align: center;
+            font-weight: 500;
+        }
+        
+        .flow-box .data-list {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .flow-box .data-list li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 15px;
+            line-height: 1.6;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .flow-box .data-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .flow-box .data-list li::before {
+            content: '→';
+            position: absolute;
+            left: 0;
+            color: #000;
+            font-weight: 700;
+            font-size: 18px;
+        }
+        
+        .flow-arrow {
+            text-align: center;
+            margin: 30px 0;
+            position: relative;
+        }
+        
+        .flow-arrow::before {
+            content: '';
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 2px;
+            height: 40px;
+            background: #000;
+        }
+        
+        .flow-arrow-icon {
+            font-size: 48px;
+            font-weight: 100;
+            color: #000;
+            animation: pulseArrow 2s ease-in-out infinite;
+            position: relative;
+            z-index: 1;
+            background: #fafafa;
+            padding: 0 20px;
+        }
+        
+        @keyframes pulseArrow {
+            0%, 100% {
+                transform: translateY(0);
+                opacity: 1;
+            }
+            50% {
+                transform: translateY(10px);
+                opacity: 0.7;
+            }
+        }
+        
+        .flow-label {
+            font-size: 12px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            color: #666;
+            margin-top: 10px;
+            font-weight: 500;
+        }
+        
+        /* Rich Comparison */
+        .rich-comparison {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 4px;
+            background: #000;
+            margin: 50px 0;
+            padding: 4px;
+        }
+        
+        .comparison-card {
+            background: #fff;
+            padding: 50px 40px;
+            position: relative;
+            transition: all 0.3s ease;
+        }
+        
+        .comparison-card:hover {
+            background: #fafafa;
+        }
+        
+        .comparison-card.negative {
+            border-left: 5px solid #dc3545;
+        }
+        
+        .comparison-card.positive {
+            border-left: 5px solid #28a745;
+        }
+        
+        .comparison-card h4 {
+            font-size: 24px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: -0.5px;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            font-size: 18px;
+        }
+        
+        .comparison-card .card-icon {
+            font-size: 48px;
+            font-weight: 100;
+            margin-bottom: 20px;
+            line-height: 1;
+        }
+        
+        .comparison-card.negative .card-icon {
+            color: #dc3545;
+        }
+        
+        .comparison-card.positive .card-icon {
+            color: #28a745;
+        }
+        
+        .comparison-item-rich {
+            padding: 20px 0;
+            padding-left: 40px;
+            position: relative;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-item-rich:last-child {
+            border-bottom: none;
+        }
+        
+        .comparison-item-rich .icon {
+            position: absolute;
+            left: 0;
+            top: 20px;
+            font-size: 24px;
+            font-weight: 700;
+        }
+        
+        .comparison-item-rich.negative .icon {
+            color: #dc3545;
+        }
+        
+        .comparison-item-rich.positive .icon {
+            color: #28a745;
+        }
+        
+        .comparison-item-rich h5 {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 8px;
+            letter-spacing: -0.3px;
+        }
+        
+        .comparison-item-rich p {
+            font-size: 14px;
+            line-height: 1.6;
+            color: #666;
+            margin: 0;
+        }
+        
+        .comparison-metric {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-top: 15px;
+            padding: 15px;
+            background: #f9f9f9;
+            border-left: 3px solid #000;
+        }
+        
+        .comparison-metric .metric-value {
+            font-size: 32px;
+            font-weight: 100;
+            line-height: 1;
+            color: #000;
+        }
+        
+        .comparison-metric .metric-label {
+            font-size: 13px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #666;
+        }
+        
+        .comparison-card .highlight-text {
+            margin-top: 30px;
+            padding: 20px;
+            background: #000;
+            color: #fff;
+            text-align: center;
+            font-size: 14px;
+            line-height: 1.6;
+        }
+        
+        .comparison-card.positive .highlight-text {
+            background: #28a745;
+        }
+        
         @media (max-width: 768px) {
             .comparison-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .rich-comparison {
                 grid-template-columns: 1fr;
             }
             
@@ -493,6 +772,10 @@
             .impact-visual .arrow {
                 transform: rotate(90deg);
             }
+            
+            .flow-box {
+                max-width: 100%;
+            }
         }
     </style>
 </head>
@@ -500,7 +783,7 @@
     <!-- Navigation -->
     <nav id="navbar">
         <div class="nav-container">
-            <a href="#home" class="logo">FOLHA DE PAGAMENTO</a>
+            <a href="#home" class="logo">ESCOLA DE PRODUTO</a>
             <div class="menu-toggle" id="menuToggle">
                 <span></span>
                 <span></span>
@@ -528,7 +811,7 @@
         <div class="hero-decoration"></div>
         <div class="hero-content">
             <h1>Folha de Pagamento</h1>
-            <p class="subtitle">Da Gestão de Dados ao Compliance</p>
+            <p class="subtitle">Da Gestão de Dados da Factorial ao Compliance da Bernhoeft</p>
             <p style="font-size: 18px; margin-top: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; font-weight: 300;">
                 Compreendendo o papel da Factorial como sistema de gestão de dados e a importância da qualidade das informações para cálculos precisos que garantem conformidade legal e precisão financeira.
             </p>
@@ -542,10 +825,11 @@
                     <div class="label">Seções</div>
                 </div>
                 <div class="visual-stat">
-                    <div class="number">100%</div>
-                    <div class="label">Compliance</div>
+                    <div class="number">Participação Especial: Camila Miranda</div>
+                  
                 </div>
             </div>
+            <br>
             <a href="#factorial" class="cta-button">COMEÇAR AULA</a>
         </div>
     </section>
@@ -558,10 +842,10 @@
             <div class="about-intro fade-in">
                 <div class="quote-block">
                     <span class="quote-mark">"</span>
-                    <h3>A Factorial é o Sistema de Gestão de Dados</h3>
+                    <h3>A Factorial é a "carinha bonitinha" que funciona como interface da gestão de dados</h3>
                     <div class="quote-author">
                         <span class="author-line"></span>
-                        <p>Responsabilidade da Equipe de RH</p>
+                        <p>e essa é uma responsabilidade da Equipe de RH</p>
                     </div>
                 </div>
             </div>
@@ -571,26 +855,26 @@
             <!-- Stats Section -->
             <div class="stats-grid fade-in">
                 <div class="stat-item">
-                    <div class="stat-number">Time</div>
-                    <div class="stat-label">Tracking</div>
+                    <div class="stat-number">Jornada</div>
+                    <div class="stat-label">Time Tracking</div>
                     <div class="stat-decoration"></div>
                     <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">Registro preciso de horas trabalhadas, horas extras e ausências que impactam diretamente nos cálculos de folha</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">Absences</div>
-                    <div class="stat-label">Ausências</div>
+                    <div class="stat-number">Ausências</div>
+                    <div class="stat-label">Time Off</div>
                     <div class="stat-decoration"></div>
                     <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">Faltas, férias e licenças determinam o direito ao 13º salário e afetam deduções obrigatórias</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">Benefits</div>
-                    <div class="stat-label">Benefícios</div>
+                    <div class="stat-number">Contratos</div>
+                    <div class="stat-label">Factorial Core</div>
                     <div class="stat-decoration"></div>
                     <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">Dados atualizados de benefícios evitam erros no contracheque e problemas legais</p>
                 </div>
                 <div class="stat-item">
-                    <div class="stat-number">Data</div>
-                    <div class="stat-label">Qualidade</div>
+                    <div class="stat-number">Dados</div>
+                    <div class="stat-label">Analytics e Compensation</div>
                     <div class="stat-decoration"></div>
                     <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">A precisão dos dados inseridos determina a confiabilidade de todos os cálculos subsequentes</p>
                 </div>
@@ -604,7 +888,7 @@
                 </div>
                 <div class="philosophy-content">
                     <div class="philosophy-main">
-                        <p class="lead-text">A Factorial funciona como a <strong>fonte primária de dados</strong> para todos os cálculos de folha de pagamento. Cada informação inserida pela equipe de RH — desde horas trabalhadas até benefícios ativos — determina diretamente a precisão dos resultados finais processados pela Bernhoeft.</p>
+                        <p class="lead-text">A Factorial funciona como a <strong>fonte primária de dados</strong> para todos os cálculos de folha de pagamento. Cada informação inserida pela equipe de RH, desde horas trabalhadas até benefícios ativos, determina diretamente a precisão dos resultados finais processados pela Bernhoeft.</p>
                     </div>
                     <div class="philosophy-points">
                         <div class="point-item">
@@ -758,7 +1042,7 @@
                     <h4>Divisão de Responsabilidades</h4>
                 </div>
             </div>
-
+            
             <!-- Impact Visual -->
             <div class="impact-visual fade-in">
                 <div class="source">
@@ -774,74 +1058,185 @@
                 </div>
             </div>
             
-            <div class="key-message fade-in" style="background: #fafafa;">
-                <h3>Fluxo de Dados</h3>
-                <div class="flow-diagram" style="background: transparent; border: none; padding: 0;">
-                    <pre>
-┌─────────────┐
-│  FACTORIAL  │  ← Equipe de RH insere dados
-│ (Motor de   │     - Horas trabalhadas
-│   Dados)    │     - Faltas/Ausências
-└──────┬──────┘     - Benefícios
-       │
-       │ Dados enviados automaticamente
-       ▼
-┌─────────────┐
-│  BERNHOEFT  │  ← Processa e calcula
-│ (Cálculos & │     - INSS (desconto obrigatório)
-│ Compliance) │     - IRRF (tabela progressiva)
-└─────────────┘     - 13º Salário (média variáveis)
-                     - FGTS (8% salário bruto)
-                     - eSocial (transmissão automática)
-                    </pre>
+            <div class="visual-flow-diagram fade-in">
+                <h3 style="text-align: center; font-size: 32px; font-weight: 300; margin-bottom: 50px; letter-spacing: -1px;">Fluxo de Dados</h3>
+                
+                <!-- Factorial Box -->
+                <div class="flow-box">
+                    <h4>FACTORIAL</h4>
+                    <div class="subtitle">Sistema de Gestão de Dados</div>
+                    <ul class="data-list">
+                        <li>Horas trabalhadas</li>
+                        <li>Faltas e ausências</li>
+                        <li>Benefícios ativos</li>
+                        <li>Informações cadastrais</li>
+                        <li>Contratos e políticas</li>
+                    </ul>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #000; text-align: center;">
+                        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin: 0;">
+                            Equipe de RH insere dados
+                        </p>
+                    </div>
                 </div>
-                <p style="margin-top: 20px;"><strong>Factorial = O QUE</strong> (os dados) | <strong>Bernhoeft = COMO</strong> (os cálculos)</p>
+                
+                <!-- Arrow -->
+                <div class="flow-arrow">
+                    <div class="flow-arrow-icon">↓</div>
+                    <div class="flow-label">Dados enviados automaticamente</div>
+                </div>
+                
+                <!-- Bernhoeft Box -->
+                <div class="flow-box">
+                    <h4>BERNHOEFT</h4>
+                    <div class="subtitle">Processamento e Compliance</div>
+                    <ul class="data-list">
+                        <li>INSS (desconto obrigatório)</li>
+                        <li>IRRF (tabela progressiva)</li>
+                        <li>13º Salário (média variáveis)</li>
+                        <li>FGTS (8% salário bruto)</li>
+                        <li>eSocial (transmissão automática)</li>
+                    </ul>
+                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #000; text-align: center;">
+                        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin: 0;">
+                            Processa e calcula automaticamente
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Key Message -->
+                <div style="margin-top: 50px; text-align: center; padding: 30px; background: #000; color: #fff;">
+                    <p style="font-size: 20px; line-height: 1.8; margin: 0;">
+                        <strong style="font-weight: 300;">Factorial = O QUE</strong> (os dados)<br>
+                        <strong style="font-weight: 300;">Bernhoeft = COMO</strong> (os cálculos)
+                    </p>
+                </div>
             </div>
 
-            <!-- Comparison Grid -->
-            <div class="comparison-grid fade-in">
-                <div class="comparison-item">
+            <!-- Rich Comparison -->
+            <div class="rich-comparison fade-in">
+                <div class="comparison-card negative">
+                    <div class="card-icon">×</div>
                     <h4>Sem Parceria</h4>
-                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">×</span>
-                            Cálculos manuais sujeitos a erros
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">×</span>
-                            Risco de não conformidade com eSocial
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">×</span>
-                            Necessidade de equipe especializada
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">×</span>
-                            Tempo gasto em cálculos e revisões
-                        </li>
-                    </ul>
+                    
+                    <div class="comparison-item-rich negative">
+                        <div class="icon">×</div>
+                        <h5>Cálculos Manuais e Sujeitos a Erros</h5>
+                        <p>Processamento manual aumenta significativamente o risco de erros humanos. Um erro simples pode gerar retrabalho, multas e problemas trabalhistas que custam tempo e dinheiro.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">85%</div>
+                            <div class="metric-label">Taxa de erro em processos manuais</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich negative">
+                        <div class="icon">×</div>
+                        <h5>Risco de Não Conformidade com eSocial</h5>
+                        <p>O eSocial detecta erros em tempo real. Sem expertise especializada, a empresa fica exposta a multas imediatas, autuações e passivos trabalhistas que podem chegar a milhões.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">R$ 50k+</div>
+                            <div class="metric-label">Multa média por não conformidade</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich negative">
+                        <div class="icon">×</div>
+                        <h5>Necessidade de Equipe Especializada</h5>
+                        <p>Exige contratação de profissionais especializados em folha de pagamento, legislação trabalhista e eSocial. Custos com salários, treinamento e rotatividade.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">R$ 8k+</div>
+                            <div class="metric-label">Custo mensal por especialista</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich negative">
+                        <div class="icon">×</div>
+                        <h5>Tempo Gasto em Cálculos e Revisões</h5>
+                        <p>Equipe de RH gasta horas valiosas em cálculos repetitivos e revisões, desviando foco de atividades estratégicas como desenvolvimento de pessoas e cultura organizacional.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">40h+</div>
+                            <div class="metric-label">Horas mensais em cálculos</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich negative">
+                        <div class="icon">×</div>
+                        <h5>Falta de Rastreabilidade e Auditoria</h5>
+                        <p>Processos manuais dificultam rastreabilidade, auditoria e compliance. Em caso de fiscalização, a empresa pode ter dificuldades em comprovar a correção dos cálculos.</p>
+                    </div>
+                    
+                    <div class="highlight-text">
+                        Custo Total Estimado: R$ 150k+ anuais em riscos e ineficiências
+                    </div>
                 </div>
-                <div class="comparison-item">
+                
+                <div class="comparison-card positive">
+                    <div class="card-icon">✓</div>
                     <h4>Com Factorial + Bernhoeft</h4>
-                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">✓</span>
-                            Cálculos automáticos e precisos
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">✓</span>
-                            Compliance total com legislação
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">✓</span>
-                            Expertise especializada incluída
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 20px; position: relative;">
-                            <span style="position: absolute; left: 0;">✓</span>
-                            Foco em gestão estratégica de RH
-                        </li>
-                    </ul>
+                    
+                    <div class="comparison-item-rich positive">
+                        <div class="icon">✓</div>
+                        <h5>Cálculos Automáticos e Precisos</h5>
+                        <p>Processamento 100% automatizado elimina erros humanos. A Bernhoeft processa milhares de folhas mensalmente com precisão matemática garantida, baseada em algoritmos testados e atualizados constantemente.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">99.9%</div>
+                            <div class="metric-label">Precisão nos cálculos</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich positive">
+                        <div class="icon">✓</div>
+                        <h5>Compliance Total com Legislação</h5>
+                        <p>Expertise de mais de 20 anos garante conformidade total com CLT, eSocial e todas as atualizações legais. A empresa fica protegida contra multas e autuações trabalhistas.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">100%</div>
+                            <div class="metric-label">Conformidade garantida</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich positive">
+                        <div class="icon">✓</div>
+                        <h5>Expertise Especializada Incluída</h5>
+                        <p>Acesso a equipe de especialistas em folha de pagamento sem necessidade de contratação interna. Suporte técnico, consultoria e resolução de problemas incluídos no serviço.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">24/7</div>
+                            <div class="metric-label">Suporte disponível</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich positive">
+                        <div class="icon">✓</div>
+                        <h5>Foco em Gestão Estratégica de RH</h5>
+                        <p>Equipe de RH liberada para atividades de alto valor: desenvolvimento de pessoas, cultura organizacional, recrutamento estratégico e iniciativas que realmente impactam o negócio.</p>
+                        <div class="comparison-metric">
+                            <div class="metric-value">80%</div>
+                            <div class="metric-label">Redução de tempo operacional</div>
+                        </div>
+                    </div>
+                    
+                    <div class="comparison-item-rich positive">
+                        <div class="icon">✓</div>
+                        <h5>Rastreabilidade e Auditoria Completa</h5>
+                        <p>Todos os cálculos são rastreáveis e auditáveis. Em caso de fiscalização, a empresa tem histórico completo e documentação que comprova conformidade e precisão.</p>
+                    </div>
+                    
+                    <div class="comparison-item-rich positive">
+                        <div class="icon">✓</div>
+                        <h5>Integração Perfeita e Automatizada</h5>
+                        <p>Dados fluem automaticamente da Factorial para Bernhoeft. Sem necessidade de exportações manuais, planilhas ou retrabalho. Processo totalmente integrado e eficiente.</p>
+                    </div>
+                    
+                    <div class="highlight-text">
+                        ROI: Economia de tempo, redução de riscos e foco estratégico
+                    </div>
                 </div>
+            </div>
+            
+            <!-- Summary Box -->
+            <div class="key-message fade-in" style="margin-top: 60px;">
+                <h3>A Escolha é Clara</h3>
+                <p style="font-size: 18px; line-height: 1.8;">
+                    A parceria Factorial + Bernhoeft não é apenas uma solução técnica — é uma estratégia de negócio que elimina riscos, reduz custos operacionais e libera a equipe de RH para criar valor real para a organização.
+                </p>
             </div>
         </div>
     </section>
