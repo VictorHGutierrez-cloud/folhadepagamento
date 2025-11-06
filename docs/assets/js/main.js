@@ -164,6 +164,19 @@
 
 							}
 
+						// Anchor link (starts with #)?
+							else if (href && href.charAt(0) == '#') {
+
+								// Use scrolly for smooth scroll.
+									var $target = $(href);
+									if ($target.length > 0) {
+										$('html, body').animate({
+											scrollTop: $target.offset().top - $header.height()
+										}, 800);
+									}
+
+							}
+
 						// Otherwise ...
 							else {
 
