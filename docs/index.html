@@ -1,414 +1,1789 @@
-<!DOCTYPE HTML>
-<!--
-	Da Gestão de Dados ao Compliance: Vendendo a Solução Completa Factorial + Bernhoeft
-	Baseado no template Forty by HTML5 UP
--->
+<!DOCTYPE html>
 <html lang="pt-BR">
-	<head>
-		<title>Factorial + Bernhoeft: Solução Completa de Folha de Pagamento</title>
-		<meta charset="utf-8" />
-		<meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
-		<link rel="stylesheet" href="assets/css/main.css" />
-		<noscript><link rel="stylesheet" href="assets/css/noscript.css" /></noscript>
-	</head>
-	<body class="is-preload">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestria em Folha de Pagamento - Academia Factorial & Bernhoeft</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+    <link href="style_completo.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Loading Screen -->
+    <div id="loadingScreen" class="loading-screen">
+        <div class="loading-content">
+            <div class="loading-spinner"></div>
+            <h2>Preparando sua experiência</h2>
+            <p>Carregando conteúdo estratégico...</p>
+        </div>
+    </div>
 
-		<!-- Wrapper -->
-			<div id="wrapper">
+    <!-- Progress Bar -->
+    <div class="progress-bar" id="progressBar"></div>
 
-				<!-- Header -->
-					<header id="header" class="alt">
-						<a href="index.html" class="logo"><strong>Factorial + Bernhoeft</strong> <span>Solução Completa</span></a>
-						<nav>
-							<a href="#menu">Menu</a>
-						</nav>
-					</header>
+    <!-- Navigation -->
+    <nav id="navbar" class="navbar">
+        <div class="nav-container">
+            <div class="nav-brand">
+                <img src="logo-factorial.svg" alt="Factorial" class="nav-logo">
+                <span class="nav-separator">×</span>
+                <img src="logo-bernhoeft.svg" alt="Bernhoeft" class="nav-logo">
+            </div>
+            
+            <div class="nav-menu">
+                <button class="menu-toggle" id="menuToggle">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+                
+                <ul class="nav-links" id="navLinks">
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Fundamentos <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#anatomia">Anatomia do Custo CLT</a></li>
+                            <li><a href="#iceberg">Metáfora do Iceberg</a></li>
+                            <li><a href="#triangulo">Triângulo da Folha</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Riscos & Compliance <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#esocial">eSocial em Tempo Real</a></li>
+                            <li><a href="#multas">Matriz de Multas</a></li>
+                            <li><a href="#passivos">Passivos Trabalhistas</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Solução Integrada <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#factorial">Factorial: Dados</a></li>
+                            <li><a href="#bernhoeft">Bernhoeft: Processamento</a></li>
+                            <li><a href="#jornada">Jornada Perfeita</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link">Ferramentas <i class="fas fa-chevron-down"></i></a>
+                        <ul class="dropdown-menu">
+                            <li><a href="#calculadora">Calculadora CLT</a></li>
+                            <li><a href="#diagnostico">Diagnóstico Grátis</a></li>
+                            <li><a href="#simulador">Simulador de Riscos</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="#contato" class="nav-link nav-cta">Falar com Especialista</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
 
-				<!-- Menu -->
-					<nav id="menu">
-						<ul class="links">
-							<li><a href="index.html">Início</a></li>
-							<li><a href="#desafio-content">O Desafio</a></li>
-							<li><a href="#custo-content">Custo CLT</a></li>
-							<li><a href="#risco-content">Risco eSocial</a></li>
-							<li><a href="#solucao-content">A Solução</a></li>
-							<li><a href="#acao-content">Plano de Ação</a></li>
-						</ul>
-						<ul class="actions stacked">
-							<li><a href="#one" class="button primary fit">Começar</a></li>
-						</ul>
-					</nav>
+    <!-- Hero Section -->
+    <section id="hero" class="hero-section">
+        <div class="hero-background">
+            <div class="hero-particles" id="heroParticles"></div>
+            <div class="hero-gradient"></div>
+        </div>
+        
+        <div class="container hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <i class="fas fa-graduation-cap"></i> Academia de Folha de Pagamento
+                </div>
+                
+                <h1 class="hero-title">
+                    <span class="hero-subtitle">Domine a complexidade da</span>
+                    Folha de Pagamento
+                    <span class="hero-highlight">em 40 minutos</span>
+                </h1>
+                
+                <p class="hero-description">
+                    Transforme o maior risco do RH brasileiro em vantagem competitiva.
+                    Aprenda com quem processa <strong>+500 mil</strong> folhas por mês.
+                </p>
+                
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="183">0</div>
+                        <div class="stat-label">% Custo Real CLT</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-count="99.9">0</div>
+                        <div class="stat-label">% Precisão Garantida</div>
+                    </div>
+                    <div class="stat-item">
+                        <div class="stat-number" data-prefix="R$ " data-count="45000">0</div>
+                        <div class="stat-label">Multa Média Evitada</div>
+                    </div>
+                </div>
+                
+                <div class="hero-actions">
+                    <button class="btn btn-primary btn-large" onclick="startJourney()">
+                        <i class="fas fa-play"></i> Iniciar Jornada Agora
+                    </button>
+                    <button class="btn btn-secondary btn-large" onclick="showVideo()">
+                        <i class="fas fa-video"></i> Assistir Demonstração
+                    </button>
+                </div>
+                
+                <div class="hero-trust">
+                    <p>Confiado por <strong>+10.000</strong> empresas brasileiras</p>
+                    <div class="trust-logos">
+                        <img src="cliente1.png" alt="Cliente 1">
+                        <img src="cliente2.png" alt="Cliente 2">
+                        <img src="cliente3.png" alt="Cliente 3">
+                        <img src="cliente4.png" alt="Cliente 4">
+                    </div>
+                </div>
+            </div>
+            
+            <div class="hero-visual">
+                <div class="hero-mockup">
+                    <img src="dashboard-mockup.png" alt="Dashboard Factorial">
+                    <div class="mockup-float mockup-float-1">
+                        <i class="fas fa-check-circle"></i> Compliance Total
+                    </div>
+                    <div class="mockup-float mockup-float-2">
+                        <i class="fas fa-shield-alt"></i> Zero Multas
+                    </div>
+                    <div class="mockup-float mockup-float-3">
+                        <i class="fas fa-chart-line"></i> -80% Tempo
+                    </div>
+                </div>
+            </div>
+        </div>
+        
+        <div class="hero-scroll">
+            <i class="fas fa-chevron-down"></i>
+        </div>
+    </section>
 
-				<!-- Banner -->
-					<section id="banner" class="major">
-						<div class="inner">
-							<header class="major">
-								<h1>Da Gestão de Dados ao Compliance</h1>
-							</header>
-							<div class="content">
-								<p>Vendendo a Solução Completa<br />
-								<strong>Factorial + Bernhoeft</strong></p>
-								<p style="font-size: 0.9em; margin-top: 1em; opacity: 0.9;">A folha de pagamento é muito mais do que um holerite — ela é o elo central entre Empresa, Colaborador e Governo.</p>
-								<ul class="actions">
-									<li><a href="#one" class="button next scrolly">Entender a Solução</a></li>
-								</ul>
-							</div>
-						</div>
-					</section>
+    <!-- Chapter 1: Anatomia do Custo CLT -->
+    <section id="anatomia" class="chapter chapter-dark">
+        <div class="chapter-header">
+            <div class="container">
+                <div class="chapter-number">Capítulo 1</div>
+                <h2 class="chapter-title">A Anatomia do Custo CLT</h2>
+                <p class="chapter-subtitle">O que seu cliente não vê pode custar 83% a mais</p>
+            </div>
+        </div>
+        
+        <div class="container">
+            <div class="content-grid">
+                <div class="content-main">
+                    <div class="content-card reveal">
+                        <div class="card-icon">
+                            <i class="fas fa-eye-slash"></i>
+                        </div>
+                        <h3>O Custo Invisível</h3>
+                        <p>Para o colaborador, a folha é o holerite. Para a empresa, é um iceberg de obrigações que pode chegar a <strong>183% do salário bruto</strong>.</p>
+                        
+                        <div class="insight-box">
+                            <i class="fas fa-lightbulb"></i>
+                            <p><strong>Insight:</strong> Quando um cliente reclama do "Custo CLT", ele não está falando das deduções (que saem do bolso do funcionário), mas dos encargos patronais - o verdadeiro custo empresarial.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="interactive-table reveal">
+                        <h4>Tabela Interativa: Decomposição do Custo CLT</h4>
+                        <div class="table-controls">
+                            <input type="number" id="salaryInput" value="5000" min="1000" max="50000">
+                            <label>Salário Bruto (R$)</label>
+                        </div>
+                        
+                        <table class="cost-breakdown-table">
+                            <thead>
+                                <tr>
+                                    <th>Componente</th>
+                                    <th>Tipo</th>
+                                    <th>%</th>
+                                    <th>Valor</th>
+                                    <th>Quem Paga</th>
+                                </tr>
+                            </thead>
+                            <tbody id="costTableBody">
+                                <!-- Dynamic content -->
+                            </tbody>
+                            <tfoot>
+                                <tr class="total-row">
+                                    <td colspan="3"><strong>CUSTO TOTAL EMPRESA</strong></td>
+                                    <td colspan="2" id="totalCost"><strong>R$ 0,00</strong></td>
+                                </tr>
+                            </tfoot>
+                        </table>
+                    </div>
+                </div>
+                
+                <div class="content-sidebar">
+                    <div class="sidebar-card">
+                        <h4>Deduções vs Encargos</h4>
+                        <div class="comparison-chart">
+                            <canvas id="deductionsChart"></canvas>
+                        </div>
+                        <ul class="legend-list">
+                            <li><span class="legend-color" style="background: #FF6B6B;"></span> Deduções (do colaborador)</li>
+                            <li><span class="legend-color" style="background: #4ECDC4;"></span> Encargos (da empresa)</li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-card">
+                        <h4>Você sabia?</h4>
+                        <div class="fact-card">
+                            <i class="fas fa-info-circle"></i>
+                            <p>O FGTS não é um desconto! É um encargo 100% pago pela empresa, representando 8% sobre a remuneração bruta.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-card download-card">
+                        <i class="fas fa-download"></i>
+                        <h4>Material Complementar</h4>
+                        <p>Baixe nossa tabela completa de encargos CLT 2025</p>
+                        <button class="btn btn-secondary btn-block">Download PDF</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-				<!-- Main -->
-					<div id="main">
+    <!-- Chapter 2: O Iceberg -->
+    <section id="iceberg" class="chapter">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="chapter-number">Capítulo 2</div>
+                <h2>A Metáfora do Iceberg</h2>
+                <p class="section-subtitle">O que está submerso pode afundar sua empresa</p>
+            </div>
+            
+            <div class="iceberg-visualization">
+                <div class="iceberg-container">
+                    <div class="water-line">
+                        <span>Linha d'água</span>
+                    </div>
+                    
+                    <div class="iceberg-visible">
+                        <h4>O que o colaborador vê</h4>
+                        <div class="iceberg-item" data-tooltip="7,5% a 14% progressivo">
+                            <i class="fas fa-receipt"></i> INSS
+                        </div>
+                        <div class="iceberg-item" data-tooltip="0% a 27,5% progressivo">
+                            <i class="fas fa-file-invoice-dollar"></i> IRRF
+                        </div>
+                        <div class="iceberg-item">
+                            <i class="fas fa-utensils"></i> Vale Alimentação
+                        </div>
+                    </div>
+                    
+                    <div class="iceberg-hidden">
+                        <h4>O custo real da empresa</h4>
+                        <div class="iceberg-items">
+                            <div class="iceberg-item large" data-tooltip="20% sobre folha total">
+                                <i class="fas fa-building"></i> INSS Patronal
+                                <span class="item-value">20%</span>
+                            </div>
+                            <div class="iceberg-item" data-tooltip="8% sobre remuneração">
+                                <i class="fas fa-piggy-bank"></i> FGTS
+                                <span class="item-value">8%</span>
+                            </div>
+                            <div class="iceberg-item" data-tooltip="1% a 3% conforme risco">
+                                <i class="fas fa-hard-hat"></i> RAT/FAP
+                                <span class="item-value">1-3%</span>
+                            </div>
+                            <div class="iceberg-item" data-tooltip="Até 5,8% Sistema S">
+                                <i class="fas fa-graduation-cap"></i> Sistema S
+                                <span class="item-value">5,8%</span>
+                            </div>
+                            <div class="iceberg-item large" data-tooltip="11,11% provisão mensal">
+                                <i class="fas fa-umbrella-beach"></i> Férias + 1/3
+                                <span class="item-value">11,11%</span>
+                            </div>
+                            <div class="iceberg-item" data-tooltip="8,33% provisão mensal">
+                                <i class="fas fa-gift"></i> 13º Salário
+                                <span class="item-value">8,33%</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="iceberg-summary">
+                    <div class="summary-card">
+                        <h3>Impacto Total</h3>
+                        <div class="impact-meter">
+                            <div class="meter-fill" style="width: 83%;"></div>
+                            <span class="meter-label">83% de custo adicional</span>
+                        </div>
+                        <p>Para cada R$ 1.000 de salário, a empresa desembolsa até <strong>R$ 1.830</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- One: Seções Principais -->
-							<section id="one" class="tiles">
-								<article id="desafio">
-									<span class="image">
-										<img src="images/pic01.jpg" alt="O Desafio" />
-									</span>
-									<header class="major">
-										<h3><a href="#desafio-content" class="link scrolly">Por que é um Desafio?</a></h3>
-										<p>O Triângulo da Folha de Pagamento</p>
-									</header>
-								</article>
-								<article id="custo-clt">
-									<span class="image">
-										<img src="images/pic02.jpg" alt="Custo CLT" />
-									</span>
-									<header class="major">
-										<h3><a href="#custo-content" class="link scrolly">Anatomia do Custo CLT</a></h3>
-										<p>Deduções e Encargos Patronais</p>
-									</header>
-								</article>
-								<article id="risco">
-									<span class="image">
-										<img src="images/pic03.jpg" alt="Risco eSocial" />
-									</span>
-									<header class="major">
-										<h3><a href="#risco-content" class="link scrolly">O Risco do "Feito em Casa"</a></h3>
-										<p>eSocial e Compliance em Tempo Real</p>
-									</header>
-								</article>
-								<article id="solucao">
-									<span class="image">
-										<img src="images/pic04.jpg" alt="A Solução" />
-									</span>
-									<header class="major">
-										<h3><a href="#solucao-content" class="link scrolly">A Solução Completa</a></h3>
-										<p>Factorial + Bernhoeft</p>
-									</header>
-								</article>
-							</section>
+    <!-- Chapter 3: Triângulo da Folha -->
+    <section id="triangulo" class="chapter chapter-gradient">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="chapter-number">Capítulo 3</div>
+                <h2>O Triângulo da Folha de Pagamento</h2>
+                <p class="section-subtitle">Três atores, infinitas complexidades</p>
+            </div>
+            
+            <div class="triangle-system">
+                <div class="triangle-container">
+                    <svg class="triangle-svg" viewBox="0 0 500 433">
+                        <!-- Triangle -->
+                        <path d="M250,50 L450,383 L50,383 Z" fill="none" stroke="#ddd" stroke-width="2"/>
+                        
+                        <!-- Connections -->
+                        <line x1="250" y1="50" x2="450" y2="383" stroke="#4ECDC4" stroke-width="3" class="connection-line"/>
+                        <line x1="250" y1="50" x2="50" y2="383" stroke="#FF6B6B" stroke-width="3" class="connection-line"/>
+                        <line x1="50" y1="383" x2="450" y2="383" stroke="#FFD93D" stroke-width="3" class="connection-line"/>
+                        
+                        <!-- Flow animations -->
+                        <circle r="5" fill="#4ECDC4" class="flow-dot">
+                            <animateMotion dur="3s" repeatCount="indefinite">
+                                <mpath href="#path1"/>
+                            </animateMotion>
+                        </circle>
+                        
+                        <!-- Hidden paths for animation -->
+                        <path id="path1" d="M250,50 L450,383" fill="none"/>
+                    </svg>
+                    
+                    <div class="triangle-actor actor-empresa">
+                        <div class="actor-icon">
+                            <i class="fas fa-building"></i>
+                        </div>
+                        <h4>Empresa</h4>
+                        <p>Responsável por dados e políticas</p>
+                        <div class="actor-details">
+                            <ul>
+                                <li>Coleta de dados</li>
+                                <li>Gestão de políticas</li>
+                                <li>Compliance legal</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="triangle-actor actor-colaborador">
+                        <div class="actor-icon">
+                            <i class="fas fa-user"></i>
+                        </div>
+                        <h4>Colaborador</h4>
+                        <p>Espera pagamento correto</p>
+                        <div class="actor-details">
+                            <ul>
+                                <li>Salário pontual</li>
+                                <li>Benefícios corretos</li>
+                                <li>Transparência</li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="triangle-actor actor-governo">
+                        <div class="actor-icon">
+                            <i class="fas fa-landmark"></i>
+                        </div>
+                        <h4>Governo</h4>
+                        <p>Fiscaliza e aplica multas</p>
+                        <div class="actor-details">
+                            <ul>
+                                <li>eSocial em tempo real</li>
+                                <li>Multas automáticas</li>
+                                <li>Cruzamento de dados</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="triangle-insights">
+                    <div class="insight-grid">
+                        <div class="insight-card">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <h5>Risco Empresa-Governo</h5>
+                            <p>Erro em um dado gera multa automática no eSocial</p>
+                        </div>
+                        <div class="insight-card">
+                            <i class="fas fa-balance-scale"></i>
+                            <h5>Risco Empresa-Colaborador</h5>
+                            <p>Cálculo errado gera processo trabalhista</p>
+                        </div>
+                        <div class="insight-card">
+                            <i class="fas fa-sync"></i>
+                            <h5>Efeito Cascata</h5>
+                            <p>Um erro afeta todos os vértices do triângulo</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Two: O Desafio -->
-							<section id="desafio-content" class="spotlight">
-								<div class="inner">
-									<header class="major">
-										<h2>1. Por que Folha de Pagamento é um Desafio?</h2>
-									</header>
-									<p>A folha de pagamento é muito mais do que um holerite — ela é o <strong>elo central</strong> entre três partes que sustentam toda a relação trabalhista:</p>
-									
-									<div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5em; margin: 2em 0;">
-										<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #6fc3df;">
-											<h3 style="margin-top: 0;">Empresa</h3>
-											<p>Quem paga, registra e responde legalmente por cada colaborador.</p>
-										</div>
-										<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #8d82c4;">
-											<h3 style="margin-top: 0;">Colaborador</h3>
-											<p>Quem recebe, depende da acurácia dos cálculos e tem direitos garantidos por lei.</p>
-										</div>
-										<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #ec8d81;">
-											<h3 style="margin-top: 0;">Governo</h3>
-											<p>Quem fiscaliza e cobra o cumprimento das obrigações (Receita Federal, eSocial, órgãos de classe).</p>
-										</div>
-									</div>
+    <!-- Chapter 4: eSocial -->
+    <section id="esocial" class="chapter chapter-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="chapter-number">Capítulo 4</div>
+                <h2>eSocial: O Fiscal em Tempo Real</h2>
+                <p class="section-subtitle">A Receita Federal agora mora dentro do seu RH</p>
+            </div>
+            
+            <div class="esocial-timeline">
+                <div class="timeline-header">
+                    <h3>A Evolução da Fiscalização</h3>
+                </div>
+                
+                <div class="timeline-container">
+                    <div class="timeline-line"></div>
+                    
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <h4>Antes do eSocial</h4>
+                            <p>Erros descobertos em auditorias anos depois</p>
+                            <div class="timeline-icon">
+                                <i class="fas fa-search"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item right reveal">
+                        <div class="timeline-content">
+                            <h4>Hoje com eSocial</h4>
+                            <p>Cruzamento instantâneo, multas automáticas</p>
+                            <div class="timeline-icon">
+                                <i class="fas fa-bolt"></i>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="timeline-item left reveal">
+                        <div class="timeline-content">
+                            <h4>O Futuro</h4>
+                            <p>IA fiscalizando padrões e anomalias</p>
+                            <div class="timeline-icon">
+                                <i class="fas fa-robot"></i>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="esocial-dashboard">
+                <h3>Principais Eventos Monitorados</h3>
+                
+                <div class="events-grid">
+                    <div class="event-card critical reveal">
+                        <div class="event-header">
+                            <span class="event-code">S-2190/S-2200</span>
+                            <span class="event-status critical">CRÍTICO</span>
+                        </div>
+                        <h4>Admissão</h4>
+                        <p>Prazo: Até 1 dia antes do início</p>
+                        <div class="event-consequence">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Multa: Até R$ 3.000 por funcionário
+                        </div>
+                    </div>
+                    
+                    <div class="event-card high reveal">
+                        <div class="event-header">
+                            <span class="event-code">S-2220</span>
+                            <span class="event-status high">ALTO</span>
+                        </div>
+                        <h4>ASO - Saúde Ocupacional</h4>
+                        <p>Prazo: Até o dia 15 do mês seguinte</p>
+                        <div class="event-consequence">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Multa: R$ 402 a R$ 4.025
+                        </div>
+                    </div>
+                    
+                    <div class="event-card high reveal">
+                        <div class="event-header">
+                            <span class="event-code">S-1200</span>
+                            <span class="event-status high">ALTO</span>
+                        </div>
+                        <h4>Folha de Pagamento</h4>
+                        <p>Prazo: Até o dia 15 do mês seguinte</p>
+                        <div class="event-consequence">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Multa: A partir de R$ 1.812
+                        </div>
+                    </div>
+                    
+                    <div class="event-card medium reveal">
+                        <div class="event-header">
+                            <span class="event-code">FGTS Digital</span>
+                            <span class="event-status medium">MÉDIO</span>
+                        </div>
+                        <h4>Recolhimento FGTS</h4>
+                        <p>Prazo: Até o dia 7 de cada mês</p>
+                        <div class="event-consequence">
+                            <i class="fas fa-exclamation-circle"></i>
+                            Multa: 30% sobre o débito
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="risk-calculator">
+                <h3>Calculadora de Risco eSocial</h3>
+                <div class="calculator-container">
+                    <div class="calc-inputs">
+                        <div class="input-group">
+                            <label>Número de funcionários</label>
+                            <input type="number" id="numEmployees" value="50" min="1">
+                        </div>
+                        <div class="input-group">
+                            <label>Eventos com atraso/mês</label>
+                            <input type="number" id="delayedEvents" value="3" min="0">
+                        </div>
+                        <div class="input-group">
+                            <label>Erros de cálculo/mês</label>
+                            <input type="number" id="calcErrors" value="2" min="0">
+                        </div>
+                    </div>
+                    
+                    <div class="calc-results">
+                        <h4>Risco Mensal Estimado</h4>
+                        <div class="risk-amount" id="monthlyRisk">R$ 0</div>
+                        <div class="risk-annual">
+                            <span>Risco Anual:</span>
+                            <span id="annualRisk">R$ 0</span>
+                        </div>
+                        <button class="btn btn-primary" onclick="showRiskDetails()">
+                            Ver Detalhamento do Cálculo
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="background: rgba(212, 212, 255, 0.1); padding: 2em; margin: 2em 0; border-left: 4px solid #9bf1ff;">
-										<h3 style="margin-top: 0;">O Triângulo da Folha de Pagamento</h3>
-										<p style="margin-bottom: 0;">Essas três partes formam o triângulo da folha de pagamento. E quando uma delas falha, toda a estrutura desaba. O que parece um simples arquivo de holerite esconde um ecossistema de obrigações contábeis, previdenciárias e fiscais.</p>
-									</div>
+    <!-- Chapter 5: Matriz de Multas -->
+    <section id="multas" class="chapter">
+        <div class="container">
+            <div class="section-header">
+                <div class="chapter-number">Capítulo 5</div>
+                <h2>Matriz de Multas e Penalidades</h2>
+                <p class="section-subtitle">Quanto custa cada erro na folha de pagamento</p>
+            </div>
+            
+            <div class="penalties-dashboard">
+                <div class="penalty-filters">
+                    <button class="filter-btn active" data-filter="all">Todas</button>
+                    <button class="filter-btn" data-filter="critical">Críticas</button>
+                    <button class="filter-btn" data-filter="high">Altas</button>
+                    <button class="filter-btn" data-filter="medium">Médias</button>
+                </div>
+                
+                <div class="penalties-table-container">
+                    <table class="penalties-table">
+                        <thead>
+                            <tr>
+                                <th>Erro/Infração</th>
+                                <th>Evento eSocial</th>
+                                <th>Gravidade</th>
+                                <th>Multa</th>
+                                <th>Observações</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr class="penalty-row critical">
+                                <td>
+                                    <strong>Omissão de Registro</strong>
+                                    <p>Funcionário sem carteira assinada</p>
+                                </td>
+                                <td>S-2190/S-2200</td>
+                                <td><span class="severity critical">CRÍTICA</span></td>
+                                <td class="penalty-amount">R$ 3.000+</td>
+                                <td>Por funcionário + direitos trabalhistas</td>
+                            </tr>
+                            <tr class="penalty-row high">
+                                <td>
+                                    <strong>ASO em Atraso</strong>
+                                    <p>Exame médico não enviado</p>
+                                </td>
+                                <td>S-2220</td>
+                                <td><span class="severity high">ALTA</span></td>
+                                <td class="penalty-amount">R$ 402 - R$ 4.025</td>
+                                <td>Varia conforme porte da empresa</td>
+                            </tr>
+                            <tr class="penalty-row high">
+                                <td>
+                                    <strong>Erros na Folha</strong>
+                                    <p>Cálculos incorretos, rubricas erradas</p>
+                                </td>
+                                <td>S-1200</td>
+                                <td><span class="severity high">ALTA</span></td>
+                                <td class="penalty-amount">R$ 1.812+</td>
+                                <td>Pode gerar passivo trabalhista</td>
+                            </tr>
+                            <tr class="penalty-row medium">
+                                <td>
+                                    <strong>FGTS não Recolhido</strong>
+                                    <p>Atraso ou não pagamento</p>
+                                </td>
+                                <td>FGTS Digital</td>
+                                <td><span class="severity medium">MÉDIA</span></td>
+                                <td class="penalty-amount">30% do débito</td>
+                                <td>+ juros e correção monetária</td>
+                            </tr>
+                            <tr class="penalty-row medium">
+                                <td>
+                                    <strong>RAIS/DIRF em Atraso</strong>
+                                    <p>Declarações anuais</p>
+                                </td>
+                                <td>Via eSocial</td>
+                                <td><span class="severity medium">MÉDIA</span></td>
+                                <td class="penalty-amount">R$ 425+</td>
+                                <td>+ R$ 106 por bimestre de atraso</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+                
+                <div class="penalty-summary">
+                    <div class="summary-cards">
+                        <div class="summary-card">
+                            <i class="fas fa-calculator"></i>
+                            <h4>Multa Média Mensal</h4>
+                            <p class="amount">R$ 8.745</p>
+                            <span>Para empresa com 50 funcionários</span>
+                        </div>
+                        <div class="summary-card">
+                            <i class="fas fa-chart-line"></i>
+                            <h4>Projeção Anual</h4>
+                            <p class="amount">R$ 104.940</p>
+                            <span>Sem sistema de compliance</span>
+                        </div>
+                        <div class="summary-card highlight">
+                            <i class="fas fa-shield-alt"></i>
+                            <h4>Economia com Parceria</h4>
+                            <p class="amount">R$ 99.693</p>
+                            <span>95% de redução de riscos</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="background: rgba(255, 193, 7, 0.15); padding: 1.5em; margin: 2em 0; border-left: 4px solid #ffc107;">
-										<p style="margin: 0;"><strong>A maioria das empresas enxerga apenas a ponta do iceberg</strong> — o pagamento do salário. Mas o verdadeiro desafio está submerso: os encargos patronais, as deduções e o risco de erro nos cálculos.</p>
-									</div>
-								</div>
-							</section>
+    <!-- Chapter 6: Passivos Trabalhistas -->
+    <section id="passivos" class="chapter chapter-warning">
+        <div class="container">
+            <div class="section-header">
+                <div class="chapter-number">Capítulo 6</div>
+                <h2>Passivos Trabalhistas: A Bomba-Relógio</h2>
+                <p class="section-subtitle">A dívida oculta que pode quebrar sua empresa</p>
+            </div>
+            
+            <div class="liability-visualization">
+                <div class="bomb-timer">
+                    <div class="timer-display">
+                        <span class="timer-number" id="bombYears">5</span>
+                        <span class="timer-label">ANOS</span>
+                    </div>
+                    <p>Prazo prescricional para cobrança</p>
+                </div>
+                
+                <div class="liability-chain">
+                    <h3>Cadeia Causal do Passivo</h3>
+                    
+                    <div class="chain-flow">
+                        <div class="chain-step">
+                            <div class="step-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <h4>Origem</h4>
+                            <p>Controle de ponto inadequado</p>
+                            <ul>
+                                <li>Horas extras não pagas</li>
+                                <li>Banco de horas irregular</li>
+                                <li>Intervalos não respeitados</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="chain-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="chain-step">
+                            <div class="step-icon">
+                                <i class="fas fa-calculator"></i>
+                            </div>
+                            <h4>Acúmulo</h4>
+                            <p>Erros se multiplicam</p>
+                            <ul>
+                                <li>Reflexos em férias</li>
+                                <li>Reflexos em 13º</li>
+                                <li>FGTS não recolhido</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="chain-arrow">
+                            <i class="fas fa-arrow-right"></i>
+                        </div>
+                        
+                        <div class="chain-step danger">
+                            <div class="step-icon">
+                                <i class="fas fa-bomb"></i>
+                            </div>
+                            <h4>Explosão</h4>
+                            <p>Cobrança judicial</p>
+                            <ul>
+                                <li>Ação trabalhista</li>
+                                <li>Multas + correção</li>
+                                <li>Dano à reputação</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="liability-scenarios">
+                    <h3>Simulador de Passivo Trabalhista</h3>
+                    
+                    <div class="scenario-calculator">
+                        <div class="scenario-inputs">
+                            <h4>Configure o cenário:</h4>
+                            <div class="input-row">
+                                <label>Funcionários com horas extras não pagas:</label>
+                                <input type="number" id="unpaidOvertime" value="10" min="0">
+                            </div>
+                            <div class="input-row">
+                                <label>Média de horas/mês por funcionário:</label>
+                                <input type="number" id="overtimeHours" value="20" min="0">
+                            </div>
+                            <div class="input-row">
+                                <label>Meses acumulados:</label>
+                                <input type="number" id="accumulatedMonths" value="24" min="0">
+                            </div>
+                            <div class="input-row">
+                                <label>Salário médio (R$):</label>
+                                <input type="number" id="avgSalary" value="3000" min="0">
+                            </div>
+                        </div>
+                        
+                        <div class="scenario-results">
+                            <h4>Passivo Estimado:</h4>
+                            <div class="result-display">
+                                <div class="result-item">
+                                    <span>Principal</span>
+                                    <span id="principalAmount">R$ 0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span>Reflexos (Férias + 13º)</span>
+                                    <span id="reflexAmount">R$ 0</span>
+                                </div>
+                                <div class="result-item">
+                                    <span>FGTS + Multa 40%</span>
+                                    <span id="fgtsAmount">R$ 0</span>
+                                </div>
+                                <div class="result-total">
+                                    <span>TOTAL DO PASSIVO</span>
+                                    <span id="totalLiability">R$ 0</span>
+                                </div>
+                            </div>
+                            
+                            <div class="result-warning">
+                                <i class="fas fa-exclamation-triangle"></i>
+                                <p>Este valor não inclui correção monetária, juros e honorários advocatícios</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Three: Anatomia do Custo CLT -->
-							<section id="custo-content" class="spotlight alt">
-								<div class="inner">
-									<header class="major">
-										<h2>2. Anatomia do Custo CLT</h2>
-									</header>
-									<p>Para o time comercial entender a dor do cliente, é essencial compreender a <strong>composição real do custo</strong> de um funcionário CLT.</p>
-									
-									<div style="margin: 2em 0;">
-										<h3>2.1. Deduções (o que sai do salário bruto do colaborador)</h3>
-										<p>São valores retidos antes que o colaborador receba o líquido:</p>
-										<ul style="list-style: none; padding: 0; margin: 1em 0;">
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>INSS:</strong> contribuição previdenciária do trabalhador.
-											</li>
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>IRRF:</strong> imposto de renda retido na fonte.
-											</li>
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>VT, VR, VA:</strong> se houver coparticipação.
-											</li>
-										</ul>
-									</div>
+    <!-- Chapter 7: Solução Factorial -->
+    <section id="factorial" class="chapter">
+        <div class="container">
+            <div class="section-header">
+                <div class="chapter-number">Capítulo 7</div>
+                <h2>Factorial: A Fonte da Verdade</h2>
+                <p class="section-subtitle">Onde os dados nascem corretos</p>
+            </div>
+            
+            <div class="solution-showcase">
+                <div class="showcase-grid">
+                    <div class="showcase-main">
+                        <div class="feature-video">
+                            <video autoplay muted loop>
+                                <source src="factorial-demo.mp4" type="video/mp4">
+                            </video>
+                            <div class="video-overlay">
+                                <button class="play-btn" onclick="playFullVideo()">
+                                    <i class="fas fa-play"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="feature-highlights">
+                            <h3>Recursos que Previnem Passivos</h3>
+                            
+                            <div class="highlight-cards">
+                                <div class="highlight-card active" data-feature="ponto">
+                                    <div class="card-header">
+                                        <i class="fas fa-fingerprint"></i>
+                                        <h4>Controle de Ponto Inteligente</h4>
+                                    </div>
+                                    <p>Múltiplas formas de registro: QR Code, Web, Reconhecimento Facial. Cálculo automático de horas extras e banco de horas.</p>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Geolocalização</li>
+                                        <li><i class="fas fa-check"></i> Aprovação de gestores</li>
+                                        <li><i class="fas fa-check"></i> Relatórios em tempo real</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="highlight-card" data-feature="ferias">
+                                    <div class="card-header">
+                                        <i class="fas fa-umbrella-beach"></i>
+                                        <h4>Gestão de Férias e Ausências</h4>
+                                    </div>
+                                    <p>Controle completo do saldo, solicitações online e cálculo automático de provisões.</p>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Calendário integrado</li>
+                                        <li><i class="fas fa-check"></i> Alertas automáticos</li>
+                                        <li><i class="fas fa-check"></i> Compliance garantido</li>
+                                    </ul>
+                                </div>
+                                
+                                <div class="highlight-card" data-feature="admissao">
+                                    <div class="card-header">
+                                        <i class="fas fa-user-plus"></i>
+                                        <h4>Admissão Digital Completa</h4>
+                                    </div>
+                                    <p>Onboarding 100% digital com coleta de documentos e assinatura eletrônica.</p>
+                                    <ul class="feature-list">
+                                        <li><i class="fas fa-check"></i> Checklist automático</li>
+                                        <li><i class="fas fa-check"></i> Integração eSocial</li>
+                                        <li><i class="fas fa-check"></i> Zero papel</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="showcase-sidebar">
+                        <div class="integration-flow">
+                            <h4>Fluxo de Dados</h4>
+                            <div class="flow-diagram">
+                                <div class="flow-step">
+                                    <i class="fas fa-users"></i>
+                                    <span>Colaboradores</span>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step factorial">
+                                    <img src="logo-factorial-small.svg" alt="Factorial">
+                                    <span>Coleta e Validação</span>
+                                </div>
+                                <div class="flow-arrow">↓</div>
+                                <div class="flow-step">
+                                    <i class="fas fa-database"></i>
+                                    <span>Dados Estruturados</span>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="testimonial-card">
+                            <div class="stars">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                            </div>
+                            <p>"Reduzimos erros de ponto em 95% e economizamos 20 horas por mês no fechamento."</p>
+                            <div class="testimonial-author">
+                                <strong>Maria Silva</strong>
+                                <span>Head de RH - TechCorp</span>
+                            </div>
+                        </div>
+                        
+                        <div class="cta-card">
+                            <h4>Veja na Prática</h4>
+                            <p>Agende uma demonstração personalizada para sua empresa</p>
+                            <button class="btn btn-primary btn-block">
+                                <i class="fas fa-calendar"></i> Agendar Demo
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="margin: 2em 0;">
-										<h3>2.2. Encargos Patronais (o que a empresa paga além do salário)</h3>
-										<p>Esses são os custos que de fato ampliam o "custo CLT":</p>
-										<ul style="list-style: none; padding: 0; margin: 1em 0;">
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>INSS Patronal / RAT:</strong> contribuição da empresa para a Previdência Social.
-											</li>
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>FGTS:</strong> 8% do salário, depósito mensal obrigatório e integralmente pago pela empresa.
-											</li>
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>Sistema S (Terceiros):</strong> contribuições destinadas a entidades como SENAI, SESI, SEBRAE.
-											</li>
-											<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-												<span style="position: absolute; left: 0; font-weight: bold;">•</span>
-												<strong>Provisões:</strong> 13º salário e férias + 1/3, que representam obrigações futuras já acumulando no passivo.
-											</li>
-										</ul>
-									</div>
+    <!-- Chapter 8: Solução Bernhoeft -->
+    <section id="bernhoeft" class="chapter chapter-dark">
+        <div class="container">
+            <div class="section-header">
+                <div class="chapter-number">Capítulo 8</div>
+                <h2>Bernhoeft: O Cérebro do Compliance</h2>
+                <p class="section-subtitle">Onde dados se transformam em conformidade total</p>
+            </div>
+            
+            <div class="services-showcase">
+                <div class="service-tabs">
+                    <button class="tab-btn active" data-service="bpo">
+                        <i class="fas fa-cogs"></i>
+                        BPO de Folha
+                    </button>
+                    <button class="tab-btn" data-service="auditoria">
+                        <i class="fas fa-search"></i>
+                        Auditoria Especializada
+                    </button>
+                </div>
+                
+                <div class="service-content">
+                    <div class="service-panel active" id="bpo-panel">
+                        <div class="panel-grid">
+                            <div class="panel-main">
+                                <h3>Terceirização Completa da Folha</h3>
+                                <p class="lead">Processamento de ponta a ponta com garantia de compliance</p>
+                                
+                                <div class="process-flow">
+                                    <div class="process-step">
+                                        <div class="step-number">1</div>
+                                        <h5>Recebimento de Dados</h5>
+                                        <p>Integração automática com Factorial</p>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">2</div>
+                                        <h5>Processamento Inteligente</h5>
+                                        <p>Cálculos complexos e validações</p>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">3</div>
+                                        <h5>Geração de Obrigações</h5>
+                                        <p>Guias, impostos e eSocial</p>
+                                    </div>
+                                    <div class="process-step">
+                                        <div class="step-number">4</div>
+                                        <h5>Entrega e Suporte</h5>
+                                        <p>Consultoria contínua inclusa</p>
+                                    </div>
+                                </div>
+                                
+                                <div class="service-benefits">
+                                    <h4>Diferenciais do BPO Bernhoeft</h4>
+                                    <div class="benefits-grid">
+                                        <div class="benefit-item">
+                                            <i class="fas fa-user-tie"></i>
+                                            <h5>Consultoria Inclusa</h5>
+                                            <p>Não apenas processamos, orientamos</p>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-brain"></i>
+                                            <h5>Especialistas em Folhas Complexas</h5>
+                                            <p>Múltiplos sindicatos, turnos, adicionais</p>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-shield-alt"></i>
+                                            <h5>Garantia Anti-Multas</h5>
+                                            <p>Assumimos responsabilidade por erros</p>
+                                        </div>
+                                        <div class="benefit-item">
+                                            <i class="fas fa-sync"></i>
+                                            <h5>Atualização Contínua</h5>
+                                            <p>Sempre em dia com a legislação</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="panel-sidebar">
+                                <div class="metrics-card">
+                                    <h4>Números que Impressionam</h4>
+                                    <div class="metric">
+                                        <span class="metric-value">500k+</span>
+                                        <span class="metric-label">Folhas processadas/mês</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">0</span>
+                                        <span class="metric-label">Multas em 2024</span>
+                                    </div>
+                                    <div class="metric">
+                                        <span class="metric-value">99,9%</span>
+                                        <span class="metric-label">Taxa de precisão</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="case-study-card">
+                                    <h5>Caso de Sucesso</h5>
+                                    <p>"Empresa com 500 funcionários, 3 sindicatos diferentes. Redução de 80% no tempo de fechamento e zero multas em 12 meses."</p>
+                                    <a href="#" class="link-arrow">Ver caso completo →</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-panel" id="auditoria-panel">
+                        <div class="panel-grid">
+                            <div class="panel-main">
+                                <h3>Auditoria de Folha de Pagamento</h3>
+                                <p class="lead">Diagnóstico completo para identificar e corrigir riscos</p>
+                                
+                                <div class="audit-process">
+                                    <h4>O que analisamos:</h4>
+                                    <div class="audit-checklist">
+                                        <div class="checklist-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h5>Cálculos e Alíquotas</h5>
+                                                <p>Verificação de INSS, IRRF, FGTS e encargos</p>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h5>Conformidade eSocial</h5>
+                                                <p>Todos os eventos e prazos</p>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h5>Convenções Coletivas</h5>
+                                                <p>Adicionais, benefícios e particularidades</p>
+                                            </div>
+                                        </div>
+                                        <div class="checklist-item">
+                                            <i class="fas fa-check-circle"></i>
+                                            <div>
+                                                <h5>Passivos Ocultos</h5>
+                                                <p>Identificação de riscos trabalhistas</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                
+                                <div class="audit-deliverables">
+                                    <h4>O que você recebe:</h4>
+                                    <div class="deliverables-grid">
+                                        <div class="deliverable">
+                                            <i class="fas fa-file-alt"></i>
+                                            <h5>Relatório Executivo</h5>
+                                            <p>Visão macro dos riscos e oportunidades</p>
+                                        </div>
+                                        <div class="deliverable">
+                                            <i class="fas fa-list-check"></i>
+                                            <h5>Plano de Ação</h5>
+                                            <p>Passo a passo para correções</p>
+                                        </div>
+                                        <div class="deliverable">
+                                            <i class="fas fa-dollar-sign"></i>
+                                            <h5>Quantificação</h5>
+                                            <p>Valor dos riscos e economia potencial</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="panel-sidebar">
+                                <div class="audit-simulator">
+                                    <h4>Simule sua Economia</h4>
+                                    <div class="simulator-form">
+                                        <label>Nº de funcionários:</label>
+                                        <input type="number" id="auditEmployees" value="100">
+                                        <label>Folha mensal (R$):</label>
+                                        <input type="number" id="auditPayroll" value="500000">
+                                        <button class="btn btn-secondary" onclick="calculateAuditSavings()">
+                                            Calcular Economia
+                                        </button>
+                                    </div>
+                                    <div class="simulator-result" id="auditResult">
+                                        <p>Economia potencial estimada:</p>
+                                        <strong>R$ 0</strong>
+                                    </div>
+                                </div>
+                                
+                                <div class="guarantee-card">
+                                    <i class="fas fa-medal"></i>
+                                    <h5>Garantia Bernhoeft</h5>
+                                    <p>Se não encontrarmos pelo menos 5% de economia ou riscos, a auditoria é gratuita.</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="background: #d1ecf1; padding: 2em; margin: 2em 0; border-left: 4px solid #0c5460;">
-										<h3 style="margin-top: 0;">💡 Impacto Real</h3>
-										<p style="margin-bottom: 0; font-size: 1.1em;"><strong>Esses encargos, somados, costumam adicionar 30% a 40% sobre o salário bruto</strong> — e isso muda completamente a percepção do custo real de um colaborador.</p>
-									</div>
-								</div>
-							</section>
+    <!-- Chapter 9: Jornada Perfeita -->
+    <section id="jornada" class="chapter chapter-gradient">
+        <div class="container">
+            <div class="section-header text-center">
+                <div class="chapter-number">Capítulo 9</div>
+                <h2>A Jornada Perfeita do Cliente</h2>
+                <p class="section-subtitle">Como Factorial + Bernhoeft eliminam 95% dos riscos</p>
+            </div>
+            
+            <div class="journey-visualization">
+                <div class="journey-metrics">
+                    <div class="metric-card">
+                        <i class="fas fa-clock"></i>
+                        <h4>Redução de Tempo</h4>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 80%;"></div>
+                        </div>
+                        <span class="metric-value">80% mais rápido</span>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-bug"></i>
+                        <h4>Redução de Erros</h4>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 95%;"></div>
+                        </div>
+                        <span class="metric-value">95% menos erros</span>
+                    </div>
+                    <div class="metric-card">
+                        <i class="fas fa-shield-alt"></i>
+                        <h4>Compliance</h4>
+                        <div class="metric-bar">
+                            <div class="bar-fill" style="width: 99.9%;"></div>
+                        </div>
+                        <span class="metric-value">99,9% conformidade</span>
+                    </div>
+                </div>
+                
+                <div class="journey-flow">
+                    <h3>O Fluxo Integrado</h3>
+                    
+                    <div class="flow-container">
+                        <div class="flow-stage">
+                            <div class="stage-icon factorial">
+                                <img src="icon-factorial.svg" alt="Factorial">
+                            </div>
+                            <h4>1. Coleta de Dados</h4>
+                            <p>Colaborador registra ponto, solicita férias, atualiza dados</p>
+                            <div class="stage-features">
+                                <span><i class="fas fa-check"></i> Interface intuitiva</span>
+                                <span><i class="fas fa-check"></i> Mobile-first</span>
+                                <span><i class="fas fa-check"></i> Validação em tempo real</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-connector">
+                            <div class="connector-line"></div>
+                            <div class="connector-label">Integração Automática</div>
+                        </div>
+                        
+                        <div class="flow-stage">
+                            <div class="stage-icon bernhoeft">
+                                <img src="icon-bernhoeft.svg" alt="Bernhoeft">
+                            </div>
+                            <h4>2. Processamento</h4>
+                            <p>Cálculos complexos, validações e geração de obrigações</p>
+                            <div class="stage-features">
+                                <span><i class="fas fa-check"></i> Motor de cálculo avançado</span>
+                                <span><i class="fas fa-check"></i> Validação multicamadas</span>
+                                <span><i class="fas fa-check"></i> eSocial automático</span>
+                            </div>
+                        </div>
+                        
+                        <div class="flow-connector">
+                            <div class="connector-line"></div>
+                            <div class="connector-label">Retorno dos Dados</div>
+                        </div>
+                        
+                        <div class="flow-stage">
+                            <div class="stage-icon result">
+                                <i class="fas fa-trophy"></i>
+                            </div>
+                            <h4>3. Resultado</h4>
+                            <p>Folha processada, impostos pagos, compliance garantido</p>
+                            <div class="stage-features">
+                                <span><i class="fas fa-check"></i> Holerite no app</span>
+                                <span><i class="fas fa-check"></i> Zero multas</span>
+                                <span><i class="fas fa-check"></i> Relatórios gerenciais</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="integration-benefits">
+                    <h3>Vantagens da Integração</h3>
+                    
+                    <div class="benefits-comparison">
+                        <div class="comparison-column before">
+                            <h4>Antes (Soluções Separadas)</h4>
+                            <ul class="comparison-list">
+                                <li class="negative"><i class="fas fa-times"></i> Retrabalho manual</li>
+                                <li class="negative"><i class="fas fa-times"></i> Erros de digitação</li>
+                                <li class="negative"><i class="fas fa-times"></i> Dados desatualizados</li>
+                                <li class="negative"><i class="fas fa-times"></i> Múltiplos sistemas</li>
+                                <li class="negative"><i class="fas fa-times"></i> Sem rastreabilidade</li>
+                            </ul>
+                        </div>
+                        
+                        <div class="comparison-vs">VS</div>
+                        
+                        <div class="comparison-column after">
+                            <h4>Depois (Factorial + Bernhoeft)</h4>
+                            <ul class="comparison-list">
+                                <li class="positive"><i class="fas fa-check"></i> Fluxo automatizado</li>
+                                <li class="positive"><i class="fas fa-check"></i> Zero erros manuais</li>
+                                <li class="positive"><i class="fas fa-check"></i> Dados em tempo real</li>
+                                <li class="positive"><i class="fas fa-check"></i> Plataforma única</li>
+                                <li class="positive"><i class="fas fa-check"></i> Auditoria completa</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="journey-cta">
+                    <h3>Pronto para transformar seu RH?</h3>
+                    <p>Descubra como a parceria Factorial + Bernhoeft pode eliminar seus riscos trabalhistas</p>
+                    <button class="btn btn-primary btn-large">
+                        Solicitar Proposta Personalizada
+                    </button>
+                </div>
+            </div>
+        </div>
+    </section>
 
-						<!-- Four: O Risco do "Feito em Casa" -->
-							<section id="risco-content" class="spotlight">
-								<div class="inner">
-									<header class="major">
-										<h2>3. O Risco do "Feito em Casa": O eSocial e o Compliance em Tempo Real</h2>
-									</header>
-									
-									<div style="background: rgba(220, 53, 69, 0.15); padding: 1.5em; margin: 2em 0; border-left: 4px solid #dc3545;">
-										<p style="margin: 0;"><strong>O eSocial não é um imposto novo — é uma nova forma de fiscalização.</strong></p>
-									</div>
+    <!-- Interactive Tools Section -->
+    <section id="ferramentas" class="chapter">
+        <div class="container">
+            <div class="section-header text-center">
+                <h2>Ferramentas Interativas</h2>
+                <p class="section-subtitle">Calcule, diagnostique e simule seus riscos em tempo real</p>
+            </div>
+            
+            <div class="tools-grid">
+                <!-- Calculadora CLT -->
+                <div class="tool-card" id="calculadora">
+                    <div class="tool-header">
+                        <i class="fas fa-calculator"></i>
+                        <h3>Calculadora Completa CLT</h3>
+                    </div>
+                    
+                    <div class="calculator-advanced">
+                        <div class="calc-inputs">
+                            <h4>Dados do Funcionário</h4>
+                            <div class="input-grid">
+                                <div class="input-group">
+                                    <label>Salário Bruto (R$)</label>
+                                    <input type="number" id="calcSalary" value="5000" min="0">
+                                </div>
+                                <div class="input-group">
+                                    <label>Dependentes IRRF</label>
+                                    <input type="number" id="calcDependents" value="0" min="0" max="10">
+                                </div>
+                                <div class="input-group">
+                                    <label>Vale Transporte</label>
+                                    <select id="calcVT">
+                                        <option value="yes">Sim</option>
+                                        <option value="no">Não</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Vale Alimentação (R$)</label>
+                                    <input type="number" id="calcVA" value="0" min="0">
+                                </div>
+                            </div>
+                            
+                            <h4>Dados da Empresa</h4>
+                            <div class="input-grid">
+                                <div class="input-group">
+                                    <label>Regime Tributário</label>
+                                    <select id="calcRegime">
+                                        <option value="normal">Lucro Real/Presumido</option>
+                                        <option value="simples">Simples Nacional</option>
+                                    </select>
+                                </div>
+                                <div class="input-group">
+                                    <label>Grau de Risco (RAT)</label>
+                                    <select id="calcRAT">
+                                        <option value="1">1% - Risco Mínimo</option>
+                                        <option value="2">2% - Risco Médio</option>
+                                        <option value="3">3% - Risco Grave</option>
+                                    </select>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="calc-results">
+                            <h4>Resultado Detalhado</h4>
+                            
+                            <div class="result-section">
+                                <h5>Remuneração</h5>
+                                <div class="result-row">
+                                    <span>Salário Bruto</span>
+                                    <span id="resultGross">R$ 0,00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="result-section">
+                                <h5>Descontos do Colaborador</h5>
+                                <div class="result-row">
+                                    <span>INSS</span>
+                                    <span id="resultINSS">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>IRRF</span>
+                                    <span id="resultIRRF">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>Vale Transporte (6%)</span>
+                                    <span id="resultVT">R$ 0,00</span>
+                                </div>
+                                <div class="result-row total">
+                                    <span>Salário Líquido</span>
+                                    <span id="resultNet">R$ 0,00</span>
+                                </div>
+                            </div>
+                            
+                            <div class="result-section">
+                                <h5>Custos da Empresa</h5>
+                                <div class="result-row">
+                                    <span>INSS Patronal</span>
+                                    <span id="resultINSSEmp">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>FGTS</span>
+                                    <span id="resultFGTS">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>RAT/FAP</span>
+                                    <span id="resultRAT">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>Sistema S</span>
+                                    <span id="resultSistemaS">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>Provisão Férias + 1/3</span>
+                                    <span id="resultVacation">R$ 0,00</span>
+                                </div>
+                                <div class="result-row">
+                                    <span>Provisão 13º</span>
+                                    <span id="result13th">R$ 0,00</span>
+                                </div>
+                                <div class="result-row total">
+                                    <span>Custo Total Empresa</span>
+                                    <span id="resultTotal">R$ 0,00</span>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-secondary" onclick="calculateCLT()">
+                                <i class="fas fa-sync"></i> Recalcular
+                            </button>
+                            <button class="btn btn-primary" onclick="downloadCalculation()">
+                                <i class="fas fa-download"></i> Baixar Relatório
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Diagnóstico Grátis -->
+                <div class="tool-card" id="diagnostico">
+                    <div class="tool-header">
+                        <i class="fas fa-stethoscope"></i>
+                        <h3>Diagnóstico de Risco Grátis</h3>
+                    </div>
+                    
+                    <div class="diagnostic-tool">
+                        <div class="diagnostic-intro">
+                            <p>Responda 10 perguntas rápidas e descubra o nível de risco da sua folha de pagamento</p>
+                        </div>
+                        
+                        <div class="diagnostic-quiz" id="diagnosticQuiz">
+                            <div class="quiz-progress">
+                                <div class="progress-bar">
+                                    <div class="progress-fill" id="quizProgress" style="width: 10%;"></div>
+                                </div>
+                                <span class="progress-text">Pergunta <span id="currentQuestion">1</span> de 10</span>
+                            </div>
+                            
+                            <div class="question-container" id="questionContainer">
+                                <!-- Dynamic questions -->
+                            </div>
+                            
+                            <div class="quiz-navigation">
+                                <button class="btn btn-secondary" id="prevQuestion" onclick="previousQuestion()" disabled>
+                                    <i class="fas fa-arrow-left"></i> Anterior
+                                </button>
+                                <button class="btn btn-primary" id="nextQuestion" onclick="nextQuestion()">
+                                    Próxima <i class="fas fa-arrow-right"></i>
+                                </button>
+                            </div>
+                        </div>
+                        
+                        <div class="diagnostic-result" id="diagnosticResult" style="display: none;">
+                            <h4>Seu Diagnóstico</h4>
+                            <div class="risk-meter">
+                                <div class="meter-container">
+                                    <div class="meter-fill" id="riskMeter"></div>
+                                    <div class="meter-labels">
+                                        <span>Baixo</span>
+                                        <span>Médio</span>
+                                        <span>Alto</span>
+                                        <span>Crítico</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="risk-analysis">
+                                <h5 id="riskLevel">Nível de Risco: </h5>
+                                <p id="riskDescription"></p>
+                                
+                                <div class="risk-recommendations">
+                                    <h5>Recomendações:</h5>
+                                    <ul id="riskRecommendations"></ul>
+                                </div>
+                            </div>
+                            
+                            <div class="diagnostic-cta">
+                                <p>Quer um diagnóstico completo e personalizado?</p>
+                                <button class="btn btn-primary" onclick="requestFullDiagnostic()">
+                                    Solicitar Análise Completa Grátis
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Simulador de Riscos -->
+                <div class="tool-card" id="simulador">
+                    <div class="tool-header">
+                        <i class="fas fa-chart-line"></i>
+                        <h3>Simulador de Economia</h3>
+                    </div>
+                    
+                    <div class="savings-simulator">
+                        <div class="simulator-inputs">
+                            <h4>Dados da sua Empresa</h4>
+                            <div class="input-grid">
+                                <div class="input-group">
+                                    <label>Número de Funcionários</label>
+                                    <input type="number" id="simEmployees" value="50" min="1">
+                                </div>
+                                <div class="input-group">
+                                    <label>Folha Mensal (R$)</label>
+                                    <input type="number" id="simPayroll" value="250000" min="1000">
+                                </div>
+                                <div class="input-group">
+                                    <label>Horas/mês no Fechamento</label>
+                                    <input type="number" id="simHours" value="40" min="1">
+                                </div>
+                                <div class="input-group">
+                                    <label>Erros/mês Identificados</label>
+                                    <input type="number" id="simErrors" value="5" min="0">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="simulator-results">
+                            <h4>Projeção de Economia Anual</h4>
+                            
+                            <div class="savings-breakdown">
+                                <div class="saving-item">
+                                    <div class="saving-icon">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="saving-details">
+                                        <h5>Economia de Tempo</h5>
+                                        <p class="saving-value" id="timeSaving">0 horas/ano</p>
+                                        <span class="saving-money" id="timeMoney">R$ 0</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="saving-item">
+                                    <div class="saving-icon">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <div class="saving-details">
+                                        <h5>Redução de Multas</h5>
+                                        <p class="saving-value" id="penaltySaving">0 multas evitadas</p>
+                                        <span class="saving-money" id="penaltyMoney">R$ 0</span>
+                                    </div>
+                                </div>
+                                
+                                <div class="saving-item">
+                                    <div class="saving-icon">
+                                        <i class="fas fa-chart-line"></i>
+                                    </div>
+                                    <div class="saving-details">
+                                        <h5>Eficiência Operacional</h5>
+                                        <p class="saving-value" id="efficiencySaving">0% mais eficiente</p>
+                                        <span class="saving-money" id="efficiencyMoney">R$ 0</span>
+                                    </div>
+                                </div>
+                            </div>
+                            
+                            <div class="total-savings">
+                                <h5>Economia Total Estimada</h5>
+                                <div class="total-amount" id="totalSavings">R$ 0</div>
+                                <div class="roi-indicator">
+                                    <span>ROI em</span>
+                                    <strong id="roiMonths">0 meses</strong>
+                                </div>
+                            </div>
+                            
+                            <button class="btn btn-primary btn-large" onclick="simulateSavings()">
+                                <i class="fas fa-calculator"></i> Calcular Economia
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 2em; margin: 2em 0;">
-										<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #ec8d81;">
-											<h3 style="margin-top: 0;">Antes</h3>
-											<p>Erros na folha eram descobertos anos depois, em auditorias.</p>
-										</div>
-										<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #87c5a4;">
-											<h3 style="margin-top: 0;">Hoje</h3>
-											<p>Com o eSocial, o erro é detectado no momento em que ocorre.</p>
-										</div>
-									</div>
+    <!-- CTA Section -->
+    <section id="cta" class="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <div class="cta-main">
+                    <h2>Transforme o Maior Risco em Vantagem Competitiva</h2>
+                    <p class="cta-subtitle">Junte-se a mais de 10.000 empresas que já eliminaram os riscos da folha de pagamento</p>
+                    
+                    <div class="cta-benefits">
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Zero multas garantido</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>80% menos tempo no fechamento</span>
+                        </div>
+                        <div class="benefit">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Compliance total com eSocial</span>
+                        </div>
+                    </div>
+                    
+                    <div class="cta-actions">
+                        <button class="btn btn-primary btn-large" onclick="scheduleDemo()">
+                            <i class="fas fa-calendar-check"></i> Agendar Demonstração
+                        </button>
+                        <button class="btn btn-secondary btn-large" onclick="downloadWhitepaper()">
+                            <i class="fas fa-file-pdf"></i> Baixar Guia Completo
+                        </button>
+                    </div>
+                </div>
+                
+                <div class="cta-trust">
+                    <h4>Certificações e Garantias</h4>
+                    <div class="trust-badges">
+                        <img src="badge-iso.png" alt="ISO 27001">
+                        <img src="badge-lgpd.png" alt="LGPD Compliant">
+                        <img src="badge-gptw.png" alt="Great Place to Work">
+                        <img src="badge-abnt.png" alt="ABNT">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="background: rgba(255, 193, 7, 0.15); padding: 1.5em; margin: 2em 0; border-left: 4px solid #ffc107;">
-										<p style="margin: 0;"><strong>Um simples dado incorreto</strong> — uma hora extra não aprovada, um atestado não lançado, uma admissão atrasada — pode gerar <strong>multa imediata e passivo trabalhista</strong>.</p>
-									</div>
+    <!-- Contact Section -->
+    <section id="contato" class="contact-section">
+        <div class="container">
+            <div class="contact-grid">
+                <div class="contact-info">
+                    <h3>Fale com um Especialista</h3>
+                    <p>Nossa equipe está pronta para criar uma solução personalizada para sua empresa</p>
+                    
+                    <div class="contact-methods">
+                        <div class="contact-method">
+                            <i class="fas fa-phone"></i>
+                            <div>
+                                <h5>Telefone</h5>
+                                <a href="tel:08000000000">0800 000 0000</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-envelope"></i>
+                            <div>
+                                <h5>E-mail</h5>
+                                <a href="mailto:contato@factorial-bernhoeft.com.br">contato@factorial-bernhoeft.com.br</a>
+                            </div>
+                        </div>
+                        <div class="contact-method">
+                            <i class="fas fa-comments"></i>
+                            <div>
+                                <h5>Chat Online</h5>
+                                <a href="#" onclick="openChat()">Iniciar conversa</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="office-locations">
+                        <h5>Escritórios</h5>
+                        <div class="location">
+                            <strong>São Paulo</strong>
+                            <p>Av. Paulista, 1000 - Bela Vista</p>
+                        </div>
+                        <div class="location">
+                            <strong>Rio de Janeiro</strong>
+                            <p>Av. Rio Branco, 500 - Centro</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="contact-form">
+                    <form id="contactForm">
+                        <div class="form-grid">
+                            <div class="form-group">
+                                <label>Nome Completo*</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>E-mail Corporativo*</label>
+                                <input type="email" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Telefone*</label>
+                                <input type="tel" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Empresa*</label>
+                                <input type="text" required>
+                            </div>
+                            <div class="form-group">
+                                <label>Cargo</label>
+                                <input type="text">
+                            </div>
+                            <div class="form-group">
+                                <label>Nº de Funcionários*</label>
+                                <select required>
+                                    <option value="">Selecione</option>
+                                    <option value="1-50">1-50</option>
+                                    <option value="51-200">51-200</option>
+                                    <option value="201-500">201-500</option>
+                                    <option value="501-1000">501-1000</option>
+                                    <option value="1000+">Mais de 1000</option>
+                                </select>
+                            </div>
+                        </div>
+                        
+                        <div class="form-group full-width">
+                            <label>Como podemos ajudar?</label>
+                            <textarea rows="4" placeholder="Descreva suas necessidades ou desafios atuais..."></textarea>
+                        </div>
+                        
+                        <div class="form-consent">
+                            <label>
+                                <input type="checkbox" required>
+                                <span>Concordo em receber comunicações da Factorial e Bernhoeft sobre produtos e serviços.</span>
+                            </label>
+                        </div>
+                        
+                        <button type="submit" class="btn btn-primary btn-large btn-block">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
 
-									<div style="background: rgba(212, 212, 255, 0.1); padding: 2em; margin: 2em 0; border-left: 4px solid #9bf1ff;">
-										<h3 style="margin-top: 0;">O Discurso Comercial</h3>
-										<p style="margin-bottom: 0; font-style: italic;">"A folha não é apenas uma questão de RH — é um campo de risco fiscal e reputacional. E a Bernhoeft existe justamente para eliminar esse risco com precisão cirúrgica."</p>
-									</div>
-								</div>
-							</section>
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-main">
+                <div class="footer-brand">
+                    <div class="footer-logos">
+                        <img src="logo-factorial-white.svg" alt="Factorial">
+                        <span>×</span>
+                        <img src="logo-bernhoeft-white.svg" alt="Bernhoeft">
+                    </div>
+                    <p>A parceria que elimina os riscos da folha de pagamento</p>
+                </div>
+                
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h5>Soluções</h5>
+                        <ul>
+                            <li><a href="#">Gestão de Pessoas</a></li>
+                            <li><a href="#">Processamento de Folha</a></li>
+                            <li><a href="#">Auditoria Trabalhista</a></li>
+                            <li><a href="#">Compliance eSocial</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Recursos</h5>
+                        <ul>
+                            <li><a href="#">Blog</a></li>
+                            <li><a href="#">Webinars</a></li>
+                            <li><a href="#">Guias e E-books</a></li>
+                            <li><a href="#">Calculadoras</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Empresa</h5>
+                        <ul>
+                            <li><a href="#">Sobre Nós</a></li>
+                            <li><a href="#">Parceria</a></li>
+                            <li><a href="#">Casos de Sucesso</a></li>
+                            <li><a href="#">Contato</a></li>
+                        </ul>
+                    </div>
+                    <div class="footer-column">
+                        <h5>Legal</h5>
+                        <ul>
+                            <li><a href="#">Termos de Uso</a></li>
+                            <li><a href="#">Política de Privacidade</a></li>
+                            <li><a href="#">LGPD</a></li>
+                            <li><a href="#">Segurança</a></li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <div class="footer-copy">
+                    <p>&copy; 2025 Factorial & Bernhoeft. Todos os direitos reservados.</p>
+                </div>
+                <div class="footer-social">
+                    <a href="#" aria-label="LinkedIn"><i class="fab fa-linkedin"></i></a>
+                    <a href="#" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="#" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="#" aria-label="Facebook"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
 
-						<!-- Five: A Solução Completa -->
-							<section id="solucao-content" class="spotlight alt">
-								<div class="inner">
-									<header class="major">
-										<h2>4. A Solução Completa: Factorial + Bernhoeft</h2>
-									</header>
-									<p>A parceria entre <strong>Factorial</strong> e <strong>Bernhoeft</strong> une o melhor da tecnologia com o melhor da consultoria especializada. A fronteira é clara, e entender essa fronteira é o que diferencia um vendedor técnico de um vendedor estratégico.</p>
-									
-									<div style="margin: 2em 0;">
-										<h3>4.1. Factorial — A Gestão de Dados</h3>
-										<p>A Factorial é o <strong>sistema nervoso</strong> da operação de RH. Gerencia os dados que alimentam a folha e garante que tudo esteja organizado, acessível e auditável.</p>
-										
-										<div style="background: #e7f3ff; padding: 1.5em; margin: 1.5em 0; border-left: 4px solid #0066cc;">
-											<h4 style="margin-top: 0;">Principais entregas:</h4>
-											<ul style="list-style: none; padding: 0; margin: 0;">
-												<li style="padding: 0.3em 0;">✓ Admissão Digital e Gestão Documental</li>
-												<li style="padding: 0.3em 0;">✓ Controle de Ponto e Férias</li>
-												<li style="padding: 0.3em 0;">✓ Gestão de Ausências, Benefícios e Políticas de Jornada</li>
-												<li style="padding: 0.3em 0;">✓ Relatórios Gerenciais sobre turnover, absenteísmo e custo de pessoal</li>
-											</ul>
-											<p style="margin-bottom: 0; margin-top: 1em;"><strong>A Factorial coleta, estrutura e valida os dados</strong> — a base sem a qual nenhum processamento seria confiável.</p>
-										</div>
-									</div>
+    <!-- Video Modal -->
+    <div class="modal" id="videoModal">
+        <div class="modal-content">
+            <span class="modal-close" onclick="closeVideo()">&times;</span>
+            <video id="demoVideo" controls>
+                <source src="demo-factorial-bernhoeft.mp4" type="video/mp4">
+            </video>
+        </div>
+    </div>
 
-									<div style="margin: 2em 0;">
-										<h3>4.2. Bernhoeft — O Cérebro do Cálculo e do Compliance</h3>
-										<p>A Bernhoeft é o <strong>motor inteligente</strong> por trás do processamento. Com mais de 20 anos de experiência em BPO e Consultoria de RH, ela transforma os dados da Factorial em folhas de pagamento exatas e livres de risco.</p>
-										
-										<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin: 1.5em 0;">
-											<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #6fc3df;">
-												<h4 style="margin-top: 0;">Terceirização da Folha (BPO)</h4>
-												<ul style="list-style: none; padding: 0; margin: 0;">
-													<li style="padding: 0.3em 0;">• Processamento completo da folha</li>
-													<li style="padding: 0.3em 0;">• Cálculo de impostos, encargos e guias de recolhimento</li>
-													<li style="padding: 0.3em 0;">• Entrega e transmissão dos eventos do eSocial</li>
-												</ul>
-											</div>
-											<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; border-left: 4px solid #8d82c4;">
-												<h4 style="margin-top: 0;">Auditoria de Folha</h4>
-												<ul style="list-style: none; padding: 0; margin: 0;">
-													<li style="padding: 0.3em 0;">• Revisão técnica para empresas que processam internamente</li>
-													<li style="padding: 0.3em 0;">• Identificação de erros de cálculo, riscos de autuação e inconsistências contábeis</li>
-													<li style="padding: 0.3em 0;">• Correção proativa antes que o problema chegue à Receita</li>
-												</ul>
-											</div>
-										</div>
-									</div>
+    <!-- Chat Widget -->
+    <div class="chat-widget" id="chatWidget">
+        <button class="chat-button" onclick="toggleChat()">
+            <i class="fas fa-comments"></i>
+        </button>
+        <div class="chat-window" id="chatWindow">
+            <div class="chat-header">
+                <h5>Fale Conosco</h5>
+                <button class="chat-close" onclick="closeChat()">&times;</button>
+            </div>
+            <div class="chat-body">
+                <p>Olá! Como posso ajudar você hoje?</p>
+            </div>
+            <div class="chat-footer">
+                <input type="text" placeholder="Digite sua mensagem...">
+                <button><i class="fas fa-paper-plane"></i></button>
+            </div>
+        </div>
+    </div>
 
-									<div style="background: #d4edda; padding: 2em; margin: 2em 0; border-left: 4px solid #28a745;">
-										<h3 style="margin-top: 0;">4.3. A Jornada Perfeita do Cliente</h3>
-										<ol style="padding-left: 1.5em; margin: 0;">
-											<li style="padding: 0.5em 0;">O cliente usa a <strong>Factorial</strong> para gerenciar o dia a dia (admissões, ponto, férias).</li>
-											<li style="padding: 0.5em 0;">Os dados fluem automaticamente para a <strong>Bernhoeft</strong>.</li>
-											<li style="padding: 0.5em 0;">A <strong>Bernhoeft</strong> processa, audita e gera todos os cálculos, guias e holerites.</li>
-											<li style="padding: 0.5em 0;">O colaborador acessa tudo pelo portal <strong>Factorial</strong>.</li>
-										</ol>
-										<p style="margin-bottom: 0; margin-top: 1em; font-weight: bold;">Resultado: uma operação de RH 100% integrada, eficiente e em conformidade legal.</p>
-									</div>
-								</div>
-							</section>
+    <!-- Back to Top -->
+    <button class="back-to-top" id="backToTop" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </button>
 
-						<!-- Six: Plano de Ação -->
-							<section id="acao-content" class="spotlight">
-								<div class="inner">
-									<header class="major">
-										<h2>5. Plano de Ação: O Que Fazer com Isso</h2>
-									</header>
-									
-									<div style="margin: 2em 0;">
-										<h3>Para o Time de Vendas</h3>
-										<p>O papel da equipe comercial é identificar momentos de dor e posicionar a parceria como solução de segurança e eficiência.</p>
-										
-										<div style="background: rgba(212, 212, 255, 0.05); padding: 1.5em; margin: 1.5em 0; border-left: 4px solid #9bf1ff;">
-											<h4 style="margin-top: 0;">Perguntas de diagnóstico:</h4>
-											<ul style="list-style: none; padding: 0; margin: 0;">
-												<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-													<span style="position: absolute; left: 0;">•</span>
-													"Como você processa sua folha hoje?"
-												</li>
-												<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-													<span style="position: absolute; left: 0;">•</span>
-													"Quem cuida do eSocial?"
-												</li>
-												<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-													<span style="position: absolute; left: 0;">•</span>
-													"Quanto tempo sua equipe gasta conferindo cálculos da contabilidade?"
-												</li>
-												<li style="padding: 0.5em 0; padding-left: 1.5em; position: relative;">
-													<span style="position: absolute; left: 0;">•</span>
-													"Você tem confiança de que está 100% em compliance trabalhista?"
-												</li>
-											</ul>
-										</div>
-
-										<div style="background: rgba(255, 193, 7, 0.15); padding: 1.5em; margin: 1.5em 0; border-left: 4px solid #ffc107;">
-											<h4 style="margin-top: 0;">Sinais de oportunidade:</h4>
-											<ul style="list-style: none; padding: 0; margin: 0;">
-												<li style="padding: 0.3em 0;">Erros frequentes na folha</li>
-												<li style="padding: 0.3em 0;">Contabilidade sobrecarregada</li>
-												<li style="padding: 0.3em 0;">Processos manuais</li>
-												<li style="padding: 0.3em 0;">Reclamações sobre atraso de guias ou inconsistências em impostos</li>
-											</ul>
-										</div>
-									</div>
-
-									<div style="margin: 2em 0;">
-										<h3>Para o Time de Suporte</h3>
-										<p>O suporte é o radar de dores reais. Cada pergunta técnica pode esconder uma oportunidade comercial.</p>
-										
-										<div style="background: rgba(220, 53, 69, 0.15); padding: 1.5em; margin: 1.5em 0; border-left: 4px solid #dc3545;">
-											<h4 style="margin-top: 0;">Sinais de alerta:</h4>
-											<ul style="list-style: none; padding: 0; margin: 0;">
-												<li style="padding: 0.3em 0;">"Como a Factorial calcula o INSS Patronal?"</li>
-												<li style="padding: 0.3em 0;">"A Factorial envia eventos do eSocial?"</li>
-												<li style="padding: 0.3em 0;">"O IRRF não está batendo com o holerite."</li>
-											</ul>
-										</div>
-
-										<div style="background: #d1ecf1; padding: 1.5em; margin: 1.5em 0; border-left: 4px solid #0c5460;">
-											<h4 style="margin-top: 0;">Discurso ideal de encaminhamento:</h4>
-											<p style="margin: 0; font-style: italic;">"A Factorial gerencia os dados e garante a base correta. Para o processamento completo e compliance, temos um parceiro especialista — a Bernhoeft. Quer que eu conecte você com o time deles para resolver isso?"</p>
-										</div>
-									</div>
-
-									<div style="background: rgba(212, 212, 255, 0.1); padding: 2em; margin: 2em 0; border-left: 4px solid #9bf1ff;">
-										<h3 style="margin-top: 0;">O Fluxo Interno</h3>
-										<ol style="padding-left: 1.5em; margin: 0;">
-											<li style="padding: 0.5em 0;">Vendas ou Suporte identificam o gatilho.</li>
-											<li style="padding: 0.5em 0;">Indicação direta ao canal de parceria (Bernhoeft).</li>
-											<li style="padding: 0.5em 0;">Acompanhamento da conversão e retorno do cliente ao ecossistema Factorial.</li>
-										</ol>
-									</div>
-								</div>
-							</section>
-
-						<!-- Seven: Encerramento -->
-							<section id="encerramento-content" class="spotlight alt">
-								<div class="inner">
-									<header class="major">
-										<h2>6. Encerramento: A Mensagem Central</h2>
-									</header>
-									
-									<div style="background: rgba(212, 212, 255, 0.1); padding: 2.5em; margin: 2em 0; text-align: center; border-left: 4px solid #9bf1ff;">
-										<h3 style="margin-top: 0; font-size: 1.5em;">A Folha de Pagamento é o ponto mais sensível da relação trabalhista.</h3>
-										<p style="margin-bottom: 0; font-size: 1.1em;">Um erro de dados pode gerar multas, processos e perda de credibilidade.</p>
-									</div>
-
-									<div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5em; margin: 2em 0;">
-										<div style="background: #e7f3ff; padding: 2em; border: 2px solid #0066cc; text-align: center;">
-											<h3 style="margin-top: 0; color: #0066cc;">Factorial</h3>
-											<p style="margin-bottom: 0; font-weight: bold;">Garante gestão e rastreabilidade</p>
-										</div>
-										<div style="background: #fff3cd; padding: 2em; border: 2px solid #ffc107; text-align: center;">
-											<h3 style="margin-top: 0; color: #856404;">Bernhoeft</h3>
-											<p style="margin-bottom: 0; font-weight: bold;">Garante processamento e conformidade</p>
-										</div>
-									</div>
-
-									<div style="background: #d4edda; padding: 2em; margin: 2em 0; border-left: 4px solid #28a745; text-align: center;">
-										<h3 style="margin-top: 0; font-size: 1.3em;">Juntas, entregam uma solução completa de ponta a ponta, que une eficiência, precisão e segurança jurídica.</h3>
-										<p style="margin-bottom: 0; font-size: 1.2em; font-weight: bold; color: #155724;">Factorial + Bernhoeft: da gestão de dados ao compliance total.</p>
-									</div>
-								</div>
-							</section>
-
-					</div>
-
-				<!-- Footer -->
-					<footer id="footer">
-						<div class="inner">
-							<ul class="copyright">
-								<li>&copy; 2025 Factorial + Bernhoeft — Solução Completa de Folha de Pagamento</li><li>Design baseado em: <a href="https://html5up.net">HTML5 UP</a></li>
-							</ul>
-						</div>
-					</footer>
-
-			</div>
-
-		<!-- Scripts -->
-			<script src="assets/js/jquery.min.js"></script>
-			<script src="assets/js/jquery.scrolly.min.js"></script>
-			<script src="assets/js/jquery.scrollex.min.js"></script>
-			<script src="assets/js/browser.min.js"></script>
-			<script src="assets/js/breakpoints.min.js"></script>
-			<script src="assets/js/util.js"></script>
-			<script src="assets/js/main.js"></script>
-
-	</body>
+    <!-- Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts_completo.js"></script>
+</body>
 </html>
