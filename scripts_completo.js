@@ -248,7 +248,15 @@ function initializeCLTCalculator() {
         updateAdvancedCalculator();
     }
     
-    salaryInput.addEventListener('input', updateCostTable);
+    // Support both slider and number input
+    salaryInput.addEventListener('input', function() {
+        const value = parseFloat(this.value) || 0;
+        const salaryValueEl = document.getElementById('salaryValue');
+        if (salaryValueEl) {
+            salaryValueEl.textContent = formatMoney(value);
+        }
+        updateCostTable();
+    });
     updateCostTable();
 }
 
@@ -1017,3 +1025,57 @@ style.textContent = `
     }
 `;
 document.head.appendChild(style);
+
+// Expand/Collapse Tools
+function expandTool(toolId) {
+    const tool = document.getElementById(toolId);
+    const content = document.getElementById(toolId + '-content');
+    if (!content) return;
+    
+    const isExpanded = content.style.display !== 'none';
+    
+    if (isExpanded) {
+        content.style.display = 'none';
+    } else {
+        content.style.display = 'block';
+        // Scroll to tool
+        tool.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    }
+}
+
+// Download PDF function
+function downloadPDF() {
+    // Create a simple PDF content (in production, use a library like jsPDF)
+    const content = `
+TABELA COMPLETA DE ENCARGOS CLT 2025
+=====================================
+
+COMPONENTE                    | TIPO        | %        | QUEM PAGA
+-----------------------------|-------------|----------|------------
+Salário Bruto                 | Remuneração | 100%     | Empresa
+INSS (Colaborador)            | Dedução     | 7,5-14%  | Colaborador
+IRRF (Colaborador)            | Dedução     | 0-27,5%  | Colaborador
+INSS Patronal                 | Encargo     | 20%      | Empresa
+RAT/FAP                       | Encargo     | 1-3%     | Empresa
+FGTS                          | Encargo     | 8%       | Empresa
+Sistema S                     | Encargo     | ~5,8%    | Empresa
+Provisão Férias + 1/3         | Encargo     | 11,11%   | Empresa
+Provisão 13º                  | Encargo     | 8,33%    | Empresa
+
+CUSTO TOTAL APROXIMADO: 150% - 180% do Salário Bruto
+
+Fonte: Academia de Folha de Pagamento - Factorial & Bernhoeft
+    `;
+    
+    const blob = new Blob([content], { type: 'text/plain' });
+    const url = URL.createObjectURL(blob);
+    const a = document.createElement('a');
+    a.href = url;
+    a.download = 'Tabela-Encargos-CLT-2025.txt';
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    URL.revokeObjectURL(url);
+    
+    alert('Download iniciado! Em produção, este arquivo seria um PDF completo.');
+}

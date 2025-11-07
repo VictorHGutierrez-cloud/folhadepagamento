@@ -159,7 +159,7 @@
     </section>
 
     <!-- Chapter 1: Anatomia do Custo CLT -->
-    <section id="anatomia" class="chapter chapter-dark">
+    <section id="anatomia" class="chapter">
         <div class="chapter-header">
             <div class="container">
                 <div class="chapter-number">Capítulo 1</div>
@@ -187,8 +187,12 @@
                     <div class="interactive-table reveal">
                         <h4>Tabela Interativa: Decomposição do Custo CLT</h4>
                         <div class="table-controls">
-                            <input type="number" id="salaryInput" value="5000" min="1000" max="50000">
-                            <label>Salário Bruto (R$)</label>
+                            <label>Salário Bruto: <span id="salaryValue">R$ 5.000,00</span></label>
+                            <input type="range" id="salaryInput" value="5000" min="1000" max="50000" step="100" style="width: 100%; margin-top: 10px;">
+                            <div style="display: flex; justify-content: space-between; font-size: 0.875rem; color: #666; margin-top: 5px;">
+                                <span>R$ 1.000</span>
+                                <span>R$ 50.000</span>
+                            </div>
                         </div>
                         
                         <table class="cost-breakdown-table">
@@ -228,9 +232,9 @@
                     
                     <div class="sidebar-card">
                         <h4>Você sabia?</h4>
-                        <div class="fact-card">
-                            <i class="fas fa-info-circle"></i>
-                            <p>O FGTS não é um desconto! É um encargo 100% pago pela empresa, representando 8% sobre a remuneração bruta.</p>
+                        <div class="fact-card" style="background: #e3f2fd; border-left: 4px solid #2196f3; padding: 1rem; border-radius: 0.5rem;">
+                            <i class="fas fa-info-circle" style="color: #2196f3; font-size: 1.5rem; margin-bottom: 0.5rem; display: block;"></i>
+                            <p style="color: #1565c0; margin: 0;"><strong>O FGTS não é um desconto!</strong> É um encargo 100% pago pela empresa, representando 8% sobre a remuneração bruta.</p>
                         </div>
                     </div>
                     
@@ -238,7 +242,7 @@
                         <i class="fas fa-download"></i>
                         <h4>Material Complementar</h4>
                         <p>Baixe nossa tabela completa de encargos CLT 2025</p>
-                        <button class="btn btn-secondary btn-block">Download PDF</button>
+                        <button class="btn btn-secondary btn-block" onclick="downloadPDF()">Download PDF</button>
                     </div>
                 </div>
             </div>
@@ -1244,22 +1248,24 @@
     </section>
 
     <!-- Interactive Tools Section -->
-    <section id="ferramentas" class="chapter">
+    <section id="ferramentas" class="chapter chapter-gradient">
         <div class="container">
             <div class="section-header text-center">
                 <h2>Ferramentas Interativas</h2>
-                <p class="section-subtitle">Calcule, diagnostique e simule seus riscos em tempo real</p>
+                <p class="section-subtitle">Acesse nossas calculadoras e diagnósticos avançados</p>
             </div>
             
-            <div class="tools-grid">
+            <div class="tools-grid" style="grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
                 <!-- Calculadora CLT -->
                 <div class="tool-card" id="calculadora">
                     <div class="tool-header">
                         <i class="fas fa-calculator"></i>
                         <h3>Calculadora Completa CLT</h3>
                     </div>
+                    <p style="padding: 1rem; color: #666;">Calcule todos os custos de um funcionário CLT, incluindo encargos e descontos.</p>
+                    <button class="btn btn-primary btn-block" style="margin-top: 1rem;" onclick="expandTool('calculadora'); event.stopPropagation();">Abrir Calculadora</button>
                     
-                    <div class="calculator-advanced">
+                    <div class="calculator-advanced" style="display: none;" id="calculadora-content">
                         <div class="calc-inputs">
                             <h4>Dados do Funcionário</h4>
                             <div class="input-grid">
@@ -1383,8 +1389,10 @@
                         <i class="fas fa-stethoscope"></i>
                         <h3>Diagnóstico de Risco Grátis</h3>
                     </div>
+                    <p style="padding: 1rem; color: #666;">Responda 10 perguntas e descubra o nível de risco da sua folha de pagamento.</p>
+                    <button class="btn btn-primary btn-block" style="margin-top: 1rem;" onclick="expandTool('diagnostico'); event.stopPropagation();">Iniciar Diagnóstico</button>
                     
-                    <div class="diagnostic-tool">
+                    <div class="diagnostic-tool" style="display: none;" id="diagnostico-content">
                         <div class="diagnostic-intro">
                             <p>Responda 10 perguntas rápidas e descubra o nível de risco da sua folha de pagamento</p>
                         </div>
@@ -1451,8 +1459,10 @@
                         <i class="fas fa-chart-line"></i>
                         <h3>Simulador de Economia</h3>
                     </div>
+                    <p style="padding: 1rem; color: #666;">Calcule quanto sua empresa pode economizar com a parceria Factorial + Bernhoeft.</p>
+                    <button class="btn btn-primary btn-block" style="margin-top: 1rem;" onclick="expandTool('simulador'); event.stopPropagation();">Abrir Simulador</button>
                     
-                    <div class="savings-simulator">
+                    <div class="savings-simulator" style="display: none;" id="simulador-content">
                         <div class="simulator-inputs">
                             <h4>Dados da sua Empresa</h4>
                             <div class="input-grid">
