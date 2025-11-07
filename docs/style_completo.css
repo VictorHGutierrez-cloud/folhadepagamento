@@ -729,6 +729,7 @@ a:hover {
 .cost-breakdown-table td {
     padding: var(--space-md);
     border-bottom: 1px solid var(--gray-200);
+    color: var(--gray-900);
 }
 
 .cost-breakdown-table .total-row td {
