@@ -754,16 +754,22 @@ a:hover {
 }
 
 .fact-card {
-    background: var(--gray-100);
-    padding: var(--space-md);
-    border-radius: var(--radius-md);
+    background: #e3f2fd !important;
+    border-left: 4px solid #2196f3 !important;
+    padding: 1rem !important;
+    border-radius: 0.5rem !important;
 }
 
 .fact-card i {
-    color: var(--info);
+    color: #2196f3 !important;
     font-size: 1.5rem;
-    margin-bottom: var(--space-sm);
+    margin-bottom: 0.5rem;
     display: block;
+}
+
+.fact-card p {
+    color: #1565c0 !important;
+    margin: 0 !important;
 }
 
 .download-card {
