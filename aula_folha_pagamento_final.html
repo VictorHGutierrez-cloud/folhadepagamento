@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Aula: Folha de Pagamento - Factorial & Bernhoeft</title>
+    <link href="2141_minimal_white/tooplate-minimal-white-style.css" rel="stylesheet">
+    <link href="style.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav id="navbar">
+        <div class="nav-container">
+            <a href="#hero" class="logo">ESCOLA DE PRODUTO</a>
+            <div class="menu-toggle" id="menuToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links" id="navLinks">
+                <li><a href="#hero" class="nav-link">INÍCIO</a></li>
+                <li><a href="#definicao" class="nav-link">DEFINIÇÃO</a></li>
+                <li><a href="#problema" class="nav-link">PROBLEMA</a></li>
+                <li><a href="#triangulo" class="nav-link">TRIÂNGULO</a></li>
+                <li><a href="#calculo" class="nav-link">CÁLCULO</a></li>
+                <li><a href="#impacto" class="nav-link">IMPACTO</a></li>
+                <li><a href="#riscos" class="nav-link">RISCOS</a></li>
+                <li><a href="#caso-real" class="nav-link">CASO REAL</a></li>
+                <li><a href="#solucao" class="nav-link">SOLUÇÃO</a></li>
+                <li><a href="#metricas" class="nav-link">MÉTRICAS</a></li>
+                <li><a href="#diagnostico" class="nav-link">DIAGNÓSTICO</a></li>
+                <li><a href="#plano" class="nav-link">PLANO</a></li>
+                <li><a href="#exercicio" class="nav-link">EXERCÍCIO</a></li>
+                <li><a href="#quiz" class="nav-link">QUIZ</a></li>
+            </ul>
+        </div>
+    </nav>
+
+    <!-- HERO -->
+    <section id="hero" class="hero">
+        <div class="floating-objects">
+            <div class="floating-circle"></div>
+            <div class="floating-circle"></div>
+            <div class="floating-square"></div>
+            <div class="floating-line"></div>
+        </div>
+        <div class="hero-decoration"></div>
+        <div class="hero-content">
+            <br><br>
+            <h1>Folha de pagamento em 40 minutos</h1>
+            <p class="subtitle">Onde mora o risco e como transformar risco em confiança</p>
+            <br>
+            <a href="#definicao" class="cta-button">COMEÇAR AULA</a>
+        </div>
+    </section>
+
+    <!-- DEFINICAO -->
+    <section id="definicao" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:00 Abrir com definição clara. Folha não é só holerite - é processo completo que conecta três atores críticos.">
+                <h2>O que é folha de pagamento</h2>
+                <p class="slide-line">Processo que transforma dados em pagamento e obrigações fiscais</p>
+                <p class="slide-line">Três atores: empresa colaborador governo</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- PROBLEMA -->
+    <section id="problema" class="services">
+        <div class="container">
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;" data-presenter="00:02 Apresentar problema em uma frase. Dados ruins têm consequências imediatas e mensuráveis.">
+                <h2 style="color: #fff;">O problema em uma frase</h2>
+                <p class="slide-line" style="color: #fff;">Dados ruins geram cálculos errados multas e perda de confiança</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- TRIANGULO -->
+    <section id="triangulo" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:03 Mostrar triângulo visual. Cada vértice tem riscos específicos. Erro em um afeta os outros dois.">
+                <h2>Triângulo da folha</h2>
+                <div class="triangle-visual">
+                    <div class="triangle-corner">
+                        <h4>Empresa</h4>
+                        <p>Responsável por dados e políticas</p>
+                    </div>
+                    <div class="triangle-corner">
+                        <h4>Colaborador</h4>
+                        <p>Espera pagamento correto</p>
+                    </div>
+                    <div class="triangle-corner">
+                        <h4>Governo</h4>
+                        <p>Fiscaliza e aplica multas</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CALCULO -->
+    <section id="calculo" class="services">
+        <div class="container">
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;" data-presenter="00:05 Mostrar acumulação linha por linha. Clique para revelar cada item. Enfatizar que custos somam 43 por cento">
+                <h2 style="color: #fff;">Exemplo rápido de custo</h2>
+                <div class="calculation-box" id="calculationBox">
+                    <div class="calculation-line visible">
+                        <span>Salário bruto 1000</span>
+                        <span>R$ 1.000,00</span>
+                    </div>
+                    <div class="calculation-line" data-line="1">
+                        <span>INSS 90</span>
+                        <span>R$ 90,00</span>
+                    </div>
+                    <div class="calculation-line" data-line="2">
+                        <span>FGTS 80</span>
+                        <span>R$ 80,00</span>
+                    </div>
+                    <div class="calculation-line" data-line="3">
+                        <span>13º 83,33</span>
+                        <span>R$ 83,33</span>
+                    </div>
+                    <div class="calculation-line" data-line="4">
+                        <span>Férias mais um terço 111,11</span>
+                        <span>R$ 111,11</span>
+                    </div>
+                    <div class="calculation-line" data-line="5">
+                        <span><strong>Custo total 1432,69</strong></span>
+                        <span><strong>R$ 1.432,69</strong></span>
+                    </div>
+                </div>
+                <p class="slide-line" style="color: #fff; margin-top: 20px; font-size: 16px;">Clique na caixa para revelar cada linha</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- IMPACTO -->
+    <section id="impacto" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:08 Demonstrar como erro pequeno multiplica. 1% de erro no salário vira erro maior no custo total.">
+                <h2>Impacto de 1 por cento de erro</h2>
+                <p class="slide-line">Erro pequeno multiplica no ecossistema inteiro</p>
+                <p class="slide-line">Prejuízo financeiro e risco legal</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- RISCOS -->
+    <section id="riscos" class="services">
+        <div class="container">
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;" data-presenter="00:10 Listar riscos práticos. Cada item tem consequência imediata e mensurável.">
+                <h2 style="color: #fff;">Riscos práticos</h2>
+                <div class="risk-box">
+                    <ul>
+                        <li>Multas e autuações por dados inconsistentes</li>
+                        <li>Perda de confiança do colaborador</li>
+                        <li>Retrabalho e custo operacional crescente</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- CASO REAL -->
+    <section id="caso-real" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:12 Apresentar caso em 60 segundos. Empresa real, problema específico, solução clara.">
+                <h2>Caso real em 60 segundos</h2>
+                <div class="case-study">
+                    <div class="case-before-after">
+                        <div class="case-before">
+                            <h4>ANTES</h4>
+                            <p class="slide-line">Empresa 50 funcionários erro base de desconto</p>
+                            <p class="slide-line">Multa 45 mil e retrabalho de 20 horas</p>
+                        </div>
+                        <div class="case-after">
+                            <h4>DEPOIS</h4>
+                            <p class="slide-line">Solução: validação de dados antes do fechamento</p>
+                            <p class="slide-line">Zero multas e conformidade total</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SOLUCAO -->
+    <section id="solucao" class="services">
+        <div class="container">
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;" data-presenter="00:15 Separar papéis claramente. Factorial = dados. Bernhoeft = processamento. Eliminar ambiguidade comercial.">
+                <h2 style="color: #fff;">Solução clara e papéis</h2>
+                <div class="solution-grid">
+                    <div class="solution-card">
+                        <h4>FACTORIAL</h4>
+                        <p>Garante qualidade e origem dos dados</p>
+                        <p style="font-size: 14px; margin-top: 15px; color: #666;">Factorial = dados e governança</p>
+                    </div>
+                    <div class="solution-card">
+                        <h4>BERNHOEFT</h4>
+                        <p>Processa cálculos e garante compliance</p>
+                        <p style="font-size: 14px; margin-top: 15px; color: #666;">Bernhoeft = processamento e compliance</p>
+                    </div>
+                </div>
+                <p class="slide-line" style="color: #fff; margin-top: 30px;">Fluxo: dados entram uma única vez</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- METRICAS -->
+    <section id="metricas" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:18 Apresentar métricas alvo. Estes são targets operacionais mensuráveis.">
+                <h2>Métricas alvo operacionais</h2>
+                <div class="metrics-grid">
+                    <div class="metric-card">
+                        <div class="metric-value">99,9%</div>
+                        <div class="metric-label">Precisão dos dados</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">80%</div>
+                        <div class="metric-label">Redução tempo de fechamento</div>
+                    </div>
+                    <div class="metric-card">
+                        <div class="metric-value">0</div>
+                        <div class="metric-label">Zero autuações críticas por ano</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- DIAGNOSTICO -->
+    <section id="diagnostico" class="services">
+        <div class="container">
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;" data-presenter="00:20 Apresentar perguntas de diagnóstico. Estas são ferramentas para o time comercial identificar oportunidades.">
+                <h2 style="color: #fff;">Perguntas de diagnóstico</h2>
+                <div style="margin-top: 40px;">
+                    <p class="slide-line" style="color: #fff;">Quem gera os dados de ponto e contratação</p>
+                    <p class="slide-line" style="color: #fff;">Como valida ausências e férias hoje</p>
+                    <p class="slide-line" style="color: #fff;">Quantas revisões antes do fechamento</p>
+                    <p class="slide-line" style="color: #fff;">Já teve autuação nos últimos 24 meses</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- PLANO -->
+    <section id="plano" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:22 Apresentar três ações práticas. Transformar entendimento em próximos passos concretos.">
+                <h2>Três ações para aplicar hoje</h2>
+                <div class="action-box">
+                    <ol>
+                        <li>Auditoria de dados na origem</li>
+                        <li>Validação automatizada antes do fechamento</li>
+                        <li>Rotina mensal de auditoria com KPIs</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- EXERCICIO -->
+    <section id="exercicio" class="services">
+        <div class="container">
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;" data-presenter="00:25 Exercício prático. Em duplas identificar erros e impacto. 30 segundos por dupla.">
+                <h2 style="color: #fff;">Exercício rápido</h2>
+                <div class="case-study" style="background: #fff; color: #000;">
+                    <h4 style="color: #000;">Caso João</h4>
+                    <p class="slide-line" style="color: #000;">Em duplas identifique 2 erros no caso João</p>
+                    <p class="slide-line" style="color: #000;">Explique impacto e solução em 30 segundos</p>
+                    <div style="margin-top: 20px; padding: 20px; background: #fafafa; border: 2px solid #000;">
+                        <p style="font-size: 16px; margin: 5px 0;"><strong>Erro 1:</strong> 5 dias de férias não registrados</p>
+                        <p style="font-size: 16px; margin: 5px 0;"><strong>Erro 2:</strong> 3 faltas não registradas</p>
+                        <p style="font-size: 16px; margin: 5px 0;"><strong>Erro 3:</strong> Total 12 dias (deveria ser 15+)</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- QUIZ -->
+    <section id="quiz" class="about">
+        <div class="container">
+            <div class="slide fade-in" data-presenter="00:28 Quiz rápido. Validar aprendizado com feedback imediato.">
+                <h2>Quiz rápido</h2>
+                <div class="quiz-box">
+                    <div class="quiz-question">Qual a maior alavanca para reduzir erros?</div>
+                    <ul class="quiz-options" id="quiz1" role="radiogroup" aria-label="Opções de resposta">
+                        <li data-correct="false" role="radio" aria-checked="false" tabindex="0">Dados origem</li>
+                        <li data-correct="true" role="radio" aria-checked="false" tabindex="0">Cálculos</li>
+                        <li data-correct="false" role="radio" aria-checked="false" tabindex="0">Auditoria</li>
+                    </ul>
+                    <div class="quiz-feedback" id="feedback1" role="alert" aria-live="polite"></div>
+                </div>
+                <div class="quiz-box" style="margin-top: 30px;">
+                    <div class="quiz-question">Qual meta imediata de precisão sugerida?</div>
+                    <ul class="quiz-options" id="quiz2" role="radiogroup" aria-label="Opções de resposta">
+                        <li data-correct="false" role="radio" aria-checked="false" tabindex="0">95%</li>
+                        <li data-correct="true" role="radio" aria-checked="false" tabindex="0">99,9%</li>
+                        <li data-correct="false" role="radio" aria-checked="false" tabindex="0">100%</li>
+                    </ul>
+                    <div class="quiz-feedback" id="feedback2" role="alert" aria-live="polite"></div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ENCERRAMENTO -->
+    <section id="encerramento" class="services">
+        <div class="container">
+            <div class="highlight-message fade-in" data-presenter="00:30 Encerramento. Resumir mensagem principal e próximo passo concreto.">
+                <h3>Resumo e próximo passo</h3>
+                <p>Qualidade de dados gera confiança e conformidade</p>
+                <p style="margin-top: 20px;">Vou enviar checklist e roteiro de diagnóstico</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>© 2025 Aula de Folha de Pagamento | Factorial & Bernhoeft</p>
+    </footer>
+
+    <!-- Presenter Notes Toggle -->
+    <button class="presenter-toggle" id="presenterToggle" aria-label="Toggle presenter notes">NOTAS</button>
+    <div class="presenter-notes" id="presenterNotes" role="complementary" aria-label="Presenter notes"></div>
+
+    <script src="2141_minimal_white/tooplate-minimal-script.js"></script>
+    <script>
+        // Função para inicializar reveal incremental - versão robusta
+        function initCalculationReveal() {
+            const calculationBox = document.getElementById('calculationBox');
+            if (!calculationBox) {
+                console.log('calculationBox não encontrado, tentando novamente...');
+                return false;
+            }
+            
+            // Verificar se já foi inicializado
+            if (calculationBox.dataset.initialized === 'true') {
+                console.log('Já inicializado');
+                return true;
+            }
+            
+            calculationBox.dataset.initialized = 'true';
+            
+            const allLines = calculationBox.querySelectorAll('.calculation-line');
+            const linesToReveal = Array.from(allLines).filter(line => !line.classList.contains('visible'));
+            
+            console.log('Linhas encontradas para revelar:', linesToReveal.length);
+            
+            if (linesToReveal.length === 0) {
+                console.log('Nenhuma linha para revelar');
+                return true;
+            }
+            
+            // Adicionar event listener com closure para manter lineIndex
+            let lineIndex = 0;
+            calculationBox.addEventListener('click', function(e) {
+                e.stopPropagation();
+                e.preventDefault();
+                
+                console.log('Clique detectado! Linha atual:', lineIndex, 'de', linesToReveal.length);
+                
+                if (lineIndex < linesToReveal.length) {
+                    const lineToShow = linesToReveal[lineIndex];
+                    console.log('Revelando linha:', lineIndex);
+                    lineToShow.classList.add('visible');
+                    lineIndex++;
+                } else {
+                    console.log('Todas as linhas já foram reveladas');
+                }
+            }, false);
+            
+            // Adicionar indicador visual
+            calculationBox.style.cursor = 'pointer';
+            calculationBox.title = 'Clique para revelar próxima linha';
+            calculationBox.style.userSelect = 'none';
+            
+            console.log('Reveal incremental inicializado com sucesso!');
+            return true;
+        }
+        
+        // Múltiplas tentativas de inicialização
+        function tryInit() {
+            if (initCalculationReveal()) {
+                console.log('Inicialização bem-sucedida!');
+            } else {
+                console.log('Tentando novamente em 100ms...');
+                setTimeout(tryInit, 100);
+            }
+        }
+        
+        // Aguardar DOM estar pronto
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', tryInit);
+        } else {
+            // DOM já está pronto
+            tryInit();
+        }
+        
+        // Tentar novamente após um delay para garantir
+        setTimeout(tryInit, 500);
+
+        // Quiz
+        const quizOptions = document.querySelectorAll('.quiz-options li');
+        quizOptions.forEach(option => {
+            option.addEventListener('click', function() {
+                const quizId = this.closest('.quiz-box').querySelector('.quiz-options').id;
+                const feedbackId = 'feedback' + quizId.replace('quiz', '');
+                const feedback = document.getElementById(feedbackId);
+                const options = this.parentElement.querySelectorAll('li');
+                
+                options.forEach(opt => {
+                    opt.classList.remove('selected');
+                    opt.setAttribute('aria-checked', 'false');
+                });
+                this.classList.add('selected');
+                this.setAttribute('aria-checked', 'true');
+                
+                if (this.dataset.correct === 'true') {
+                    feedback.innerHTML = '<p style="color: #28a745; font-weight: 500;">Correto: ' + (quizId === 'quiz1' ? 'Cálculos automatizados eliminam erros humanos' : '99,9% é meta operacional realista e mensurável') + '</p>';
+                } else {
+                    feedback.innerHTML = '<p style="color: #dc3545; font-weight: 500;">Incorreto. Tente novamente.</p>';
+                }
+                feedback.classList.add('show');
+            });
+            
+            option.addEventListener('keydown', function(e) {
+                if (e.key === 'Enter' || e.key === ' ') {
+                    e.preventDefault();
+                    this.click();
+                }
+            });
+        });
+
+        // Presenter Notes
+        const presenterToggle = document.getElementById('presenterToggle');
+        const presenterNotes = document.getElementById('presenterNotes');
+        let presenterVisible = false;
+
+        if (presenterToggle && presenterNotes) {
+            presenterToggle.addEventListener('click', function() {
+                presenterVisible = !presenterVisible;
+                presenterNotes.classList.toggle('show', presenterVisible);
+                updatePresenterNotes();
+            });
+
+            // Atalho de teclado: P para presenter notes
+            document.addEventListener('keydown', function(e) {
+                if (e.key === 'p' || e.key === 'P') {
+                    presenterToggle.click();
+                }
+            });
+
+            function updatePresenterNotes() {
+                const currentSlide = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2);
+                const slide = currentSlide ? currentSlide.closest('.slide') : null;
+                if (slide && slide.dataset.presenter) {
+                    presenterNotes.textContent = slide.dataset.presenter;
+                } else {
+                    presenterNotes.textContent = 'Nenhuma nota disponível para este slide';
+                }
+            }
+
+            // Atualizar notas ao rolar
+            let lastScroll = 0;
+            window.addEventListener('scroll', function() {
+                if (presenterVisible) {
+                    const now = Date.now();
+                    if (now - lastScroll > 100) {
+                        updatePresenterNotes();
+                        lastScroll = now;
+                    }
+                }
+            });
+        }
+    </script>
+</body>
+</html>
+

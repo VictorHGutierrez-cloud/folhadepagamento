@@ -6,7 +6,7 @@
     <title>Aula: Folha de Pagamento - Factorial & Bernhoeft</title>
     <link href="2141_minimal_white/tooplate-minimal-white-style.css" rel="stylesheet">
     <style>
-        /* Estilos adicionais específicos para a apresentação */
+        /* Estilos principais - melhor contraste e acessibilidade */
         .section-time {
             font-size: 12px;
             letter-spacing: 2px;
@@ -16,16 +16,15 @@
             font-weight: 500;
         }
         
-        .concept-card {
+        .slide {
             background: #fff;
-            padding: 40px;
+            padding: 60px 40px;
+            margin-bottom: 50px;
             border: 2px solid #000;
-            margin-bottom: 30px;
-            transition: all 0.3s ease;
             position: relative;
         }
         
-        .concept-card::before {
+        .slide::before {
             content: '';
             position: absolute;
             top: -2px;
@@ -36,745 +35,358 @@
             border-left: 2px solid #000;
         }
         
-        .concept-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        .slide h2 {
+            font-size: 36px;
+            font-weight: 300;
+            margin-bottom: 30px;
+            letter-spacing: -1px;
+            text-align: center;
         }
         
-        .concept-card h4 {
-            font-size: 24px;
+        .slide h3 {
+            font-size: 28px;
             font-weight: 300;
-            margin-bottom: 15px;
+            margin-bottom: 20px;
             letter-spacing: -0.5px;
         }
         
-        .concept-card ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .concept-card li {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-        }
-        
-        .concept-card li::before {
-            content: '—';
-            position: absolute;
-            left: 0;
-            color: #000;
-            font-weight: 700;
-        }
-        
-        .scenario-box {
-            background: #fafafa;
-            padding: 40px;
-            border-left: 4px solid #000;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .scenario-box::after {
-            content: '';
-            position: absolute;
-            bottom: 0;
-            right: 0;
-            width: 30px;
-            height: 30px;
-            border-bottom: 2px solid #000;
-            border-right: 2px solid #000;
-        }
-        
-        .scenario-box h4 {
-            font-size: 20px;
-            font-weight: 500;
-            margin-bottom: 20px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .scenario-box p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-            margin-bottom: 15px;
-        }
-        
-        .question-box {
-            background: #000;
-            color: #fff;
-            padding: 30px;
-            margin: 20px 0;
-            position: relative;
-        }
-        
-        .question-box::before {
-            content: '';
-            position: absolute;
-            top: -10px;
-            left: -10px;
-            width: 30px;
-            height: 30px;
-            border-top: 2px solid #000;
-            border-left: 2px solid #000;
-        }
-        
-        .question-box h4 {
-            font-size: 18px;
-            font-weight: 500;
-            margin-bottom: 15px;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-        }
-        
-        .answer-box {
-            background: #fff;
-            border: 2px solid #000;
-            padding: 25px;
-            margin-top: 15px;
-        }
-        
-        .answer-box strong {
-            color: #000;
-            font-weight: 700;
-        }
-        
-        .flow-diagram {
-            background: #fff;
-            padding: 40px;
-            border: 2px solid #000;
-            text-align: center;
-            margin: 40px 0;
-            font-family: 'Courier New', monospace;
-            position: relative;
-        }
-        
-        .flow-diagram::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 15px;
-            height: 15px;
-            border-top: 2px solid #000;
-            border-left: 2px solid #000;
-        }
-        
-        .flow-diagram pre {
-            font-size: 14px;
-            line-height: 1.8;
-            margin: 0;
-            text-align: left;
-            display: inline-block;
-        }
-        
-        .highlight-box {
-            background: #000;
-            color: #fff;
-            padding: 40px;
-            margin: 30px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .highlight-box::after {
-            content: '';
-            position: absolute;
-            bottom: -10px;
-            right: -10px;
-            width: 30px;
-            height: 30px;
-            border-bottom: 2px solid #000;
-            border-right: 2px solid #000;
-        }
-        
-        .highlight-box h3 {
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 15px;
-            letter-spacing: -1px;
-        }
-        
-        .highlight-box p {
-            font-size: 18px;
-            line-height: 1.6;
-        }
-        
-        .key-message {
-            background: #fff;
-            border: 3px solid #000;
-            padding: 50px;
-            margin: 40px 0;
-            text-align: center;
-            position: relative;
-        }
-        
-        .key-message::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 40px;
-            height: 40px;
-            border-top: 3px solid #000;
-            border-left: 3px solid #000;
-        }
-        
-        .key-message::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            right: -15px;
-            width: 40px;
-            height: 40px;
-            border-bottom: 3px solid #000;
-            border-right: 3px solid #000;
-        }
-        
-        .key-message h3 {
-            font-size: 32px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-        }
-        
-        .key-message p {
+        .slide p {
             font-size: 18px;
             line-height: 1.8;
             color: #333;
+            max-width: 800px;
+            margin: 0 auto 20px;
         }
         
-        .objectives-list {
-            list-style: none;
-            padding: 0;
-            margin: 30px 0;
-        }
-        
-        .objectives-list li {
-            padding: 20px;
-            margin-bottom: 15px;
-            border-left: 4px solid #000;
-            background: #fafafa;
-            font-size: 16px;
-            line-height: 1.8;
-            position: relative;
-            transition: all 0.3s ease;
-        }
-        
-        .objectives-list li:hover {
-            transform: translateX(10px);
-            background: #f0f0f0;
-        }
-        
-        .objectives-list li::before {
-            content: '✓';
-            margin-right: 15px;
-            font-weight: 700;
-            color: #000;
-            font-size: 20px;
-        }
-        
-        .visual-stat {
-            text-align: center;
-            padding: 30px;
-            border: 1px solid #000;
-            transition: all 0.3s ease;
-        }
-        
-        .visual-stat:hover {
-            background: #000;
-            color: #fff;
-        }
-        
-        .visual-stat .number {
-            font-size: 48px;
+        .big-number {
+            font-size: 72px;
             font-weight: 100;
             line-height: 1;
-            margin-bottom: 10px;
+            color: #000;
+            text-align: center;
+            margin: 30px 0;
         }
         
-        .visual-stat .label {
-            font-size: 12px;
-            letter-spacing: 2px;
+        .big-number-label {
+            font-size: 14px;
             text-transform: uppercase;
-            font-weight: 500;
+            letter-spacing: 2px;
+            text-align: center;
+            color: #666;
+            margin-top: 10px;
         }
         
-        .process-step {
-            position: relative;
-            padding-left: 60px;
-            margin-bottom: 40px;
-        }
-        
-        .process-step::before {
-            content: '';
-            position: absolute;
-            left: 0;
-            top: 0;
-            width: 40px;
-            height: 40px;
-            border: 2px solid #000;
-            border-radius: 50%;
+        .triangle-visual {
             display: flex;
+            justify-content: space-around;
             align-items: center;
-            justify-content: center;
-            font-weight: 700;
+            flex-wrap: wrap;
+            gap: 40px;
+            margin: 50px 0;
+            padding: 40px;
         }
         
-        .process-step:nth-child(1)::before { content: '1'; }
-        .process-step:nth-child(2)::before { content: '2'; }
-        .process-step:nth-child(3)::before { content: '3'; }
-        .process-step:nth-child(4)::before { content: '4'; }
-        
-        .comparison-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 2px;
-            background: #000;
-            margin: 40px 0;
-        }
-        
-        .comparison-item {
-            background: #fff;
+        .triangle-corner {
+            text-align: center;
+            flex: 1;
+            min-width: 200px;
             padding: 30px;
+            border: 3px solid #000;
+            background: #fff;
+            position: relative;
         }
         
-        .comparison-item h4 {
-            font-size: 18px;
-            font-weight: 500;
+        .triangle-corner h4 {
+            font-size: 24px;
+            font-weight: 300;
             margin-bottom: 15px;
             text-transform: uppercase;
             letter-spacing: 1px;
         }
         
-        .impact-visual {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            padding: 30px;
-            border: 2px solid #000;
-            margin: 20px 0;
-        }
-        
-        .impact-visual .arrow {
-            font-size: 32px;
-            font-weight: 100;
-        }
-        
-        .impact-visual .source {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .impact-visual .destination {
-            flex: 1;
-            text-align: center;
-        }
-        
-        .impact-visual strong {
-            display: block;
-            font-size: 20px;
-            margin-bottom: 10px;
-        }
-        
-        .data-quality-box {
-            background: #000;
-            color: #fff;
-            padding: 40px;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .data-quality-box::before {
-            content: '';
-            position: absolute;
-            top: 10px;
-            left: 10px;
-            width: 20px;
-            height: 20px;
-            border-top: 2px solid #fff;
-            border-left: 2px solid #fff;
-        }
-        
-        .data-quality-box h4 {
-            font-size: 24px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -0.5px;
-        }
-        
-        .data-quality-box ul {
-            list-style: none;
-            padding: 0;
-        }
-        
-        .data-quality-box li {
-            padding: 10px 0;
-            padding-left: 25px;
-            position: relative;
+        .triangle-corner p {
             font-size: 16px;
-            line-height: 1.8;
-        }
-        
-        .data-quality-box li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #fff;
-            font-weight: 700;
-        }
-        
-        .calculation-example {
-            background: #fafafa;
-            padding: 30px;
-            border-left: 4px solid #000;
-            margin: 20px 0;
-            font-family: 'Courier New', monospace;
-        }
-        
-        .calculation-example .formula {
-            font-size: 18px;
-            margin: 15px 0;
-            padding: 15px;
-            background: #fff;
-            border: 1px solid #000;
-        }
-        
-        .interactive-card {
-            background: #fff;
-            border: 2px solid #000;
-            padding: 40px;
-            margin: 30px 0;
-            transition: all 0.3s ease;
-            cursor: pointer;
-        }
-        
-        .interactive-card:hover {
-            background: #000;
-            color: #fff;
-        }
-        
-        .interactive-card:hover h4,
-        .interactive-card:hover p {
-            color: #fff;
-        }
-        
-        .interactive-card h4 {
-            font-size: 22px;
-            font-weight: 300;
-            margin-bottom: 15px;
-            letter-spacing: -0.5px;
-        }
-        
-        .interactive-card p {
-            font-size: 16px;
-            line-height: 1.8;
-            color: #333;
-        }
-        
-        .interactive-card:hover p {
-            color: #fff;
-        }
-        
-        /* Visual Flow Diagram */
-        .visual-flow-diagram {
-            background: #fafafa;
-            padding: 60px 40px;
-            margin: 50px 0;
-            position: relative;
-            border: 2px solid #000;
-        }
-        
-        .flow-box {
-            background: #fff;
-            border: 3px solid #000;
-            padding: 40px;
-            position: relative;
-            margin: 30px auto;
-            max-width: 400px;
-            transition: all 0.3s ease;
-            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
-        }
-        
-        .flow-box:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
-        }
-        
-        .flow-box::before {
-            content: '';
-            position: absolute;
-            top: -15px;
-            left: -15px;
-            width: 30px;
-            height: 30px;
-            border-top: 3px solid #000;
-            border-left: 3px solid #000;
-        }
-        
-        .flow-box::after {
-            content: '';
-            position: absolute;
-            bottom: -15px;
-            right: -15px;
-            width: 30px;
-            height: 30px;
-            border-bottom: 3px solid #000;
-            border-right: 3px solid #000;
-        }
-        
-        .flow-box h4 {
-            font-size: 28px;
-            font-weight: 300;
-            margin-bottom: 20px;
-            letter-spacing: -1px;
-            text-align: center;
-        }
-        
-        .flow-box .subtitle {
-            font-size: 14px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
-            margin-bottom: 25px;
-            text-align: center;
-            font-weight: 500;
-        }
-        
-        .flow-box .data-list {
-            list-style: none;
-            padding: 0;
+            line-height: 1.6;
             margin: 0;
         }
         
-        .flow-box .data-list li {
-            padding: 12px 0;
-            padding-left: 30px;
-            position: relative;
-            font-size: 15px;
-            line-height: 1.6;
-            border-bottom: 1px solid #eee;
+        .calculation-box {
+            background: #fafafa;
+            border: 3px solid #000;
+            padding: 40px;
+            margin: 30px auto;
+            max-width: 600px;
+            font-family: 'Courier New', monospace;
         }
         
-        .flow-box .data-list li:last-child {
-            border-bottom: none;
-        }
-        
-        .flow-box .data-list li::before {
-            content: '→';
-            position: absolute;
-            left: 0;
-            color: #000;
-            font-weight: 700;
+        .calculation-row {
+            display: flex;
+            justify-content: space-between;
+            padding: 15px 0;
+            border-bottom: 1px solid #ddd;
             font-size: 18px;
         }
         
-        .flow-arrow {
-            text-align: center;
-            margin: 30px 0;
-            position: relative;
-        }
-        
-        .flow-arrow::before {
-            content: '';
-            position: absolute;
-            top: 50%;
-            left: 50%;
-            transform: translate(-50%, -50%);
-            width: 2px;
-            height: 40px;
-            background: #000;
-        }
-        
-        .flow-arrow-icon {
-            font-size: 48px;
-            font-weight: 100;
-            color: #000;
-            animation: pulseArrow 2s ease-in-out infinite;
-            position: relative;
-            z-index: 1;
-            background: #fafafa;
-            padding: 0 20px;
-        }
-        
-        @keyframes pulseArrow {
-            0%, 100% {
-                transform: translateY(0);
-                opacity: 1;
-            }
-            50% {
-                transform: translateY(10px);
-                opacity: 0.7;
-            }
-        }
-        
-        .flow-label {
-            font-size: 12px;
-            text-transform: uppercase;
-            letter-spacing: 2px;
-            color: #666;
+        .calculation-row:last-child {
+            border-bottom: none;
+            border-top: 2px solid #000;
+            font-weight: 700;
+            font-size: 20px;
             margin-top: 10px;
-            font-weight: 500;
+            padding-top: 20px;
         }
         
-        /* Rich Comparison */
-        .rich-comparison {
+        .risk-box {
+            background: #dc3545;
+            color: #fff;
+            padding: 40px;
+            margin: 30px 0;
+            border: 3px solid #000;
+        }
+        
+        .risk-box h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .risk-box ul {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .risk-box li {
+            padding: 10px 0;
+            padding-left: 30px;
+            position: relative;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .risk-box li::before {
+            content: '⚠';
+            position: absolute;
+            left: 0;
+            font-size: 20px;
+        }
+        
+        .solution-grid {
             display: grid;
             grid-template-columns: 1fr 1fr;
             gap: 4px;
             background: #000;
-            margin: 50px 0;
+            margin: 40px 0;
             padding: 4px;
         }
         
-        .comparison-card {
+        .solution-card {
             background: #fff;
-            padding: 50px 40px;
-            position: relative;
-            transition: all 0.3s ease;
+            padding: 40px;
         }
         
-        .comparison-card:hover {
-            background: #fafafa;
-        }
-        
-        .comparison-card.negative {
-            border-left: 5px solid #dc3545;
-        }
-        
-        .comparison-card.positive {
-            border-left: 5px solid #28a745;
-        }
-        
-        .comparison-card h4 {
+        .solution-card h4 {
             font-size: 24px;
             font-weight: 300;
-            margin-bottom: 30px;
-            letter-spacing: -0.5px;
+            margin-bottom: 20px;
             text-transform: uppercase;
-            letter-spacing: 2px;
-            font-size: 18px;
+            letter-spacing: 1px;
         }
         
-        .comparison-card .card-icon {
-            font-size: 48px;
-            font-weight: 100;
-            margin-bottom: 20px;
-            line-height: 1;
+        .solution-card ul {
+            list-style: none;
+            padding: 0;
         }
         
-        .comparison-card.negative .card-icon {
-            color: #dc3545;
-        }
-        
-        .comparison-card.positive .card-icon {
-            color: #28a745;
-        }
-        
-        .comparison-item-rich {
-            padding: 20px 0;
-            padding-left: 40px;
+        .solution-card li {
+            padding: 12px 0;
+            padding-left: 25px;
             position: relative;
-            margin-bottom: 20px;
-            border-bottom: 1px solid #eee;
+            font-size: 16px;
+            line-height: 1.8;
         }
         
-        .comparison-item-rich:last-child {
-            border-bottom: none;
-        }
-        
-        .comparison-item-rich .icon {
+        .solution-card li::before {
+            content: '→';
             position: absolute;
             left: 0;
-            top: 20px;
-            font-size: 24px;
             font-weight: 700;
         }
         
-        .comparison-item-rich.negative .icon {
-            color: #dc3545;
+        .case-study {
+            background: #fff;
+            border: 3px solid #000;
+            padding: 40px;
+            margin: 30px 0;
         }
         
-        .comparison-item-rich.positive .icon {
-            color: #28a745;
-        }
-        
-        .comparison-item-rich h5 {
-            font-size: 18px;
+        .case-study h4 {
+            font-size: 20px;
             font-weight: 500;
-            margin-bottom: 8px;
-            letter-spacing: -0.3px;
+            margin-bottom: 20px;
+            text-transform: uppercase;
+            letter-spacing: 1px;
         }
         
-        .comparison-item-rich p {
-            font-size: 14px;
-            line-height: 1.6;
-            color: #666;
-            margin: 0;
+        .case-before-after {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin-top: 30px;
         }
         
-        .comparison-metric {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-            margin-top: 15px;
-            padding: 15px;
-            background: #f9f9f9;
-            border-left: 3px solid #000;
+        .case-before {
+            background: #ffe6e6;
+            padding: 30px;
+            border: 2px solid #dc3545;
         }
         
-        .comparison-metric .metric-value {
-            font-size: 32px;
+        .case-after {
+            background: #e6f7e6;
+            padding: 30px;
+            border: 2px solid #28a745;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin: 40px 0;
+        }
+        
+        .metric-card {
+            background: #fff;
+            border: 2px solid #000;
+            padding: 30px;
+            text-align: center;
+        }
+        
+        .metric-value {
+            font-size: 48px;
             font-weight: 100;
-            line-height: 1;
             color: #000;
+            margin-bottom: 10px;
         }
         
-        .comparison-metric .metric-label {
-            font-size: 13px;
+        .metric-label {
+            font-size: 14px;
             text-transform: uppercase;
             letter-spacing: 1px;
             color: #666;
         }
         
-        .comparison-card .highlight-text {
-            margin-top: 30px;
-            padding: 20px;
+        .action-box {
             background: #000;
             color: #fff;
-            text-align: center;
-            font-size: 14px;
-            line-height: 1.6;
+            padding: 40px;
+            margin: 30px 0;
+            border: 3px solid #000;
         }
         
-        .comparison-card.positive .highlight-text {
-            background: #28a745;
+        .action-box h4 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .action-box ol {
+            padding-left: 30px;
+        }
+        
+        .action-box li {
+            padding: 10px 0;
+            font-size: 16px;
+            line-height: 1.8;
+        }
+        
+        .script-box {
+            background: #fff3cd;
+            border: 3px solid #ffc107;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .script-box h4 {
+            font-size: 20px;
+            color: #856404;
+            margin-bottom: 15px;
+        }
+        
+        .script-box p {
+            font-size: 16px;
+            color: #856404;
+            font-style: italic;
+            margin: 0;
+        }
+        
+        .quiz-box {
+            background: #e7f3ff;
+            border: 3px solid #0066cc;
+            padding: 30px;
+            margin: 30px 0;
+        }
+        
+        .quiz-question {
+            font-size: 18px;
+            font-weight: 500;
+            margin-bottom: 15px;
+            color: #0066cc;
+        }
+        
+        .quiz-options {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .quiz-options li {
+            padding: 10px;
+            margin: 8px 0;
+            background: #fff;
+            border: 1px solid #0066cc;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        
+        .quiz-options li:hover {
+            background: #0066cc;
+            color: #fff;
+        }
+        
+        .highlight-message {
+            background: #000;
+            color: #fff;
+            padding: 50px;
+            margin: 40px 0;
+            text-align: center;
+            border: 3px solid #000;
+        }
+        
+        .highlight-message h3 {
+            font-size: 32px;
+            font-weight: 300;
+            margin-bottom: 20px;
+            color: #fff;
+        }
+        
+        .highlight-message p {
+            font-size: 20px;
+            line-height: 1.8;
+            color: #fff;
+            margin: 0;
         }
         
         @media (max-width: 768px) {
-            .comparison-grid {
+            .solution-grid,
+            .case-before-after,
+            .metrics-grid {
                 grid-template-columns: 1fr;
             }
             
-            .rich-comparison {
-                grid-template-columns: 1fr;
-            }
-            
-            .impact-visual {
+            .triangle-visual {
                 flex-direction: column;
-                gap: 20px;
             }
             
-            .impact-visual .arrow {
-                transform: rotate(90deg);
-            }
-            
-            .flow-box {
-                max-width: 100%;
+            .big-number {
+                font-size: 48px;
             }
         }
     </style>
@@ -791,15 +403,17 @@
             </div>
             <ul class="nav-links" id="navLinks">
                 <li><a href="#home" class="nav-link">INÍCIO</a></li>
-                <li><a href="#factorial" class="nav-link">FACTORIAL</a></li>
-                <li><a href="#bernhoeft" class="nav-link">BERNHOEFT</a></li>
-                <li><a href="#deepdive" class="nav-link">DEEP DIVE</a></li>
-                <li><a href="#qa" class="nav-link">Q&A</a></li>
+                <li><a href="#definicao" class="nav-link">DEFINIÇÃO</a></li>
+                <li><a href="#triangulo" class="nav-link">TRIÂNGULO</a></li>
+                <li><a href="#custo" class="nav-link">CUSTO CLT</a></li>
+                <li><a href="#risco" class="nav-link">RISCOS</a></li>
+                <li><a href="#solucao" class="nav-link">SOLUÇÃO</a></li>
+                <li><a href="#acao" class="nav-link">AÇÃO</a></li>
             </ul>
         </div>
     </nav>
 
-    <!-- Section 1: Hero -->
+    <!-- Hero -->
     <section id="home" class="hero">
         <div class="floating-objects">
             <div class="floating-circle"></div>
@@ -810,931 +424,435 @@
         
         <div class="hero-decoration"></div>
         <div class="hero-content">
+            <br><br>
             <h1>Folha de Pagamento</h1>
-            <p class="subtitle">Da Gestão de Dados da Factorial ao Compliance da Bernhoeft</p>
+            <p class="subtitle">O ponto mais sensível da relação trabalhista</p>
             <p style="font-size: 18px; margin-top: 30px; max-width: 700px; margin-left: auto; margin-right: auto; line-height: 1.8; font-weight: 300;">
-                Compreendendo o papel da Factorial como sistema de gestão de dados e a importância da qualidade das informações para cálculos precisos que garantem conformidade legal e precisão financeira.
+                Aula de 40 minutos sobre riscos, custos e soluções
             </p>
             <div style="margin-top: 40px; display: flex; gap: 20px; justify-content: center; flex-wrap: wrap;">
                 <div class="visual-stat">
-                    <div class="number">90</div>
+                    <div class="number">40</div>
                     <div class="label">Minutos</div>
                 </div>
                 <div class="visual-stat">
-                    <div class="number">4</div>
+                    <div class="number">6</div>
                     <div class="label">Seções</div>
-                </div>
-                <div class="visual-stat">
-                    <div class="number">Participação Especial: Camila Miranda</div>
-                  
                 </div>
             </div>
             <br>
-            <a href="#factorial" class="cta-button">COMEÇAR AULA</a>
+            <a href="#definicao" class="cta-button">COMEÇAR AULA</a>
         </div>
     </section>
 
-    <!-- Section 2: Factorial -->
-    <section id="factorial" class="about">
+    <!-- SEÇÃO 1: Definição (5 minutos) -->
+    <section id="definicao" class="about">
         <div class="container">
-            <div class="section-time fade-in">SEÇÃO I • 25 MINUTOS</div>
+            <div class="section-time fade-in">SEÇÃO I • 5 MINUTOS</div>
             
-            <div class="about-intro fade-in">
-                <div class="quote-block">
-                    <span class="quote-mark">"</span>
-                    <h3>A Factorial é a "carinha bonitinha" que funciona como interface da gestão de dados</h3>
-                    <div class="quote-author">
-                        <span class="author-line"></span>
-                        <p>e essa é uma responsabilidade da Equipe de RH</p>
-                    </div>
+            <div class="slide fade-in">
+                <h2>O que é Folha de Pagamento?</h2>
+                <p style="font-size: 24px; font-weight: 300; text-align: center; margin-bottom: 30px;">
+                    A folha é o elo central entre empresa, colaborador e governo
+                </p>
+                <p style="text-align: center; font-size: 18px; color: #666;">
+                    Muito mais do que um holerite — é o processo completo que conecta três stakeholders críticos
+                </p>
+            </div>
+
+            <div class="slide fade-in">
+                <h3>Componentes da Folha</h3>
+                <div style="display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; margin-top: 40px;">
+                    <div style="text-align: center; padding: 30px; border: 2px solid #000;">
+                        <h4 style="font-size: 20px; margin-bottom: 15px;">Cálculos</h4>
+                        <p style="font-size: 14px; margin: 0;">INSS, IRRF, 13º, FGTS</p>
+                </div>
+                    <div style="text-align: center; padding: 30px; border: 2px solid #000;">
+                        <h4 style="font-size: 20px; margin-bottom: 15px;">Dados</h4>
+                        <p style="font-size: 14px; margin: 0;">Horas, faltas, benefícios</p>
+                </div>
+                    <div style="text-align: center; padding: 30px; border: 2px solid #000;">
+                        <h4 style="font-size: 20px; margin-bottom: 15px;">Compliance</h4>
+                        <p style="font-size: 14px; margin: 0;">eSocial, CLT, legislação</p>
+                </div>
                 </div>
             </div>
 
-            <div class="black-line"></div>
+            <div class="highlight-message fade-in">
+                <h3>Por que importa?</h3>
+                <p>Se um dado falhar, o impacto é imediato:<br>
+                Multas • Perda de confiança • Passivos trabalhistas</p>
+            </div>
+        </div>
+    </section>
 
-            <!-- Stats Section -->
-            <div class="stats-grid fade-in">
-                <div class="stat-item">
-                    <div class="stat-number">Jornada</div>
-                    <div class="stat-label">Time Tracking</div>
-                    <div class="stat-decoration"></div>
-                    <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">Registro preciso de horas trabalhadas, horas extras e ausências que impactam diretamente nos cálculos de folha</p>
+    <!-- SEÇÃO 2: Triângulo (5 minutos) -->
+    <section id="triangulo" class="services">
+        <div class="container">
+            <div class="section-time fade-in" style="color: #fff;">SEÇÃO II • 5 MINUTOS</div>
+            
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;">
+                <h2 style="color: #fff;">O Triângulo da Folha</h2>
+                <p style="color: #fff; text-align: center; font-size: 20px;">
+                    Três stakeholders interconectados — cada um com riscos específicos
+                </p>
+            </div>
+            
+            <div class="slide fade-in">
+                <div class="triangle-visual">
+                    <div class="triangle-corner">
+                        <h4>Empresa</h4>
+                        <p><strong>Riscos:</strong><br>
+                        Multas eSocial<br>
+                        Passivos trabalhistas<br>
+                        Custos operacionais</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">Ausências</div>
-                    <div class="stat-label">Time Off</div>
-                    <div class="stat-decoration"></div>
-                    <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">Faltas, férias e licenças determinam o direito ao 13º salário e afetam deduções obrigatórias</p>
+                    <div class="triangle-corner">
+                        <h4>Colaborador</h4>
+                        <p><strong>Riscos:</strong><br>
+                        Valores incorretos<br>
+                        Direitos não garantidos<br>
+                        Perda de confiança</p>
                 </div>
-                <div class="stat-item">
-                    <div class="stat-number">Contratos</div>
-                    <div class="stat-label">Factorial Core</div>
-                    <div class="stat-decoration"></div>
-                    <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">Dados atualizados de benefícios evitam erros no contracheque e problemas legais</p>
-                </div>
-                <div class="stat-item">
-                    <div class="stat-number">Dados</div>
-                    <div class="stat-label">Analytics e Compensation</div>
-                    <div class="stat-decoration"></div>
-                    <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">A precisão dos dados inseridos determina a confiabilidade de todos os cálculos subsequentes</p>
+                    <div class="triangle-corner">
+                        <h4>Governo</h4>
+                        <p><strong>Riscos:</strong><br>
+                        Receita não arrecadada<br>
+                        Não conformidade<br>
+                        Autuações fiscais</p>
+            </div>
                 </div>
             </div>
+            
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;">
+                <h3 style="color: #fff;">A Conexão</h3>
+                <p style="color: #fff; text-align: center; font-size: 18px;">
+                    Um erro em qualquer vértice afeta os outros dois.<br>
+                    Por isso a precisão dos dados é crítica.
+                        </p>
+                    </div>
+                </div>
+    </section>
 
-            <!-- Philosophy Section -->
-            <div class="philosophy-section fade-in">
-                <div class="philosophy-header">
-                    <h2>Papel Estratégico da Factorial</h2>
-                    <div class="header-decoration"></div>
+    <!-- SEÇÃO 3: Anatomia do Custo CLT (8 minutos) -->
+    <section id="custo" class="about">
+        <div class="container">
+            <div class="section-time fade-in">SEÇÃO III • 8 MINUTOS</div>
+            
+            <div class="slide fade-in">
+                <h2>Anatomia do Custo CLT</h2>
+                <p style="text-align: center; font-size: 20px;">
+                    O salário bruto é apenas a ponta do iceberg
+                </p>
                 </div>
-                <div class="philosophy-content">
-                    <div class="philosophy-main">
-                        <p class="lead-text">A Factorial funciona como a <strong>fonte primária de dados</strong> para todos os cálculos de folha de pagamento. Cada informação inserida pela equipe de RH, desde horas trabalhadas até benefícios ativos, determina diretamente a precisão dos resultados finais processados pela Bernhoeft.</p>
-                    </div>
-                    <div class="philosophy-points">
-                        <div class="point-item">
-                            <span class="point-number">01</span>
-                            <h4>Controle de Horas</h4>
-                            <p>Registro preciso de horas trabalhadas, horas extras e ausências que impactam diretamente nos cálculos de folha, INSS e 13º salário</p>
-                        </div>
-                        <div class="point-item">
-                            <span class="point-number">02</span>
-                            <h4>Gestão de Ausências</h4>
-                            <p>Faltas, férias e licenças determinam o direito ao 13º salário (regra dos 15 dias) e afetam todas as deduções obrigatórias</p>
-                        </div>
-                        <div class="point-item">
-                            <span class="point-number">03</span>
-                            <h4>Benefícios</h4>
-                            <p>Dados atualizados de benefícios evitam erros no contracheque, problemas legais e garantem conformidade com a CLT</p>
-                        </div>
-                    </div>
+                
+            <div class="slide fade-in">
+                <div class="calculation-box">
+                    <div style="text-align: center; margin-bottom: 30px;">
+                        <h3 style="font-size: 24px; margin-bottom: 10px;">Exemplo: Salário R$ 1.000,00</h3>
                 </div>
+                    <div class="calculation-row">
+                        <span>Salário Bruto</span>
+                        <span>R$ 1.000,00</span>
             </div>
-
-            <!-- Process Timeline -->
-            <div class="process-timeline fade-in">
-                <h2 class="section-subtitle">Fluxo de Responsabilidade</h2>
-                <div class="timeline-container">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Coleta</h4>
-                            <p>Equipe de RH registra dados na Factorial</p>
+                    <div class="calculation-row">
+                        <span>INSS (9%)</span>
+                        <span>R$ 90,00</span>
                         </div>
+                    <div class="calculation-row">
+                        <span>IRRF (7,5%)</span>
+                        <span>R$ 68,25</span>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Validação</h4>
-                            <p>Sistema estrutura e organiza as informações</p>
+                    <div class="calculation-row">
+                        <span>FGTS (8%)</span>
+                        <span>R$ 80,00</span>
                         </div>
+                    <div class="calculation-row">
+                        <span>13º Salário (1/12)</span>
+                        <span>R$ 83,33</span>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Transmissão</h4>
-                            <p>Dados são enviados para processamento</p>
+                    <div class="calculation-row">
+                        <span>Férias + 1/3</span>
+                        <span>R$ 111,11</span>
                         </div>
+                    <div class="calculation-row">
+                        <span><strong>CUSTO TOTAL MENSAL</strong></span>
+                        <span><strong>R$ 1.432,69</strong></span>
                     </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Processamento</h4>
-                            <p>Bernhoeft calcula com base nos dados recebidos</p>
                         </div>
+                <p style="text-align: center; font-size: 18px; margin-top: 20px; color: #dc3545; font-weight: 500;">
+                    Encargos adicionam 30 a 40% ao salário bruto
+                </p>
                     </div>
+                    
+            <div class="slide fade-in">
+                <h3>Impacto dos Erros</h3>
+                <div style="margin-top: 40px;">
+                    <div style="background: #ffe6e6; padding: 30px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">Erro de 1% no salário bruto</h4>
+                        <p style="margin: 0; font-size: 16px;">Multiplica em todos os encargos → Erro total de R$ 4,33 no exemplo acima</p>
+                    </div>
+                    <div style="background: #ffe6e6; padding: 30px; border-left: 4px solid #dc3545; margin-bottom: 20px;">
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">Erro em horas extras não registradas</h4>
+                        <p style="margin: 0; font-size: 16px;">Afeta INSS, IRRF, 13º salário e FGTS simultaneamente</p>
+                    </div>
+                    <div style="background: #ffe6e6; padding: 30px; border-left: 4px solid #dc3545;">
+                        <h4 style="font-size: 18px; margin-bottom: 10px;">Faltas não registradas</h4>
+                        <p style="margin: 0; font-size: 16px;">Pode gerar pagamento indevido de 13º salário e problemas trabalhistas</p>
                 </div>
+                        </div>
             </div>
+        </div>
+    </section>
 
-            <!-- Values Grid -->
-            <div class="values-section fade-in">
-                <div class="values-header">
-                    <div class="black-square"></div>
-                    <h2>Impacto da Qualidade dos Dados</h2>
-                    <div class="black-square"></div>
+    <!-- SEÇÃO 4: Risco do Feito em Casa (7 minutos) -->
+    <section id="risco" class="services">
+        <div class="container">
+            <div class="section-time fade-in" style="color: #fff;">SEÇÃO IV • 7 MINUTOS</div>
+            
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;">
+                <h2 style="color: #fff;">Risco do Feito em Casa</h2>
+                <p style="color: #fff; text-align: center; font-size: 20px;">
+                    Processamento manual = Erros humanos = Consequências imediatas
+                </p>
                 </div>
-                <div class="values-grid">
-                    <div class="value-card">
-                        <div class="value-icon">—</div>
-                        <h4>Precisão</h4>
-                        <p style="font-size: 14px; margin-top: 10px; color: #666;">Dados corretos garantem cálculos exatos</p>
-                    </div>
-                    <div class="value-card black">
-                        <div class="value-icon">+</div>
-                        <h4>Conformidade</h4>
-                        <p style="font-size: 14px; margin-top: 10px; color: #fff;">Evita multas e problemas legais</p>
-                    </div>
-                    <div class="value-card black">
-                        <div class="value-icon">○</div>
-                        <h4>Confiança</h4>
-                        <p style="font-size: 14px; margin-top: 10px; color: #fff;">Colaboradores recebem valores corretos</p>
-                    </div>
-                    <div class="value-card">
-                        <div class="value-icon">□</div>
-                        <h4>Eficiência</h4>
-                        <p style="font-size: 14px; margin-top: 10px; color: #666;">Reduz necessidade de correções</p>
-                    </div>
-                </div>
-            </div>
 
-            <div class="data-quality-box fade-in">
-                <h4>Por que a Qualidade dos Dados Importa?</h4>
+            <div class="risk-box fade-in">
+                <h4>Erros Comuns e Consequências</h4>
                 <ul>
-                    <li>Um erro de horas trabalhadas pode alterar o cálculo de INSS e IRRF</li>
-                    <li>Faltas não registradas corretamente afetam o direito ao 13º salário</li>
-                    <li>Benefícios desatualizados geram deduções incorretas no contracheque</li>
-                    <li>Dados inconsistentes podem resultar em multas e passivos trabalhistas</li>
-                    <li>A precisão na Factorial elimina a necessidade de retrabalho e correções</li>
-                </ul>
-            </div>
-
-            <div class="key-message fade-in">
-                <h3>Mensagem Principal</h3>
-                <p><strong>Factorial = O QUE</strong> (os dados)<br>
-                <strong>RH = QUEM</strong> (responsável pela qualidade dos dados)<br>
-                <strong>Bernhoeft = COMO</strong> (processa e calcula com base nos dados)</p>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 3: Bernhoeft -->
-    <section id="bernhoeft" class="services">
-        <div class="container">
-            <div class="section-time fade-in" style="color: #fff;">SEÇÃO II • 25 MINUTOS</div>
-            
-            <div class="services-header fade-in">
-                <h2>Parceiro Bernhoeft</h2>
-                <p style="font-size: 18px; font-weight: 300; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                    Especialista em cálculos de folha de pagamento e conformidade com eSocial, transformando dados em resultados precisos e legais
-                </p>
-            </div>
-            
-            <div class="asymmetric-grid fade-in">
-                <div class="service-large">
-                    <h3>Expertise em Cálculos e Compliance</h3>
-                    <p>A Bernhoeft é especializada em cálculos de folha de pagamento e conformidade com eSocial. Com mais de 20 anos de experiência em BPO e Consultoria de RH, a empresa processa todos os dados enviados pela Factorial e garante que os cálculos estejam em conformidade com a legislação trabalhista brasileira.</p>
-                    <p style="margin-top: 20px;"><strong>Escopo de atuação:</strong></p>
-                    <ul style="list-style: none; padding: 0; margin-top: 15px;">
-                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Cálculos completos de folha de pagamento
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Conformidade total com eSocial em tempo real
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Processamento de INSS, IRRF, 13º Salário e FGTS
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Auditoria preventiva de folhas
-                        </li>
-                        <li style="padding: 8px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Correção proativa de inconsistências
-                        </li>
+                    <li><strong>Horas extras não calculadas:</strong> Multa eSocial + Passivo trabalhista retroativo</li>
+                    <li><strong>13º salário com base errada:</strong> Pagamento indevido + Correção retroativa</li>
+                    <li><strong>INSS calculado incorretamente:</strong> Autuação fiscal + Multa de até R$ 50.000</li>
+                    <li><strong>Faltas não registradas:</strong> Direitos indevidos + Problemas trabalhistas</li>
+                    <li><strong>Benefícios desatualizados:</strong> Deduções ilegais + Processos trabalhistas</li>
                     </ul>
                 </div>
-                <div class="service-small">
-                    <div class="service-number">02</div>
-                    <h4>Divisão de Responsabilidades</h4>
+
+            <div class="slide fade-in">
+                <h3>eSocial: Fiscalização em Tempo Real</h3>
+                <p style="text-align: center; font-size: 18px; margin-bottom: 30px;">
+                    O eSocial detecta erros imediatamente
+                </p>
+                <div style="background: #000; color: #fff; padding: 40px; text-align: center;">
+                    <p style="font-size: 24px; margin-bottom: 20px; color: #fff;">
+                        Sem expertise especializada:<br>
+                        <strong style="font-size: 32px;">Multas imediatas</strong><br>
+                        <strong style="font-size: 32px;">Autuações</strong><br>
+                        <strong style="font-size: 32px;">Passivos trabalhistas</strong>
+                    </p>
+                    <p style="font-size: 18px; color: #fff; margin-top: 30px;">
+                        Custo médio de não conformidade: <strong>R$ 50.000+</strong>
+                    </p>
+                    </div>
                 </div>
-            </div>
+
+            <div class="case-study fade-in">
+                <h4>Caso Real: Empresa de 50 Funcionários</h4>
+                <div class="case-before-after">
+                    <div class="case-before">
+                        <h5 style="font-size: 16px; margin-bottom: 15px; color: #dc3545;">ANTES</h5>
+                        <p style="font-size: 14px; margin-bottom: 10px;"><strong>Problema:</strong> Horas extras não registradas corretamente</p>
+                        <p style="font-size: 14px; margin-bottom: 10px;"><strong>Erro:</strong> 15 funcionários com cálculo incorreto</p>
+                        <p style="font-size: 14px; margin: 0;"><strong>Resultado:</strong> Multa eSocial R$ 35.000 + Passivo trabalhista R$ 120.000</p>
+                    </div>
+                    <div class="case-after">
+                        <h5 style="font-size: 16px; margin-bottom: 15px; color: #28a745;">DEPOIS</h5>
+                        <p style="font-size: 14px; margin-bottom: 10px;"><strong>Solução:</strong> Integração Factorial + Bernhoeft</p>
+                        <p style="font-size: 14px; margin-bottom: 10px;"><strong>Correção:</strong> Dados validados automaticamente</p>
+                        <p style="font-size: 14px; margin: 0;"><strong>Resultado:</strong> Conformidade total + Zero multas</p>
+                </div>
+                    </div>
+                </div>
+                    </div>
+    </section>
+
+    <!-- SEÇÃO 5: Solução Factorial + Bernhoeft (8 minutos) -->
+    <section id="solucao" class="about">
+        <div class="container">
+            <div class="section-time fade-in">SEÇÃO V • 8 MINUTOS</div>
             
-            <!-- Impact Visual -->
-            <div class="impact-visual fade-in">
-                <div class="source">
-                    <strong>FACTORIAL</strong>
-                    <p style="font-size: 14px; margin-top: 10px;">Sistema de Gestão<br>de Dados</p>
-                    <p style="font-size: 12px; margin-top: 15px; color: #666;">• Horas trabalhadas<br>• Faltas/Ausências<br>• Benefícios<br>• Informações cadastrais</p>
+            <div class="slide fade-in">
+                <h2>A Solução</h2>
+                <p style="text-align: center; font-size: 20px;">
+                    Dois papéis claros: quem coleta dados e quem processa dados
+                    </p>
                 </div>
-                <div class="arrow">→</div>
-                <div class="destination">
-                    <strong>BERNHOEFT</strong>
-                    <p style="font-size: 14px; margin-top: 10px;">Processamento<br>e Compliance</p>
-                    <p style="font-size: 12px; margin-top: 15px; color: #666;">• Cálculos legais<br>• eSocial<br>• Holerites<br>• Conformidade</p>
-                </div>
-            </div>
-            
-            <div class="visual-flow-diagram fade-in">
-                <h3 style="text-align: center; font-size: 32px; font-weight: 300; margin-bottom: 50px; letter-spacing: -1px;">Fluxo de Dados</h3>
-                
-                <!-- Factorial Box -->
-                <div class="flow-box">
+
+            <div class="solution-grid fade-in">
+                <div class="solution-card">
                     <h4>FACTORIAL</h4>
-                    <div class="subtitle">Sistema de Gestão de Dados</div>
-                    <ul class="data-list">
-                        <li>Horas trabalhadas</li>
-                        <li>Faltas e ausências</li>
-                        <li>Benefícios ativos</li>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Gestão de Dados
+                    </p>
+                    <ul>
+                        <li>Interface de gestão de dados</li>
+                        <li>Registro de horas trabalhadas</li>
+                        <li>Controle de faltas e ausências</li>
+                        <li>Gestão de benefícios</li>
                         <li>Informações cadastrais</li>
-                        <li>Contratos e políticas</li>
                     </ul>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #000; text-align: center;">
-                        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin: 0;">
-                            Equipe de RH insere dados
+                    <p style="margin-top: 20px; font-size: 14px; color: #666;">
+                        <strong>Responsabilidade:</strong> Equipe de RH garante qualidade dos dados
                         </p>
                     </div>
-                </div>
-                
-                <!-- Arrow -->
-                <div class="flow-arrow">
-                    <div class="flow-arrow-icon">↓</div>
-                    <div class="flow-label">Dados enviados automaticamente</div>
-                </div>
-                
-                <!-- Bernhoeft Box -->
-                <div class="flow-box">
+                <div class="solution-card">
                     <h4>BERNHOEFT</h4>
-                    <div class="subtitle">Processamento e Compliance</div>
-                    <ul class="data-list">
-                        <li>INSS (desconto obrigatório)</li>
-                        <li>IRRF (tabela progressiva)</li>
-                        <li>13º Salário (média variáveis)</li>
-                        <li>FGTS (8% salário bruto)</li>
-                        <li>eSocial (transmissão automática)</li>
+                    <p style="font-size: 14px; color: #666; margin-bottom: 20px; text-transform: uppercase; letter-spacing: 1px;">
+                        Processamento e Compliance
+                    </p>
+                    <ul>
+                        <li>Cálculos automáticos (INSS, IRRF, 13º, FGTS)</li>
+                        <li>Conformidade total com eSocial</li>
+                        <li>Processamento de holerites</li>
+                        <li>Auditoria preventiva</li>
+                        <li>Correção proativa de erros</li>
                     </ul>
-                    <div style="margin-top: 25px; padding-top: 20px; border-top: 2px solid #000; text-align: center;">
-                        <p style="font-size: 12px; text-transform: uppercase; letter-spacing: 2px; color: #666; margin: 0;">
-                            Processa e calcula automaticamente
+                    <p style="margin-top: 20px; font-size: 14px; color: #666;">
+                        <strong>Expertise:</strong> 20+ anos em BPO e Consultoria de RH
                         </p>
                     </div>
                 </div>
-                
-                <!-- Key Message -->
-                <div style="margin-top: 50px; text-align: center; padding: 30px; background: #000; color: #fff;">
-                    <p style="font-size: 20px; line-height: 1.8; margin: 0;">
-                        <strong style="font-weight: 300;">Factorial = O QUE</strong> (os dados)<br>
-                        <strong style="font-weight: 300;">Bernhoeft = COMO</strong> (os cálculos)
-                    </p>
+
+            <div class="slide fade-in">
+                <h3>Fluxo de Dados</h3>
+                <div style="text-align: center; margin: 40px 0;">
+                    <div style="background: #fff; border: 3px solid #000; padding: 30px; margin-bottom: 20px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <h4 style="font-size: 20px; margin-bottom: 10px;">FACTORIAL</h4>
+                        <p style="font-size: 14px; margin: 0;">Equipe de RH insere dados</p>
+                    </div>
+                    <div style="font-size: 48px; margin: 20px 0;">↓</div>
+                    <div style="background: #fff; border: 3px solid #000; padding: 30px; max-width: 500px; margin-left: auto; margin-right: auto;">
+                        <h4 style="font-size: 20px; margin-bottom: 10px;">BERNHOEFT</h4>
+                        <p style="font-size: 14px; margin: 0;">Processa e calcula automaticamente</p>
+                        </div>
+                            </div>
+                            </div>
+
+            <div class="metrics-grid fade-in">
+                <div class="metric-card">
+                    <div class="metric-value">99.9%</div>
+                    <div class="metric-label">Precisão nos cálculos</div>
+                            </div>
+                <div class="metric-card">
+                    <div class="metric-value">100%</div>
+                    <div class="metric-label">Conformidade garantida</div>
+                            </div>
+                <div class="metric-card">
+                    <div class="metric-value">80%</div>
+                    <div class="metric-label">Redução de tempo operacional</div>
+                            </div>
+                        </div>
+
+            <div class="highlight-message fade-in">
+                <h3>Factorial = O QUE (os dados)</h3>
+                <p>Bernhoeft = COMO (os cálculos)</p>
+                    </div>
                 </div>
+    </section>
+
+    <!-- SEÇÃO 6: Plano de Ação e Diagnóstico (5 minutos) -->
+    <section id="acao" class="services">
+        <div class="container">
+            <div class="section-time fade-in" style="color: #fff;">SEÇÃO VI • 5 MINUTOS</div>
+            
+            <div class="slide fade-in" style="background: #000; color: #fff; border-color: #fff;">
+                <h2 style="color: #fff;">Plano de Ação Prático</h2>
+                <p style="color: #fff; text-align: center; font-size: 18px;">
+                    Transformar entendimento em próximos passos
+                    </p>
             </div>
 
-            <!-- Rich Comparison -->
-            <div class="rich-comparison fade-in">
-                <div class="comparison-card negative">
-                    <div class="card-icon">×</div>
-                    <h4>Sem Parceria</h4>
-                    
-                    <div class="comparison-item-rich negative">
-                        <div class="icon">×</div>
-                        <h5>Cálculos Manuais e Sujeitos a Erros</h5>
-                        <p>Processamento manual aumenta significativamente o risco de erros humanos. Um erro simples pode gerar retrabalho, multas e problemas trabalhistas que custam tempo e dinheiro.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">85%</div>
-                            <div class="metric-label">Taxa de erro em processos manuais</div>
-                        </div>
+            <div class="action-box fade-in">
+                <h4>3 Ações Imediatas</h4>
+                <ol>
+                    <li><strong>Auditar dados atuais:</strong> Verificar qualidade dos dados na Factorial (horas, faltas, benefícios)</li>
+                    <li><strong>Identificar gaps:</strong> Mapear processos manuais e pontos de risco de erro</li>
+                    <li><strong>Validar conformidade:</strong> Verificar histórico de multas eSocial e passivos trabalhistas</li>
+                </ol>
+                </div>
+
+            <div class="slide fade-in">
+                <h3>Perguntas de Diagnóstico</h3>
+                <div style="margin-top: 30px;">
+                    <div style="background: #fafafa; padding: 20px; border-left: 4px solid #000; margin-bottom: 15px;">
+                        <p style="font-size: 16px; margin: 0;"><strong>1.</strong> A folha é processada internamente ou por parceiro?</p>
                     </div>
-                    
-                    <div class="comparison-item-rich negative">
-                        <div class="icon">×</div>
-                        <h5>Risco de Não Conformidade com eSocial</h5>
-                        <p>O eSocial detecta erros em tempo real. Sem expertise especializada, a empresa fica exposta a multas imediatas, autuações e passivos trabalhistas que podem chegar a milhões.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">R$ 50k+</div>
-                            <div class="metric-label">Multa média por não conformidade</div>
-                        </div>
+                    <div style="background: #fafafa; padding: 20px; border-left: 4px solid #000; margin-bottom: 15px;">
+                        <p style="font-size: 16px; margin: 0;"><strong>2.</strong> Quantas horas são gastas mensalmente em cálculos e revisões?</p>
+                </div>
+                    <div style="background: #fafafa; padding: 20px; border-left: 4px solid #000; margin-bottom: 15px;">
+                        <p style="font-size: 16px; margin: 0;"><strong>3.</strong> Houve multas eSocial ou autuações nos últimos 12 meses?</p>
                     </div>
-                    
-                    <div class="comparison-item-rich negative">
-                        <div class="icon">×</div>
-                        <h5>Necessidade de Equipe Especializada</h5>
-                        <p>Exige contratação de profissionais especializados em folha de pagamento, legislação trabalhista e eSocial. Custos com salários, treinamento e rotatividade.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">R$ 8k+</div>
-                            <div class="metric-label">Custo mensal por especialista</div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-item-rich negative">
-                        <div class="icon">×</div>
-                        <h5>Tempo Gasto em Cálculos e Revisões</h5>
-                        <p>Equipe de RH gasta horas valiosas em cálculos repetitivos e revisões, desviando foco de atividades estratégicas como desenvolvimento de pessoas e cultura organizacional.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">40h+</div>
-                            <div class="metric-label">Horas mensais em cálculos</div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-item-rich negative">
-                        <div class="icon">×</div>
-                        <h5>Falta de Rastreabilidade e Auditoria</h5>
-                        <p>Processos manuais dificultam rastreabilidade, auditoria e compliance. Em caso de fiscalização, a empresa pode ter dificuldades em comprovar a correção dos cálculos.</p>
-                    </div>
-                    
-                    <div class="highlight-text">
-                        Custo Total Estimado: R$ 150k+ anuais em riscos e ineficiências
+                    <div style="background: #fafafa; padding: 20px; border-left: 4px solid #000;">
+                        <p style="font-size: 16px; margin: 0;"><strong>4.</strong> Como é garantida a qualidade e atualização dos dados?</p>
+                </div>
                     </div>
                 </div>
-                
-                <div class="comparison-card positive">
-                    <div class="card-icon">✓</div>
-                    <h4>Com Factorial + Bernhoeft</h4>
-                    
-                    <div class="comparison-item-rich positive">
-                        <div class="icon">✓</div>
-                        <h5>Cálculos Automáticos e Precisos</h5>
-                        <p>Processamento 100% automatizado elimina erros humanos. A Bernhoeft processa milhares de folhas mensalmente com precisão matemática garantida, baseada em algoritmos testados e atualizados constantemente.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">99.9%</div>
-                            <div class="metric-label">Precisão nos cálculos</div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-item-rich positive">
-                        <div class="icon">✓</div>
-                        <h5>Compliance Total com Legislação</h5>
-                        <p>Expertise de mais de 20 anos garante conformidade total com CLT, eSocial e todas as atualizações legais. A empresa fica protegida contra multas e autuações trabalhistas.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">100%</div>
-                            <div class="metric-label">Conformidade garantida</div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-item-rich positive">
-                        <div class="icon">✓</div>
-                        <h5>Expertise Especializada Incluída</h5>
-                        <p>Acesso a equipe de especialistas em folha de pagamento sem necessidade de contratação interna. Suporte técnico, consultoria e resolução de problemas incluídos no serviço.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">24/7</div>
-                            <div class="metric-label">Suporte disponível</div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-item-rich positive">
-                        <div class="icon">✓</div>
-                        <h5>Foco em Gestão Estratégica de RH</h5>
-                        <p>Equipe de RH liberada para atividades de alto valor: desenvolvimento de pessoas, cultura organizacional, recrutamento estratégico e iniciativas que realmente impactam o negócio.</p>
-                        <div class="comparison-metric">
-                            <div class="metric-value">80%</div>
-                            <div class="metric-label">Redução de tempo operacional</div>
-                        </div>
-                    </div>
-                    
-                    <div class="comparison-item-rich positive">
-                        <div class="icon">✓</div>
-                        <h5>Rastreabilidade e Auditoria Completa</h5>
-                        <p>Todos os cálculos são rastreáveis e auditáveis. Em caso de fiscalização, a empresa tem histórico completo e documentação que comprova conformidade e precisão.</p>
-                    </div>
-                    
-                    <div class="comparison-item-rich positive">
-                        <div class="icon">✓</div>
-                        <h5>Integração Perfeita e Automatizada</h5>
-                        <p>Dados fluem automaticamente da Factorial para Bernhoeft. Sem necessidade de exportações manuais, planilhas ou retrabalho. Processo totalmente integrado e eficiente.</p>
-                    </div>
-                    
-                    <div class="highlight-text">
-                        ROI: Economia de tempo, redução de riscos e foco estratégico
-                    </div>
-                </div>
-            </div>
-            
-            <!-- Summary Box -->
-            <div class="key-message fade-in" style="margin-top: 60px;">
-                <h3>A Escolha é Clara</h3>
-                <p style="font-size: 18px; line-height: 1.8;">
-                    A parceria Factorial + Bernhoeft não é apenas uma solução técnica — é uma estratégia de negócio que elimina riscos, reduz custos operacionais e libera a equipe de RH para criar valor real para a organização.
-                </p>
+
+            <div class="script-box fade-in">
+                <h4>Script de Encaminhamento Comercial</h4>
+                <p>"Identificamos que sua folha tem [problema específico]. A parceria Factorial + Bernhoeft elimina esse risco através de [solução específica]. Posso agendar uma conversa para mostrar como isso funciona na prática?"</p>
             </div>
         </div>
     </section>
 
-    <!-- Section 4: Deep Dive & Gamification -->
-    <section id="deepdive" class="about">
+    <!-- SEÇÃO 7: Exercício e Q&A (2-5 minutos) -->
+    <section id="exercicio" class="about">
         <div class="container">
-            <div class="section-time fade-in">SEÇÃO III • 35 MINUTOS</div>
+            <div class="section-time fade-in">SEÇÃO VII • 2-5 MINUTOS</div>
             
-            <div class="about-intro fade-in">
-                <div class="quote-block">
-                    <span class="quote-mark">"</span>
-                    <h3>Deep Dive & Aprendizado Prático</h3>
-                    <div class="quote-author">
-                        <span class="author-line"></span>
-                        <p>Entendendo as Consequências dos Dados</p>
-                    </div>
-                </div>
-            </div>
-
-            <div class="black-line"></div>
-
-            <!-- Conceitos Core -->
-            <div class="fade-in">
-                <h2 class="section-subtitle">Conceitos Core da Folha de Pagamento Brasileira</h2>
-                <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    Cada conceito abaixo impacta diretamente nos cálculos processados pela Bernhoeft com base nos dados da Factorial
-                </p>
-                
-                <div class="concept-card">
-                    <h4>1. INSS (Instituto Nacional do Seguro Social)</h4>
-                    <ul>
-                        <li><strong>O que é:</strong> Contribuição previdenciária obrigatória que garante direitos à aposentadoria e benefícios sociais</li>
-                        <li><strong>Quem paga:</strong> Funcionário (descontado do salário bruto)</li>
-                        <li><strong>Quando:</strong> Sempre calculado primeiro, antes de qualquer outra dedução</li>
-                        <li><strong>Alíquotas:</strong> Variam conforme faixa salarial (7,5% a 14%)</li>
-                        <li><strong>Impacto:</strong> Erros no registro de horas podem alterar a base de cálculo e resultar em valores incorretos</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Exemplo de Cálculo:</strong>
-                        <div class="formula">Salário Bruto: R$ 3.000,00<br>INSS (9%): R$ 270,00<br>Base para IRRF: R$ 2.730,00</div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>2. IRRF (Imposto de Renda Retido na Fonte)</h4>
-                    <ul>
-                        <li><strong>O que é:</strong> Imposto de renda descontado diretamente na fonte de pagamento</li>
-                        <li><strong>Base de cálculo:</strong> Salário após dedução do INSS (nunca sobre o salário bruto)</li>
-                        <li><strong>Tabela progressiva:</strong> Varia conforme renda (isento até R$ 1.903,98, depois 7,5% a 27,5%)</li>
-                        <li><strong>Dependência:</strong> Se o INSS estiver errado, o IRRF também estará incorreto</li>
-                        <li><strong>Responsabilidade:</strong> Cálculo feito pela Bernhoeft com base nos dados da Factorial</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Exemplo de Cálculo:</strong>
-                        <div class="formula">Base após INSS: R$ 2.730,00<br>IRRF (7,5%): R$ 204,75<br>Salário Líquido: R$ 2.525,25</div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>3. 13º Salário (Décimo Terceiro)</h4>
-                    <ul>
-                        <li><strong>O que é:</strong> Pagamento adicional anual obrigatório equivalente a 1/12 do salário por mês trabalhado</li>
-                        <li><strong>Cálculo:</strong> Baseado na média de variáveis, não apenas salário base (inclui hora extra, comissões, etc.)</li>
-                        <li><strong>Regra crítica:</strong> Funcionário precisa trabalhar pelo menos 15 dias no mês para ter direito ao avo (1/12)</li>
-                        <li><strong>Impacto das faltas:</strong> Faltas não registradas corretamente na Factorial podem resultar em pagamento incorreto</li>
-                        <li><strong>Processamento:</strong> Calculado pela Bernhoeft com base nos dados de ausências da Factorial</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Exemplo de Cálculo:</strong>
-                        <div class="formula">Média Variáveis: R$ 3.500,00<br>Meses Trabalhados: 11/12<br>13º Salário: R$ 3.208,33</div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>4. FGTS (Fundo de Garantia do Tempo de Serviço)</h4>
-                    <ul>
-                        <li><strong>O que é:</strong> Depósito obrigatório em conta do funcionário que funciona como poupança forçada</li>
-                        <li><strong>Quem paga:</strong> Empresa (não é descontado do salário do funcionário)</li>
-                        <li><strong>Percentual:</strong> 8% do salário bruto mensal</li>
-                        <li><strong>Cálculo:</strong> Feito pela Bernhoeft automaticamente</li>
-                        <li><strong>Importância:</strong> Erros no salário bruto registrado na Factorial afetam o valor depositado</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Exemplo de Cálculo:</strong>
-                        <div class="formula">Salário Bruto: R$ 3.000,00<br>FGTS (8%): R$ 240,00<br>Depositado na conta do funcionário</div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>5. Vale-Transporte</h4>
-                    <ul>
-                        <li><strong>O que é:</strong> Benefício para transporte público obrigatório para empresas com mais de 100 funcionários</li>
-                        <li><strong>Desconto máximo:</strong> 6% do salário base do funcionário</li>
-                        <li><strong>Regra importante:</strong> Se o custo real do transporte for menor que 6%, desconta-se apenas o valor real</li>
-                        <li><strong>Responsabilidade:</strong> Dados corretos na Factorial são essenciais para evitar deduções incorretas</li>
-                        <li><strong>Consequência:</strong> Benefícios desatualizados podem gerar deduções ilegais e problemas trabalhistas</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Exemplo de Cálculo:</strong>
-                        <div class="formula">Salário Base: R$ 3.000,00<br>Desconto Máximo (6%): R$ 180,00<br>Custo Real: R$ 150,00<br>Desconto Real: R$ 150,00</div>
-                    </div>
-                </div>
-
-                <div class="concept-card">
-                    <h4>6. PAT - Programa de Alimentação ao Trabalhador</h4>
-                    <ul>
-                        <li><strong>O que é:</strong> Programa governamental de adesão voluntária que estimula empregadores a fornecer alimentação adequada aos trabalhadores</li>
-                        <li><strong>Prioridade:</strong> Foco em trabalhadores de baixa renda (até 5 salários mínimos)</li>
-                        <li><strong>Requisito crítico:</strong> Para evitar que o valor seja considerado salário, o empregador DEVE estar inscrito no PAT</li>
-                        <li><strong>Vantagens fiscais:</strong> Isenção de FGTS e contribuição previdenciária sobre o valor pago</li>
-                        <li><strong>Responsabilidade RH:</strong> Verificar e manter atualizado na Factorial o status de inscrição no PAT</li>
-                    </ul>
-                    <div class="calculation-example">
-                        <strong>Consequência se NÃO inscrito no PAT:</strong>
-                        <div class="formula">Valor da alimentação = Considerado salário<br>→ Incide INSS e FGTS<br>→ Aumenta base para 13º salário<br>→ Gera passivos trabalhistas</div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="black-line"></div>
-
-            <!-- PAT Detailed Section -->
-            <div class="fade-in">
-                <h2 class="section-subtitle">PAT - Programa de Alimentação ao Trabalhador</h2>
-                <p style="text-align: center; font-size: 16px; color: #666; margin-bottom: 50px; max-width: 700px; margin-left: auto; margin-right: auto;">
-                    Um benefício estratégico que requer registro correto na Factorial para evitar problemas trabalhistas e fiscais
-                </p>
-
-                <!-- PAT Overview -->
-                <div class="scenario-box" style="background: #fff; border: 3px solid #000;">
-                    <h4 style="font-size: 24px; margin-bottom: 25px;">O Que é o PAT?</h4>
-                    <p style="font-size: 16px; line-height: 1.8; margin-bottom: 20px;">
-                        O <strong>Programa de Alimentação ao Trabalhador (PAT)</strong> é um programa governamental de <strong>adesão voluntária</strong> que busca estimular o empregador a fornecer alimentação nutricionalmente adequada aos trabalhadores, por meio da concessão de <strong>incentivos fiscais</strong>.
-                    </p>
-                    <p style="font-size: 16px; line-height: 1.8; margin-bottom: 0;">
-                        <strong>Prioridade:</strong> O programa tem como foco principal o atendimento aos trabalhadores de <strong>baixa renda</strong>, isto é, aqueles que ganham até <strong>cinco salários mínimos mensais</strong>.
-                    </p>
-                </div>
-
-                <!-- Critical Requirement -->
-                <div class="data-quality-box fade-in" style="background: #dc3545; margin-top: 40px;">
-                    <h4 style="color: #fff;">⚠️ Requisito Crítico para o RH</h4>
-                    <p style="color: #fff; font-size: 18px; margin-top: 15px; line-height: 1.8;">
-                        <strong>Para evitar que o valor pago seja considerado salário, é NECESSÁRIO que o empregador esteja inscrito no PAT.</strong>
-                    </p>
-                    <p style="color: #fff; font-size: 16px; margin-top: 20px; line-height: 1.8;">
-                        Se a empresa não estiver inscrita no PAT, o valor da alimentação pode ser considerado parte do salário, gerando:
-                    </p>
-                    <ul style="margin-top: 20px;">
-                        <li style="color: #fff;">Incidente de INSS sobre o valor</li>
-                        <li style="color: #fff;">Incidente de FGTS sobre o valor</li>
-                        <li style="color: #fff;">Aumento da base de cálculo para 13º salário</li>
-                        <li style="color: #fff;">Problemas trabalhistas e fiscais</li>
-                        <li style="color: #fff;">Passivos trabalhistas retroativos</li>
-                    </ul>
-                </div>
-
-                <!-- Advantages Grid -->
-                <div class="stats-grid fade-in" style="margin-top: 50px;">
-                    <div class="stat-item">
-                        <div class="stat-number">Vantagens</div>
-                        <div class="stat-label">Para o Empregador</div>
-                        <div class="stat-decoration"></div>
-                        <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">
-                            <strong>Isenção de Encargos:</strong> A parcela paga pelo empregador é isenta de FGTS e contribuição previdenciária. Empresas optantes pelo lucro real podem deduzir parte das despesas do IR.
-                        </p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Benefícios</div>
-                        <div class="stat-label">Para os Trabalhadores</div>
-                        <div class="stat-decoration"></div>
-                        <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">
-                            <strong>Alimentação Nutricional:</strong> Acesso a alimentação adequada, especialmente importante para trabalhadores de baixa renda, melhorando saúde e bem-estar.
-                        </p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Impacto</div>
-                        <div class="stat-label">Organizacional</div>
-                        <div class="stat-decoration"></div>
-                        <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">
-                            <strong>Produtividade:</strong> Melhoria da capacidade física, redução de doenças, diminuição de faltas e aumento da qualidade dos serviços prestados.
-                        </p>
-                    </div>
-                    <div class="stat-item">
-                        <div class="stat-number">Responsabilidade</div>
-                        <div class="stat-label">Equipe de RH</div>
-                        <div class="stat-decoration"></div>
-                        <p style="font-size: 14px; margin-top: 15px; color: #666; line-height: 1.6;">
-                            <strong>Registro na Factorial:</strong> Verificar e manter atualizado o status de inscrição no PAT. Dados incorretos podem gerar problemas fiscais e trabalhistas graves.
-                        </p>
-                    </div>
-                </div>
-
-                <!-- PAT Benefits List -->
-                <div class="philosophy-section fade-in" style="margin-top: 60px;">
-                    <div class="philosophy-header">
-                        <h2>Vantagens do PAT (Segundo MTE)</h2>
-                        <div class="header-decoration"></div>
-                    </div>
-                    <div class="philosophy-content">
-                        <div class="philosophy-main">
-                            <p class="lead-text">O Ministério do Trabalho e Emprego destaca as principais vantagens do programa para empresas que aderem corretamente ao PAT:</p>
-                        </div>
-                        <div class="philosophy-points">
-                            <div class="point-item">
-                                <span class="point-number">01</span>
-                                <h4>Melhoria Física</h4>
-                                <p>Melhoria da capacidade e da resistência física dos trabalhadores</p>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-number">02</span>
-                                <h4>Redução de Doenças</h4>
-                                <p>Redução de doenças relacionadas a hábitos alimentares</p>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-number">03</span>
-                                <h4>Redução de Absenteísmo</h4>
-                                <p>Redução de atrasos, faltas e da rotatividade de pessoal</p>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-number">04</span>
-                                <h4>Aumento de Produtividade</h4>
-                                <p>Aumento na produtividade e na qualidade dos serviços</p>
-                            </div>
-                            <div class="point-item">
-                                <span class="point-number">05</span>
-                                <h4>Educação Nutricional</h4>
-                                <p>Promoção de educação alimentar e nutricional</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- PAT Registration Importance -->
-                <div class="key-message fade-in" style="margin-top: 60px; background: #fff3cd; border-color: #ffc107;">
-                    <h3 style="color: #856404;">⚠️ Importância do Registro Correto na Factorial</h3>
-                    <p style="font-size: 18px; line-height: 1.8; color: #856404;">
-                        <strong>Se a empresa oferece alimentação mas NÃO está inscrita no PAT:</strong><br>
-                        • O valor pago pode ser considerado salário<br>
-                        • Incidem encargos sociais (INSS, FGTS)<br>
-                        • Aumenta a base de cálculo para 13º salário<br>
-                        • Gera passivos trabalhistas retroativos<br>
-                        • Pode resultar em multas e autuações fiscais<br><br>
-                        <strong>Ação do RH:</strong> Verificar na Factorial se a empresa está corretamente cadastrada no PAT e manter essa informação sempre atualizada. Este é um dado crítico que impacta diretamente nos cálculos da Bernhoeft.
-                    </p>
-                </div>
-
-                <!-- Reference -->
-                <div class="scenario-box fade-in" style="margin-top: 40px; background: #f9f9f9;">
-                    <h4>Referência Normativa</h4>
-                    <p style="font-size: 14px; line-height: 1.8; color: #666; margin: 0;">
-                        Lei nº 6.321, de 1976 (arts. 1º, 3º) | Decreto nº 5 (arts. 1º e 6º)<br>
-                        Manual do MTE - Ministério do Trabalho e Emprego sobre PAT
-                    </p>
-            </div>
-
-            <div class="black-line"></div>
-
-            <!-- Atividade 1: Detetive da Folha -->
-            <div class="fade-in">
-                <h2 class="section-subtitle">Atividade 1: O Desafio "Detetive da Folha"</h2>
-                <p style="text-align: center; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; color: #666;">15 MINUTOS • CASO PRÁTICO</p>
-                
-                <div class="scenario-box">
-                    <h4>Cenário: João da Silva</h4>
-                    <p><strong>Salário Base:</strong> R$ 3.000,00</p>
-                    <p><strong>Dados Registrados na Factorial:</strong></p>
-                    <ul style="list-style: none; padding: 0; margin: 15px 0;">
-                        <li style="padding: 5px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            5 dias de Férias (PTO) no início do mês
-                        </li>
-                        <li style="padding: 5px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            3 faltas injustificadas registradas no sistema
-                        </li>
-                        <li style="padding: 5px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Total de dias trabalhados no mês: 12 dias
-                        </li>
-                    </ul>
-                </div>
-
-                <div class="question-box">
-                    <h4>Pergunta 1</h4>
-                    <p>Qual dedução obrigatória é sempre calculada primeiro pela Bernhoeft?</p>
-                    <div class="answer-box">
-                        <strong>Resposta:</strong> INSS. Esta é sempre a primeira dedução, calculada sobre o salário bruto antes de qualquer outra dedução. Se o salário bruto estiver incorreto na Factorial, todo o cálculo subsequente será afetado.
-                    </div>
-                </div>
-
-                <div class="question-box">
-                    <h4>Pergunta 2</h4>
-                    <p>João perderá uma parte (um avo) do 13º Salário este mês devido às suas faltas e férias?</p>
-                    <div class="answer-box">
-                        <strong>Resposta:</strong> Sim. A regra dos 15 dias é clara: o funcionário precisa trabalhar pelo menos 15 dias no mês para ter direito ao avo (1/12) do 13º salário. Com apenas 12 dias trabalhados, João não terá direito ao avo deste mês. Este é um exemplo claro de como dados incorretos ou incompletos na Factorial afetam diretamente os direitos trabalhistas.
-                    </div>
-                </div>
-
-                <div class="question-box">
-                    <h4>Pergunta 3</h4>
-                    <p>Como a Bernhoeft calcula o FGTS com base nos dados da Factorial?</p>
-                    <div class="answer-box">
-                        <strong>Resposta:</strong> O FGTS é calculado como 8% do salário bruto. Se o salário bruto estiver incorreto na Factorial (por exemplo, se horas extras não foram registradas), o valor do FGTS depositado também estará incorreto, gerando problemas futuros para o funcionário.
-                    </div>
-                </div>
-
-                <div class="highlight-box">
-                    <h3>Objetivo da Atividade</h3>
-                    <p>Demonstrar como os dados registrados na Factorial (faltas, horas, benefícios) acionam automaticamente regras legais de cálculo processadas pela Bernhoeft. Cada dado incorreto tem consequências reais e mensuráveis.</p>
-                </div>
-            </div>
-
-            <div class="black-line"></div>
-
-            <!-- Atividade 2: CLT Compliance Check -->
-            <div class="fade-in">
-                <h2 class="section-subtitle">Atividade 2: O Check de Conformidade CLT</h2>
-                <p style="text-align: center; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; color: #666;">10 MINUTOS • VERDADEIRO OU FALSO</p>
-                
-                <table class="true-false-table">
-                    <thead>
-                        <tr>
-                            <th>Pergunta</th>
-                            <th>Tópico</th>
-                            <th>Resposta Esperada</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>T/F: O funcionário sempre paga 6% do salário base para Vale-Transporte.</td>
-                            <td>Vale-Transporte</td>
-                            <td><strong>FALSO</strong> — O funcionário paga no máximo 6% do salário base. Se o custo real do transporte for menor (ex: R$ 150 quando 6% seria R$ 180), ele paga apenas R$ 150. Dados incorretos na Factorial podem resultar em dedução ilegal.</td>
-                        </tr>
-                        <tr>
-                            <td>T/F: Apenas o salário base é usado para calcular o 13º Salário.</td>
-                            <td>13º Salário</td>
-                            <td><strong>FALSO</strong> — O 13º salário deve incluir a média de variáveis como hora extra, comissões e adicionais. Se essas informações não estiverem corretas na Factorial, o cálculo estará incorreto.</td>
-                        </tr>
-                        <tr>
-                            <td>T/F: Nossa equipe de RH é responsável por calcular manualmente a dedução de INSS.</td>
-                            <td>Papel da Bernhoeft</td>
-                            <td><strong>FALSO</strong> — A Bernhoeft faz todos os cálculos legais automaticamente com base nos dados da Factorial. O RH é responsável apenas por garantir que os dados estejam corretos e atualizados.</td>
-                        </tr>
-                        <tr>
-                            <td>T/F: O FGTS é descontado do salário do funcionário.</td>
-                            <td>FGTS</td>
-                            <td><strong>FALSO</strong> — O FGTS é pago pela empresa (8% do salário bruto) e não é descontado do salário. É um custo adicional para a empresa, não uma dedução do funcionário.</td>
-                        </tr>
-                    </tbody>
-                </table>
-
-                <div class="highlight-box">
-                    <h3>Objetivo da Atividade</h3>
-                    <p>Corrigir equívocos comuns sobre a legislação trabalhista brasileira e reforçar a importância de dados precisos na Factorial para garantir conformidade legal.</p>
-                </div>
-            </div>
-
-            <div class="black-line"></div>
-
-            <!-- Atividade 3: Benefit Blunder -->
-            <div class="fade-in">
-                <h2 class="section-subtitle">Atividade 3: O Erro de Benefício</h2>
-                <p style="text-align: center; font-size: 14px; letter-spacing: 2px; text-transform: uppercase; margin-bottom: 40px; color: #666;">10 MINUTOS • CASO PRÁTICO</p>
-                
-                <div class="scenario-box">
-                    <h4>Cenário Real</h4>
-                    <p>Um funcionário esqueceu de atualizar seu perfil na Factorial e ainda está recebendo um benefício que não usa mais — especificamente, ajuda de custo para transporte privado (R$ 300/mês). O sistema continua deduzindo este valor do seu contracheque, mas ele não utiliza mais este benefício.</p>
-                    <p style="margin-top: 15px;"><strong>Pergunta:</strong> Quais são as consequências para o funcionário e para a empresa?</p>
-                </div>
-
-                <div class="interactive-card">
-                    <h4>Consequências para o Funcionário</h4>
-                    <p>O funcionário está tendo R$ 300 descontados incorretamente do seu salário todos os meses. Além da perda financeira direta, isso também afeta o cálculo de INSS e IRRF, pois a base de cálculo está incorreta. Ao descobrir o erro, ele pode exigir a restituição de todos os valores descontados incorretamente.</p>
-                </div>
-
-                <div class="interactive-card">
-                    <h4>Consequências para a Empresa</h4>
-                    <p>A empresa está em risco legal por fazer deduções não autorizadas. Isso pode resultar em processos trabalhistas, multas e necessidade de correção retroativa através da Bernhoeft. Além disso, a empresa perde a confiança do funcionário e pode enfrentar problemas de compliance trabalhista.</p>
-                </div>
-
-                <div class="highlight-box">
-                    <h3>Objetivo da Atividade</h3>
-                    <p>Enfatizar que dados de benefícios antigos ou incorretos na Factorial levam a problemas legais, financeiros e de relacionamento. A atualização constante dos dados é responsabilidade crítica da equipe de RH.</p>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <!-- Section 5: Q&A -->
-    <section id="qa" class="services">
-        <div class="container">
-            <div class="section-time fade-in" style="color: #fff;">SEÇÃO IV • 5 MINUTOS</div>
-            
-            <div class="services-header fade-in">
-                <h2>Q&A e Encerramento</h2>
-                <p style="font-size: 18px; font-weight: 300; margin-top: 20px; max-width: 800px; margin-left: auto; margin-right: auto; line-height: 1.8;">
-                    Momento para esclarecer dúvidas e consolidar o aprendizado
+            <div class="slide fade-in">
+                <h2>Exercício Prático</h2>
+                <p style="text-align: center; font-size: 18px;">
+                    Identifique os 3 erros e suas consequências
                 </p>
             </div>
             
-            <div class="asymmetric-grid fade-in">
-                <div class="service-large">
-                    <h3>Perguntas Frequentes</h3>
-                    <p>Este é o momento para esclarecer dúvidas sobre:</p>
-                    <ul style="list-style: none; padding: 0; margin-top: 20px;">
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Como manter dados atualizados na Factorial de forma eficiente
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Impacto real dos dados no contracheque final do colaborador
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Responsabilidades específicas da equipe de RH no processo
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Processo de correção de erros quando identificados
-                        </li>
-                        <li style="padding: 10px 0; padding-left: 25px; position: relative;">
-                            <span style="position: absolute; left: 0;">•</span>
-                            Como garantir qualidade contínua dos dados
-                        </li>
-                    </ul>
-                </div>
-                <div class="service-small">
-                    <div class="service-number">04</div>
-                    <h4>Próximos Passos</h4>
+            <div class="case-study fade-in">
+                <h4>Cenário: João da Silva</h4>
+                <p><strong>Salário Base:</strong> R$ 3.000,00</p>
+                <div style="margin-top: 20px;">
+                    <p style="margin-bottom: 10px;"><strong>Erro 1:</strong> 5 dias de férias não registrados no início do mês</p>
+                    <p style="margin-bottom: 10px;"><strong>Erro 2:</strong> 3 faltas injustificadas não registradas</p>
+                    <p style="margin-bottom: 10px;"><strong>Erro 3:</strong> Total de dias trabalhados: 12 dias (deveria ser 15+ para direito ao avo do 13º)</p>
                 </div>
             </div>
 
-            <!-- Process Timeline for Next Steps -->
-            <div class="process-timeline fade-in">
-                <h2 class="section-subtitle">Próximos Passos</h2>
-                <div class="timeline-container">
-                    <div class="timeline-line"></div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Revisar</h4>
-                            <p>Auditar dados atuais na Factorial</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Atualizar</h4>
-                            <p>Corrigir informações desatualizadas</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Validar</h4>
-                            <p>Verificar qualidade dos dados regularmente</p>
-                        </div>
-                    </div>
-                    <div class="timeline-item">
-                        <div class="timeline-dot"></div>
-                        <div class="timeline-content">
-                            <h4>Manter</h4>
-                            <p>Estabelecer processo contínuo de atualização</p>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="key-message fade-in" style="background: #fafafa; margin-top: 60px;">
-                <h3>Objetivos de Aprendizado Alcançados</h3>
-                <ul class="objectives-list">
-                    <li>O RH é responsável pela qualidade dos dados na Factorial — esta é a base de todo o processo</li>
-                    <li>Dados incorretos afetam cálculos legais (INSS, IRRF, 13º, FGTS) e podem gerar problemas trabalhistas</li>
-                    <li>Como os dados da Factorial são usados pela Bernhoeft para processar folhas de pagamento</li>
-                    <li>Noções básicas de CLT, deduções obrigatórias e benefícios e seu impacto nos cálculos</li>
-                    <li>Como manter dados atualizados e corretos na Factorial para garantir precisão e conformidade</li>
-                    <li>Entendimento do fluxo completo: Factorial (dados) → Bernhoeft (cálculos) → Resultado (folha precisa)</li>
+            <div class="quiz-box fade-in">
+                <div class="quiz-question">Qual a consequência principal desses erros?</div>
+                <ul class="quiz-options">
+                    <li>A) Apenas ajuste no salário do mês</li>
+                    <li>B) Perda do direito ao avo do 13º salário + problemas trabalhistas</li>
+                    <li>C) Nenhuma, pois são erros pequenos</li>
                 </ul>
-            </div>
+                <div style="margin-top: 20px; padding: 15px; background: #fff; border: 2px solid #28a745;">
+                    <p style="margin: 0; color: #28a745; font-weight: 500;">Resposta: B) Perda do direito ao avo do 13º salário + problemas trabalhistas</p>
+                    <p style="margin-top: 10px; font-size: 14px; color: #666;">A regra dos 15 dias é clara: menos de 15 dias trabalhados = sem direito ao avo do 13º. Dados incorretos na Factorial geram cálculos incorretos na Bernhoeft.</p>
+                        </div>
+                    </div>
 
-            <!-- Final Message -->
-            <div class="highlight-box fade-in" style="margin-top: 60px;">
-                <h3>A Folha de Pagamento é o Coração da Relação Trabalhista</h3>
-                <p style="font-size: 20px; line-height: 1.8; margin-top: 20px;">
-                    Cada dado inserido na Factorial tem impacto real nos cálculos processados pela Bernhoeft.<br>
-                    A precisão dos dados não é apenas uma questão técnica — é uma responsabilidade legal e ética.<br>
-                    <strong>Qualidade dos dados = Precisão dos cálculos = Conformidade legal = Confiança</strong>
+            <div class="slide fade-in">
+                <h3>Q&A</h3>
+                <p style="text-align: center; font-size: 18px;">
+                    Momento para esclarecer dúvidas e consolidar aprendizado
                 </p>
+                        </div>
+                    </div>
+    </section>
+
+    <!-- Encerramento -->
+    <section class="services">
+        <div class="container">
+            <div class="highlight-message fade-in" style="margin-top: 60px;">
+                <h3>A Folha é o Coração da Relação Trabalhista</h3>
+                <p>Qualidade dos dados = Precisão dos cálculos = Conformidade legal = Confiança</p>
             </div>
         </div>
     </section>
 
     <!-- Footer -->
     <footer>
-        <p>© 2025 Aula de Folha de Pagamento — Factorial & Bernhoeft | Design baseado em <a href="https://www.tooplate.com" target="_blank" rel="nofollow noopener" style="color: #000; font-weight: 700;">Tooplate</a></p>
+        <p>© 2025 Aula de Folha de Pagamento | Factorial & Bernhoeft</p>
     </footer>
 
     <script src="2141_minimal_white/tooplate-minimal-script.js"></script>

@@ -1,0 +1,154 @@
+{
+  "slides": [
+    {
+      "id": "hero",
+      "title": "Folha de pagamento em 40 minutos",
+      "subtitle": "Onde mora o risco e como transformar risco em confiança",
+      "presenter": "00:00 Abertura. Apresentar objetivo da aula em 40 minutos."
+    },
+    {
+      "id": "definicao",
+      "title": "O que é folha de pagamento",
+      "lines": [
+        "Processo que transforma dados em pagamento e obrigações fiscais",
+        "Três atores: empresa colaborador governo"
+      ],
+      "presenter": "00:00 Abrir com definição clara. Folha não é só holerite - é processo completo que conecta três atores críticos."
+    },
+    {
+      "id": "problema",
+      "title": "O problema em uma frase",
+      "line": "Dados ruins geram cálculos errados multas e perda de confiança",
+      "presenter": "00:02 Apresentar problema em uma frase. Dados ruins têm consequências imediatas e mensuráveis."
+    },
+    {
+      "id": "triangulo",
+      "title": "Triângulo da folha",
+      "items": [
+        "Empresa responsável por dados e políticas",
+        "Colaborador espera pagamento correto",
+        "Governo fiscaliza e aplica multas"
+      ],
+      "presenter": "00:03 Mostrar triângulo visual. Cada vértice tem riscos específicos. Erro em um afeta os outros dois."
+    },
+    {
+      "id": "calculo",
+      "title": "Exemplo rápido de custo",
+      "lines": [
+        "Salário bruto 1000",
+        "INSS 90",
+        "FGTS 80",
+        "13º 83,33",
+        "Férias mais um terço 111,11",
+        "Custo total 1432,69"
+      ],
+      "presenter": "00:05 Mostrar acumulação linha por linha. Clique para revelar cada item. Enfatizar que custos somam 43 por cento"
+    },
+    {
+      "id": "impacto",
+      "title": "Impacto de 1 por cento de erro",
+      "lines": [
+        "Erro pequeno multiplica no ecossistema inteiro",
+        "Prejuízo financeiro e risco legal"
+      ],
+      "presenter": "00:08 Demonstrar como erro pequeno multiplica. 1% de erro no salário vira erro maior no custo total."
+    },
+    {
+      "id": "riscos",
+      "title": "Riscos práticos",
+      "items": [
+        "Multas e autuações por dados inconsistentes",
+        "Perda de confiança do colaborador",
+        "Retrabalho e custo operacional crescente"
+      ],
+      "presenter": "00:10 Listar riscos práticos. Cada item tem consequência imediata e mensurável."
+    },
+    {
+      "id": "caso-real",
+      "title": "Caso real em 60 segundos",
+      "lines": [
+        "Empresa 50 funcionários erro base de desconto",
+        "Multa 45 mil e retrabalho de 20 horas",
+        "Solução: validação de dados antes do fechamento"
+      ],
+      "presenter": "00:12 Apresentar caso em 60 segundos. Empresa real, problema específico, solução clara."
+    },
+    {
+      "id": "solucao",
+      "title": "Solução clara e papéis",
+      "lines": [
+        "Factorial garante qualidade e origem dos dados",
+        "Bernhoeft processa cálculos e garante compliance",
+        "Fluxo: dados entram uma única vez"
+      ],
+      "presenter": "00:15 Separar papéis claramente. Factorial = dados. Bernhoeft = processamento. Eliminar ambiguidade comercial."
+    },
+    {
+      "id": "metricas",
+      "title": "Métricas alvo operacionais",
+      "lines": [
+        "Precisão dos dados 99,9 por cento",
+        "Redução tempo de fechamento 80 por cento",
+        "Zero autuações críticas por ano"
+      ],
+      "presenter": "00:18 Apresentar métricas alvo. Estes são targets operacionais mensuráveis."
+    },
+    {
+      "id": "diagnostico",
+      "title": "Perguntas de diagnóstico",
+      "items": [
+        "Quem gera os dados de ponto e contratação",
+        "Como valida ausências e férias hoje",
+        "Quantas revisões antes do fechamento",
+        "Já teve autuação nos últimos 24 meses"
+      ],
+      "presenter": "00:20 Apresentar perguntas de diagnóstico. Estas são ferramentas para o time comercial identificar oportunidades."
+    },
+    {
+      "id": "plano",
+      "title": "Três ações para aplicar hoje",
+      "items": [
+        "Auditoria de dados na origem",
+        "Validação automatizada antes do fechamento",
+        "Rotina mensal de auditoria com KPIs"
+      ],
+      "presenter": "00:22 Apresentar três ações práticas. Transformar entendimento em próximos passos concretos."
+    },
+    {
+      "id": "exercicio",
+      "title": "Exercício rápido",
+      "lines": [
+        "Em duplas identifique 2 erros no caso João",
+        "Explique impacto e solução em 30 segundos"
+      ],
+      "presenter": "00:25 Exercício prático. Em duplas identificar erros e impacto. 30 segundos por dupla."
+    },
+    {
+      "id": "quiz",
+      "title": "Quiz rápido",
+      "questions": [
+        {
+          "question": "Qual a maior alavanca para reduzir erros?",
+          "options": ["Dados origem", "Cálculos", "Auditoria"],
+          "correct": 1
+        },
+        {
+          "question": "Qual meta imediata de precisão sugerida?",
+          "options": ["95%", "99,9%", "100%"],
+          "correct": 1
+        }
+      ],
+      "presenter": "00:28 Quiz rápido. Validar aprendizado com feedback imediato."
+    },
+    {
+      "id": "encerramento",
+      "title": "Resumo e próximo passo",
+      "lines": [
+        "Qualidade de dados gera confiança e conformidade",
+        "Vou enviar checklist e roteiro de diagnóstico"
+      ],
+      "presenter": "00:30 Encerramento. Resumir mensagem principal e próximo passo concreto."
+    }
+  ]
+}
+
